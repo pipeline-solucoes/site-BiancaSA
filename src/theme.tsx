@@ -27,7 +27,7 @@ const themePS = createTheme({
   },
   palette: {
     primary: {
-      main: '#4a90e2', // Azul personalizado
+      main: '#d32f2f', // Azul personalizado
     },
     secondary: {
       main: '#d32f2f', // Vermelho personalizado
