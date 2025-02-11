@@ -2,25 +2,44 @@
 
 import { themePS } from "@/theme";
 import { ThemeProvider } from "styled-components";
-import { Banner } from "pipesolcomponents";
+import { AreaBannerMenuTitle, Banner, TitleBanner } from "pipesolcomponents";
 import { ReactElement } from "react";
+import banner from "../../public/banner.jpeg"
 
 export default function Home() {
 
   const renderElement = (): ReactElement => {
-    return <div>Hello, world!</div>;
+    return (
+      <div>funcionou...</div>
+    );
+  };
+
+  const renderTextoTitle = (): ReactElement => {
+    return (
+      <div>funcionou...</div>
+    );
+  };
+
+  const renderTitle = (): ReactElement => {
+    return (
+      <TitleBanner color="#d32f2f" width="100%" render={renderTextoTitle}>
+      </TitleBanner>
+    );
   };
 
   return (
     <ThemeProvider theme={themePS}>
-      <Banner background_color="transparent"            
-        background_image_1080X600='/banner1080x600.webp'
-        background_image_1920X600='./banner1080x600.webp'
-        renderContent ={renderElement}>
+      <Banner src={banner} alt="banner">
+        <AreaBannerMenuTitle background_color_menu="#d32f2f"
+          renderMenu={renderElement}
+          renderContent={renderTitle}>
+        </AreaBannerMenuTitle>
       </Banner>
+
       <p>teste</p>
 
       <p>teste</p>
+
     </ThemeProvider>   
   );
 }
