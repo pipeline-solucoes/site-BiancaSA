@@ -9,7 +9,7 @@ import { ReactElement } from "react";
 import { Typography, useTheme } from "@mui/material";
 import * as React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import TitleSection from "../components/TitleSection";
+import TitleSectionCenter from "../components/TitleSectionCenter";
 
 interface DepoimentoProps {
   nome: string;
@@ -88,7 +88,11 @@ const SecaoDepoimentos: React.FC = () => {
 
   return (
     <Section section_id="depoimentos" background_color={theme.palette.custom?.backgroundSectionAlternative}>
-      <TitleSection>Depoimentos</TitleSection>
+      <TitleSectionCenter 
+        title_text="Histórias de Superação e Esperança"
+        subtitle_text="Palavras dos meus pacientes"
+      >
+      </TitleSectionCenter>
       {renderCards(depoimentosObras)} 
     </Section>
   );

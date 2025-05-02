@@ -25,13 +25,13 @@ const TitleBannerComCTA: React.FC = () => {
             }>
             <ContainerBotao>                  
                 <NavigationButton 
-                    url="#obras"             
-                    width="calc(100% - 48px)"
+                    url="#formulario"             
+                    width="auto"
                     background_color={theme.palette.custom.backgroundButtonCTA} 
                     background_color_hover={theme.palette.custom.backgroundHoverButtonCTA}
                     color={theme.palette.custom.colorButtonCTA} 
                     border_radius={theme.palette.custom.borderRadiusButtonCTA}
-                    aria_label='botao CTA Explore minhas obras'
+                    aria_label='botao CTA Agendar Avaliação'
                     layout='button'
                     text_decoration='none'             
                 >

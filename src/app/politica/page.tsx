@@ -24,7 +24,7 @@ const PoliticaPrivacidade: React.FC = ()  => {
 
             <Section section_id='politica' background_color={theme.palette.custom?.backgroundSectionMain}>
                 <Box sx={{width:'100%'}}>
-                    <TitleSection>Política de Privacidade</TitleSection>
+                    <TitleSection title_text="Política de Privacidade"></TitleSection>
                 </Box>
                 <Box sx={{width:'100%'}}>                    
                     <ol>

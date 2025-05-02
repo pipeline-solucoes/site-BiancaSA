@@ -40,9 +40,8 @@ const FooterCustom: React.FC<FooterCustomProps> = ({itens_menu}) => {
               <ContentColFooter>
                 <TitleFooterStyle textColor={textColor}>
                   Termos e Política
-                </TitleFooterStyle> 
-                <Box display="flex" flexDirection="column" alignItems='flex-start'>
-                  <NavigationButton width='auto'
+                </TitleFooterStyle>                 
+                <NavigationButton width='auto'
                       url={urlTermoUso} layout='link' 
                       color={theme.palette.primary.contrastText} 
                       color_hover={theme.palette.primary.contrastText} 
@@ -50,8 +49,8 @@ const FooterCustom: React.FC<FooterCustomProps> = ({itens_menu}) => {
                       aria_label='link termos de uso'
                     >
                     <Typography variant="body1" component="span" color={theme.palette.secondary.contrastText}>Termos de Uso</Typography>
-                  </NavigationButton>                  
-                  <NavigationButton width='auto'
+                </NavigationButton>                  
+                <NavigationButton width='auto'
                       url={urlPoliticaPrivacidade} layout='link'               
                       color={theme.palette.primary.contrastText} 
                       color_hover={theme.palette.primary.contrastText}
@@ -59,8 +58,7 @@ const FooterCustom: React.FC<FooterCustomProps> = ({itens_menu}) => {
                       aria_label='link politica de privacidade'
                     > 
                     <Typography variant="body1" component="span" color={theme.palette.secondary.contrastText}>Política de Privacidade</Typography>
-                  </NavigationButton>                
-                </Box>                                      
+                </NavigationButton>                                                                    
               </ContentColFooter>
             </Box>
 

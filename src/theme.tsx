@@ -67,7 +67,7 @@ const theme = createTheme({
       contrastText: "#ffffff" //Branco
     },    
     text: {
-      primary: '#060606',
+      primary: '#707070',
       secondary: '#ffffff',
       disabled: '#A9A9A9',
     },       
@@ -144,17 +144,17 @@ const theme = createTheme({
       },
     },
     h4: {
-      fontSize: '20px', // Desktop
+      fontSize: '18px', // Desktop
       lineHeight: '1.5',
       letterSpacing: '0.01em',
       fontWeight: 600,
       margin: 0,
       fontStyle: 'normal',      
       '@media (min-width:601px) and (max-width:960px)': {
-        fontSize: '20px', // Tablet
+        fontSize: '18px', // Tablet
       },
       '@media (max-width:600px)': {
-        fontSize: '20px', // Mobile
+        fontSize: '18px', // Mobile
       },
     },
     body1: { //Normal

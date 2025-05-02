@@ -29,7 +29,7 @@ const BarraFerramentasCustom: React.FC<BarraFerramentasCustomProps> = ({isXs, is
           renderLogo={() => <></>}        
           renderImageHamburguer={() => 
             <MenuIcon 
-              style={{fontSize: 24, color: theme.palette.secondary.contrastText}}>
+              style={{fontSize: 24, color: theme.palette.primary.main}}>
             </MenuIcon>}      
         >
        </BarraFerramentasHamburguer>                                                           

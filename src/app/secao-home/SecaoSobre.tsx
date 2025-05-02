@@ -20,7 +20,10 @@ const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs, isSm}) => {
   return (
     <Section section_id="sobre" background_color={theme.palette.custom?.backgroundSectionMain}>
       
-      <TitleSection>Bianca Souza Aguiar</TitleSection>
+      <TitleSection 
+        title_text="Bianca Souza Aguiar" 
+        subtitle_text="Fisioterapeuta Especialista em Oncologia e Especializada em Cuidados Paliativos">
+      </TitleSection>
 
       <ContentSectionWrapStyled>
              

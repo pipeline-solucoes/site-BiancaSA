@@ -9,24 +9,24 @@ interface TitleSectionProps {
 export const Container = styled('div')(() => ({    
     display: 'flex',
     flexDirection: 'column',    
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    alignItems: 'center',
+    justifyContent: 'center',
     width: '100%',
     gap: '8px',
   }));
 
-const TitleSection: React.FC<TitleSectionProps> = ({title_text, subtitle_text}) => {            
+const TitleSectionCenter: React.FC<TitleSectionProps> = ({title_text, subtitle_text}) => {            
 
     const theme = useTheme();
     return(
         <Container>
             <Typography variant='h3' component="h3" color={theme.palette.primary.main} 
-                sx={{ width: '100%' }}>
+                sx={{ width: 'auto' }}>
                 {title_text}
             </Typography>
             {   subtitle_text &&
                 <Typography variant='h4' component="h4" color={theme.palette.text.primary} 
-                    sx={{ width: '100%' }}>
+                    sx={{ width: 'auto' }}>
                     {subtitle_text}
                 </Typography>
             }
@@ -34,4 +34,4 @@ const TitleSection: React.FC<TitleSectionProps> = ({title_text, subtitle_text}) 
     );         
 };
 
-export default TitleSection;
+export default TitleSectionCenter;

@@ -12,8 +12,8 @@ const ScrollToTopButtonCustom: React.FC = () => {
 
     return(
         <ScrollToTopButton show={false}
-            background_color={theme.palette.secondary.main} 
-            background_color_hover={theme.palette.secondary.main} 
+            background_color={theme.palette.primary.main} 
+            background_color_hover={theme.palette.primary.main} 
             border_radius="10px">   
             <ArrowUpwardIcon sx={{ color: colorIcon, fontSize: 24}}></ArrowUpwardIcon>                          
         </ScrollToTopButton>

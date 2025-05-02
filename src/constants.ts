@@ -5,7 +5,8 @@ export const subTituloBanner: string = "Cuidado especializado em cada fase da vi
 
 export const urlTermoUso: string = "/termo";
 export const urlPoliticaPrivacidade: string = "/politica";
-export const numberWhatsapp: string = "5521994751178";
+export const numberWhatsapp: string = "5521981314001";
+export const tokenFormulario = ""
 
 export const itemsMenu : ItemMenuProps[] = [
     {url: '#sobre', text: 'Sobre'},
