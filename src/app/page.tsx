@@ -1,45 +1,37 @@
-"use client"
+'use client';
 
-import { themePS } from "@/theme";
-import { ThemeProvider } from "styled-components";
-import { AreaBannerMenuTitle, Banner, TitleBanner } from "pipesolcomponents";
-import { ReactElement } from "react";
-import banner from "../../public/banner.jpeg"
+import SecaoSobre from "./secao-home/SecaoSobre";
+import SecaoDepoimentos from "./secao-home/SecaoDepoimentos";
+import SecaoFormulario from "./secao-home/SecaoFormulario";
+import ScrollToTopButtonCustom from "./components/ScrollToTopButtonCustom";
+import BannerCustomComCTA from "./components/banner/BannerCustomComCTA";
+import NotificationBarCustom from "./components/NotificationBarCustom";
+import FooterCustom from "./components/footer/FooterCustom";
+import BarraFerramentasCustom from "./components/banner/BarraFerramentasCustom";
+import { HeaderBarTop, useResponsive, WhatsAppButton } from "pipesolcomponents";
+import { itemsMenu, numberWhatsapp } from "@/constants";
+
 
 export default function Home() {
 
-  const renderElement = (): ReactElement => {
-    return (
-      <div>funcionou...</div>
-    );
-  };
+  const { isXs, isSm } = useResponsive();  
+  return (    
+    <>
+      <HeaderBarTop                
+        renderBar={() => <BarraFerramentasCustom isXs={isXs} isSm={isSm} itens_menu={itemsMenu}></BarraFerramentasCustom>}
+        renderBanner={() => <BannerCustomComCTA isSm={isSm}></BannerCustomComCTA>}>        
+      </HeaderBarTop>
+      
+      <main>
+        <SecaoSobre isXs={isXs} isSm={isSm}></SecaoSobre>        
+        <SecaoDepoimentos></SecaoDepoimentos>
+        <SecaoFormulario></SecaoFormulario>
+      </main>
 
-  const renderTextoTitle = (): ReactElement => {
-    return (
-      <div>funcionou...</div>
-    );
-  };
-
-  const renderTitle = (): ReactElement => {
-    return (
-      <TitleBanner color="#d32f2f" width="100%" render={renderTextoTitle}>
-      </TitleBanner>
-    );
-  };
-
-  return (
-    <ThemeProvider theme={themePS}>
-      <Banner src={banner} alt="banner">
-        <AreaBannerMenuTitle background_color_menu="#d32f2f"
-          renderMenu={renderElement}
-          renderContent={renderTitle}>
-        </AreaBannerMenuTitle>
-      </Banner>
-
-      <p>teste</p>
-
-      <p>teste</p>
-
-    </ThemeProvider>   
+      <FooterCustom itens_menu={itemsMenu}></FooterCustom>
+      <WhatsAppButton whatsapp={numberWhatsapp}></WhatsAppButton>
+      <ScrollToTopButtonCustom></ScrollToTopButtonCustom>
+      <NotificationBarCustom></NotificationBarCustom>
+    </>   
   );
 }

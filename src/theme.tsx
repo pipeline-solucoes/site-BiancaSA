@@ -1,18 +1,48 @@
-// theme.tsx
-import { createGlobalStyle } from 'styled-components';
 import { createTheme } from '@mui/material/styles';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    padding: ${props => props.theme.spacing(4)}px;    
+declare module '@mui/material/styles' {
+  interface Palette {
+    custom: {
+      transparent: string;
+
+      backgroundSectionMain: string;      
+      backgroundSectionAlternative: string;
+      backgroundSectionHighlight?: string;
+
+      colorSectionMain: string;      
+
+      backgroundButtonCTA: string,
+      backgroundHoverButtonCTA: string,
+      colorButtonCTA: string,
+      colorHoverButtonCTA: string,
+      borderRadiusButtonCTA: string,
+
+      carouselColorIndicators: string,
+      carouselColorFocus: string,
+    };
   }
-`;
+  interface PaletteOptions {
+    custom?: {
+      transparent: string;
+
+      backgroundSectionMain: string;      
+      backgroundSectionAlternative: string;
+      backgroundSectionHighlight?: string;     
+
+      backgroundButtonCTA: string,
+      backgroundHoverButtonCTA: string,
+      colorButtonCTA: string,
+      colorHoverButtonCTA: string,
+      borderRadiusButtonCTA: string,
+
+      carouselColorIndicators: string,
+      carouselColorFocus: string,
+    };
+  }
+}
 
 // Definindo o tema personalizado
-const themePS = createTheme({
+const theme = createTheme({
   breakpoints: { 
     values: { 
       xs: 0, // Extra small devices (phones) 
@@ -27,113 +57,134 @@ const themePS = createTheme({
   },
   palette: {
     primary: {
-      main: '#d32f2f', // Azul personalizado
+      main: "#336dd5" , //Azul
+      dark: "#0e2244" , //Azul mais escuro
+      contrastText: "#ffffff" //Branco
     },
     secondary: {
-      main: '#d32f2f', // Vermelho personalizado
-    },
+      main: '#8c6d32', // Dourado 
+      light: '#b68d40', // Dourado mais claro
+      contrastText: "#ffffff" //Branco
+    },    
     text: {
-      primary: '#333',
-      secondary: '#666',
-      disabled: '#999',
-    }, 
-    background: {
-      default: '#f5f5f5',
-      paper: '#f5f5f5',
+      primary: '#060606',
+      secondary: '#ffffff',
+      disabled: '#A9A9A9',
+    },       
+    custom: {
+      transparent: '#00000000',
+
+      backgroundSectionMain: '#ffffff',
+      backgroundSectionAlternative: '#e6ebff',      
+
+      backgroundButtonCTA: "#6aa754",
+      backgroundHoverButtonCTA: '#6aa754',
+      colorButtonCTA: '#ffffff',
+      colorHoverButtonCTA: '#ffffff',
+      borderRadiusButtonCTA: "25px",  
+      
+      carouselColorIndicators: 'gray',
+      carouselColorFocus: '#336dd5',
     },
     info: {
-      main: '#4a90e2',
+      main: '#555f56',
     },
     error: {
-      main: '#4a90e2',
-    }     
+      main: '#F44336',
+    },
+    success: {
+      main: '#4CAF50',
+    }    
   },
   typography: {
-    fontFamily: 'Roboto, Arial, sans-serif',
-    h1: { 
-      fontSize: '2.5rem', // Desktop     
-      lineHeight: '1.5',
+    fontFamily: 'Inter, Arial, sans-serif',
+    h1: {         
+      fontSize: '44px', // Desktop     
+      lineHeight: '1.0',
       letterSpacing: '0.01em',
-      fontWeight: 400,
-      margin: 0,
-      fontStyle: 'normal', 
-      '@media (max-width:600px)': {
-        fontSize: '48px', // Mobile
-      },
-      '@media (min-width:601px) and (max-width:960px)': {
-        fontSize: '40px', // Tablet
-      },
-    },
-    h2: {
-      fontSize: '2rem', // Desktop
-      lineHeight: '1.5',
-      letterSpacing: '0.01em',
-      fontWeight: 400,
+      fontWeight: 600,
       margin: 0,
       fontStyle: 'normal',
-      '@media (max-width:600px)': {
-        fontSize: '1.25rem', // Mobile
+      color: '#0e2244',
+      padding: '8px 0px',    
+      '@media (min-width:601px) and (max-width:1280px)': {
+        fontSize: '40px', // Tablet
       },
+      '@media (max-width:600px)': {
+        fontSize: '36px', // Mobile
+      },
+    },
+    h2: {      
+      fontSize: '20px', // Desktop
+      lineHeight: '1.5',
+      letterSpacing: '0.01em',
+      fontWeight: 400,
+      margin: 0,
+      color: '#0e2244',    
       '@media (min-width:601px) and (max-width:960px)': {
-        fontSize: '1.75rem', // Tablet
+        fontSize: '18px', // Tablet
+      },
+      fontStyle: 'normal',
+      '@media (max-width:600px)': {
+        fontSize: '16px', // Mobile
       },
     },
     h3: {
-      fontSize: '2rem', // Desktop
+      fontSize: '28px', // Desktop
       lineHeight: '1.5',
       letterSpacing: '0.01em',
-      fontWeight: 400,
+      fontWeight: 600,
       margin: 0,
-      fontStyle: 'normal',
-      '@media (max-width:600px)': {
-        fontSize: '1.25rem', // Mobile
-      },
+      fontStyle: 'normal',      
       '@media (min-width:601px) and (max-width:960px)': {
-        fontSize: '1.75rem', // Tablet
+        fontSize: '28px', // Tablet
+      },
+      '@media (max-width:600px)': {
+        fontSize: '28px', // Mobile
       },
     },
     h4: {
-      fontSize: '2rem', // Desktop
+      fontSize: '20px', // Desktop
       lineHeight: '1.5',
       letterSpacing: '0.01em',
-      fontWeight: 400,
+      fontWeight: 600,
       margin: 0,
-      fontStyle: 'normal',
-      '@media (max-width:600px)': {
-        fontSize: '1.25rem', // Mobile
-      },
+      fontStyle: 'normal',      
       '@media (min-width:601px) and (max-width:960px)': {
-        fontSize: '1.75rem', // Tablet
+        fontSize: '20px', // Tablet
+      },
+      '@media (max-width:600px)': {
+        fontSize: '20px', // Mobile
       },
     },
     body1: { //Normal
-      fontSize: '1rem', // Desktop
+      fontSize: '16px', // Desktop
       lineHeight: '1.5',
       letterSpacing: '0.01em',
       fontWeight: 400,      
-      fontStyle: 'normal',
-      '@media (max-width:600px)': {
-        fontSize: '0.875rem', // Mobile
-      },
+      fontStyle: 'normal',      
       '@media (min-width:601px) and (max-width:960px)': {
-        fontSize: '0.95rem', // Tablet
+        fontSize: '16px', // Tablet
+      },
+      '@media (max-width:600px)': {
+        fontSize: '16px', // Mobile
       },
     },
     body2: { //Destaque
-      fontSize: '1rem', // Desktop
+      fontSize: '16px', // Desktop
       lineHeight: '1.5',
       letterSpacing: '0.01em',
       fontWeight: 600,     
-      fontStyle: 'normal',
-      '@media (max-width:600px)': {
-        fontSize: '0.875rem', // Mobile
-      },
+      fontStyle: 'normal',      
       '@media (min-width:601px) and (max-width:960px)': {
-        fontSize: '0.95rem', // Tablet
+        fontSize: '16px', // Tablet
+      },
+      '@media (max-width:600px)': {
+        fontSize: '16px', // Mobile
       },
     },
   },
   spacing: 8,
 });
 
-export { themePS, GlobalStyle };
+export { theme };
