@@ -1,39 +1,24 @@
 import React from 'react';
-import { ImageCover, NavigationButton, TitleBanner } from 'pipesolcomponents';
-import { styled, Typography, useTheme } from '@mui/material';
+import { ContentBanner2Columns, ImageCover, NavigationButton, TitleBannerWithImage } from 'pipesolcomponents';
+import { Typography, useTheme } from '@mui/material';
 import { subTituloBanner, tituloBanner } from '@/constants';
 
-const Container = styled('div')({  
-    display: 'grid',
-    gridTemplateColumns: '50% 50%',
-    justifyItems: 'center',
-    alignItems: 'center',    
-    width: '100%',
-  });
-
-const ContainerBotao = styled('div')({  
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  gap: '16px',
-  width: '100%',
-});
 
 const TitleBannerComCTA: React.FC = () => {            
 
     const theme = useTheme();    
                           
     return (
-        <Container>
-        
-            <TitleBanner             
+        <ContentBanner2Columns>
+
+            <TitleBannerWithImage             
                 width='100%' 
-                textTitle={() => <Typography variant='h1' component='h1'>{tituloBanner}</Typography> }                                 
-                renderSubtitle={() =>                 
-                    <Typography variant='h2' component='h2'>{subTituloBanner}</Typography>                
-                }>
-                <ContainerBotao>                  
+                textTitle={tituloBanner}                                 
+                textSubtitle={subTituloBanner}
+                src='/servicos.png'
+                width_image={400}
+                height_image={80}>
+                                  
                     <NavigationButton 
                         url="#formulario"             
                         width="auto"
@@ -46,13 +31,13 @@ const TitleBannerComCTA: React.FC = () => {
                         text_decoration='none'             
                     >
                         <Typography variant='body1'>Agendar Avaliação</Typography>
-                    </NavigationButton>                                                     
-                </ContainerBotao>                          
-            </TitleBanner> 
+                    </NavigationButton>
+                                         
+            </TitleBannerWithImage> 
         
             <ImageCover src="/fotoPerfil.png" alt="foto Bianca Souza Aguiar" height={400} width={400}>
             </ImageCover>            
-        </Container>          
+        </ContentBanner2Columns>          
     );
 };
 

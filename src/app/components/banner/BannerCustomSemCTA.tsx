@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ContentBannerCenter, ContentBannerLeft, ResponsiveBanner } from 'pipesolcomponents';
+import { ResponsiveBanner } from 'pipesolcomponents';
 import TitleBannerSemCTA from './TitleBannerSemCTA';
 
 interface BannerCustomSemCTAProps {    
@@ -22,15 +22,11 @@ const BannerCustomSemCTA: React.FC<BannerCustomSemCTAProps> = ({
           xl: '/banner-2560.webp'  // Para telas extra grandes 1920 - ...
           }}
       >
-        {(!isSm) &&
-          <ContentBannerCenter>
-            <TitleBannerSemCTA/>
-          </ContentBannerCenter>
+        {(!isSm) &&          
+          <TitleBannerSemCTA/>          
         }
-        {(isSm) &&
-          <ContentBannerLeft>         
-            <TitleBannerSemCTA/>          
-          </ContentBannerLeft> 
+        {(isSm) &&                  
+          <TitleBannerSemCTA/>                    
         }
       </ResponsiveBanner>
     )    

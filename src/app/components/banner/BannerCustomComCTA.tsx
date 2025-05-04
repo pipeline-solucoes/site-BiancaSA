@@ -1,6 +1,6 @@
 "use client";
 
-import { ContentBannerLeft, ResponsiveBanner } from 'pipesolcomponents';
+import { ResponsiveBanner } from 'pipesolcomponents';
 import React from 'react';
 import TitleBannerComCTA from './TitleBannerComCTA';
 
@@ -21,15 +21,11 @@ const BannerCustomComCTA: React.FC<BannerCustomComCTAProps> = ({isSm}) => {
         xl: '/banner.png'  // Para telas extra grandes
         }}
     >
-      {(!isSm) &&
-        <ContentBannerLeft>
-          <TitleBannerComCTA/>          
-        </ContentBannerLeft>
+      {(!isSm) &&        
+        <TitleBannerComCTA/>                  
       }
-      {(isSm) &&
-        <ContentBannerLeft>         
-          <TitleBannerComCTA/>                           
-        </ContentBannerLeft> 
+      {(isSm) &&              
+        <TitleBannerComCTA/>                                   
       }
     </ResponsiveBanner>
   )

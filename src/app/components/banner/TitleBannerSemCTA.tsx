@@ -1,33 +1,25 @@
 import React from 'react';
-import { ImageCover, TitleBanner } from 'pipesolcomponents';
-import { styled, Typography } from '@mui/material';
+import { ContentBanner2Columns, ImageCover, TitleBannerWithImage } from 'pipesolcomponents';
 import { subTituloBanner, tituloBanner } from '@/constants';
 
-const Container = styled('div')({  
-    display: 'grid',
-    gridTemplateColumns: '50% 50%',
-    justifyItems: 'center',
-    alignItems: 'center',    
-    width: '100%',
-  });
-
 const TitleBannerSemCTA: React.FC = () => {            
-                          
-    return (        
-        <Container>
-        
-        <TitleBanner             
-            width='100%' 
-            textTitle={() => <Typography variant='h1' component='h1'>{tituloBanner}</Typography> }                                 
-            renderSubtitle={() =>                 
-                <Typography variant='h2' component='h2'>{subTituloBanner}</Typography>                
-            }>                               
-        </TitleBanner> 
+                                                          
+    return (
+        <ContentBanner2Columns>
     
-        <ImageCover src="/fotoPerfil.png" alt="foto Bianca Souza Aguiar" height={400} width={400}>
-        </ImageCover>            
-    </Container>                     
-    );
+            <TitleBannerWithImage             
+                width='100%' 
+                textTitle={tituloBanner}                                 
+                textSubtitle={subTituloBanner}
+                src='/servicos.png'
+                width_image={400}
+                height_image={80}>                                                                    
+            </TitleBannerWithImage> 
+            
+            <ImageCover src="/fotoPerfil.png" alt="foto Bianca Souza Aguiar" height={400} width={400}>
+            </ImageCover> 
+
+        </ContentBanner2Columns> );     
 };
 
 export default TitleBannerSemCTA;
