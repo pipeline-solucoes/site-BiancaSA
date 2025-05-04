@@ -53,7 +53,7 @@ const CardAtendimento : React.FC<CardBookProps> = ({src, alt, titulo, text, ende
   return (
 
     <ImageCard src={src} alt={alt} margin="auto" 
-      widthImage={340} heightImage={340} 
+      widthImage={340} heightImage={300} 
       border_radius='10px' 
       background_color={theme.palette.custom.backgroundSectionMain}>
         

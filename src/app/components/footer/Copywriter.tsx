@@ -1,5 +1,5 @@
 import { useTheme } from '@mui/material';
-import { Copywrite } from 'pipesolcomponents';
+import { CopywriteCenter } from 'pipesolcomponents';
 import React from 'react';
 
 
@@ -9,11 +9,11 @@ const Copywriter: React.FC = () => {
     
 
     return(
-      <Copywrite ano="2025" 
+      <CopywriteCenter ano="2025" 
           color={theme.palette.primary.contrastText} 
           color_link_pipeline={theme.palette.primary.light} 
           color_border={theme.palette.primary.contrastText}>                 
-      </Copywrite>
+      </CopywriteCenter>
     );         
 };
 

@@ -87,7 +87,7 @@ const SecaoDepoimentos: React.FC = () => {
   ];
 
   return (
-    <Section section_id="depoimentos" background_color={theme.palette.custom?.backgroundSectionAlternative}>
+    <Section section_id="depoimentos" background_color={theme.palette.custom?.backgroundSectionMain}>
       <TitleSectionCenter 
         title_text="Histórias de Superação e Esperança"
         subtitle_text="Palavras dos meus pacientes"
