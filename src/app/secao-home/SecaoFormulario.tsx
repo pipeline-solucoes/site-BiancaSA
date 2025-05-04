@@ -1,16 +1,20 @@
 "use client";
 
-import { ContentSectionWrapStyled, Form, IconCheckText, Section, SectionTextColumnStyle } from "pipesolcomponents";
+import { ContainerList, ContentSectionWrapStyled, Form, IconCheckText, Section, SectionTextColumnStyle } from "pipesolcomponents";
 import TitleSection from "../components/TitleSection";
 import { Box, useTheme } from "@mui/material";
 import Email from "../components/contatos/Email";
 import SocialMedia from "../components/contatos/SocialMedia";
 import { tokenFormulario } from "@/constants";
+import Telefone from "../components/contatos/Telefone";
 
 
 const SecaoFormulario: React.FC = () => {
    
   const theme = useTheme();
+
+  const colorIconCheck = theme.palette.primary.main;
+  const colorText = theme.palette.text.primary;
 
   return (
     
@@ -23,21 +27,21 @@ const SecaoFormulario: React.FC = () => {
 
       <ContentSectionWrapStyled>        
         
-        <SectionTextColumnStyle textColor={theme.palette.text.primary}>
+        <SectionTextColumnStyle textColor={colorText}>
           <p>Meu compromisso é oferecer um atendimento personalizado e humanizado, tanto no conforto do seu lar quanto no acolhimento do nosso consultório. Acredito que um ambiente de confiança e empatia é fundamental para um tratamento eficaz.</p>          
-          <IconCheckText iconColor={theme.palette.primary.main} textColor={theme.palette.text.primary}>Agendamento de Consultas: Marque uma consulta no horário e local que melhor se adequem à sua rotina.</IconCheckText>
-          <IconCheckText iconColor={theme.palette.primary.main} textColor={theme.palette.text.primary}>Esclarecimento de Dúvidas: Estou a disposição para responder às suas perguntas e oferecer orientações claras e precisas.</IconCheckText>
-          <IconCheckText iconColor={theme.palette.primary.main} textColor={theme.palette.text.primary}>Suporte e Acompanhamento: Precisando de um pouco de apoio extra? Estou aqui para ouvir e ajudar.</IconCheckText>                    
-          <br/>
-          <Email color={theme.palette.text.primary}></Email>
-          <SocialMedia position="faleconosco"></SocialMedia>
+          <ContainerList>
+            <IconCheckText iconColor={colorIconCheck} textColor={colorText}>Agendamento de Consultas: Marque uma consulta no horário e local que melhor se adequem à sua rotina.</IconCheckText>
+            <IconCheckText iconColor={colorIconCheck} textColor={colorText}>Esclarecimento de Dúvidas: Estou a disposição para responder às suas perguntas e oferecer orientações claras e precisas.</IconCheckText>
+            <IconCheckText iconColor={colorIconCheck} textColor={colorText}>Suporte e Acompanhamento: Precisando de um pouco de apoio extra? Estou aqui para ouvir e ajudar.</IconCheckText>                    
+          </ContainerList>                    
         </SectionTextColumnStyle>
         
         <Box display="flex" flexDirection='column' justifyContent="center" 
           gap="24px" marginTop='8px' flex={1}>
             <Form token={tokenFormulario}
               background_color={theme.palette.custom.backgroundSectionAlternative} 
-              color={theme.palette.text.primary} border_radius="10px" 
+              color={colorText} 
+              border_radius="10px" 
               background_color_button={theme.palette.custom.backgroundButtonCTA} 
               border_radius_button={theme.palette.custom.borderRadiusButtonCTA}
               color_button={theme.palette.secondary.contrastText} 
@@ -47,7 +51,12 @@ const SecaoFormulario: React.FC = () => {
               Caso o erro persista, saiba que você também pode me contatar pelos outros canais disponíveis."
               color_message_erro={theme.palette.error.main}
               color_message_sucess={theme.palette.success.main}
-            />                        
+            />
+            <ContainerList>
+              <Telefone color={theme.palette.text.primary}></Telefone>
+              <Email color={theme.palette.text.primary}></Email>
+              <SocialMedia position="faleconosco"></SocialMedia>
+            </ContainerList>                        
         </Box>              
       </ContentSectionWrapStyled>
             

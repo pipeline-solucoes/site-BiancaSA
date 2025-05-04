@@ -1,6 +1,6 @@
 "use client";
 
-import { ContentSectionWrapStyled, ImageWithPlaceHolder, Section, SectionTextColumnStyle } from "pipesolcomponents";
+import { SectionTextColumnStyle, ContentSectionWrapStyled, ImageCover, Section } from "pipesolcomponents";
 import { useTheme } from "@mui/material";
 import TitleSection from "../components/TitleSection";
 
@@ -14,8 +14,8 @@ const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs, isSm}) => {
   const theme = useTheme();
   const colorText = theme.palette.text.primary;
 
-  const width_image = (isXs || isSm ) ? 340 : 400;
-  const height_image = (isXs || isSm ) ? 410 : 400;
+  const width_image = (isXs || isSm ) ? 340 : 500;
+  const height_image = (isXs || isSm ) ? 340 : 500;
 
   return (
     <Section section_id="sobre" background_color={theme.palette.custom?.backgroundSectionMain}>
@@ -33,9 +33,9 @@ const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs, isSm}) => {
           <p>Estou em constante atualização profissional, aprimorando minhas práticas para oferecer um atendimento cada vez mais eficaz e acolhedor, tanto para os pacientes quanto para suas famílias.</p>
         </SectionTextColumnStyle>
                         
-        <ImageWithPlaceHolder src="/fotoPerfil.png" alt="foto Bianca Souza Aguiar" 
+        <ImageCover src="/fotoPerfil.png" alt="foto Bianca Souza Aguiar" 
           height={height_image} width={width_image}>
-        </ImageWithPlaceHolder>
+        </ImageCover>
                 
       </ContentSectionWrapStyled> 
 

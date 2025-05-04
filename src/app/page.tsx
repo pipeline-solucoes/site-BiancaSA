@@ -10,6 +10,7 @@ import FooterCustom from "./components/footer/FooterCustom";
 import BarraFerramentasCustom from "./components/banner/BarraFerramentasCustom";
 import { HeaderBarTop, useResponsive, WhatsAppButton } from "pipesolcomponents";
 import { itemsMenu, numberWhatsapp } from "@/constants";
+import SecaoAtendimento from "./secao-home/SecaoAtendimento";
 
 
 export default function Home() {
@@ -24,8 +25,9 @@ export default function Home() {
       
       <main>
         <SecaoSobre isXs={isXs} isSm={isSm}></SecaoSobre>        
-        <SecaoDepoimentos></SecaoDepoimentos>
+        <SecaoDepoimentos></SecaoDepoimentos>        
         <SecaoFormulario></SecaoFormulario>
+        <SecaoAtendimento></SecaoAtendimento>
       </main>
 
       <FooterCustom itens_menu={itemsMenu}></FooterCustom>

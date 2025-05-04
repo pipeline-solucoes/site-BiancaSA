@@ -7,6 +7,7 @@ import { Box, Typography, useTheme } from '@mui/material';
 import { ItemMenuProps } from 'pipesolcomponents/dist/components/menu/ItemMenuProps';
 import SocialMedia from '../contatos/SocialMedia';
 import Email from '../contatos/Email';
+import Telefone from '../contatos/Telefone';
 
 interface FooterCustomProps{
   itens_menu: ItemMenuProps[];   
@@ -66,7 +67,8 @@ const FooterCustom: React.FC<FooterCustomProps> = ({itens_menu}) => {
               <ContentColFooter>
                 <TitleFooterStyle textColor={textColor}>
                   Contatos
-                </TitleFooterStyle>                 
+                </TitleFooterStyle> 
+                <Telefone color={textColor}></Telefone>                
                 <Email color={textColor} />
                 <SocialMedia position='footer' />                                                     
               </ContentColFooter>

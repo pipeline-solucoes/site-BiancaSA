@@ -28,7 +28,7 @@ const BannerCustomComCTA: React.FC<BannerCustomComCTAProps> = ({isSm}) => {
       }
       {(isSm) &&
         <ContentBannerLeft>         
-          <TitleBannerComCTA/>          
+          <TitleBannerComCTA/>                           
         </ContentBannerLeft> 
       }
     </ResponsiveBanner>
