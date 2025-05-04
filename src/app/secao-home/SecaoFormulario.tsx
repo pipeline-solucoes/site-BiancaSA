@@ -30,9 +30,9 @@ const SecaoFormulario: React.FC = () => {
         <SectionTextColumnStyle textColor={colorText}>
           <p>Meu compromisso é oferecer um atendimento personalizado e humanizado, tanto no conforto do seu lar quanto no acolhimento do nosso consultório. Acredito que um ambiente de confiança e empatia é fundamental para um tratamento eficaz.</p>          
           <ContainerList>
-            <IconCheckText iconColor={colorIconCheck} textColor={colorText}>Agendamento de Consultas: Marque uma consulta no horário e local que melhor se adequem à sua rotina.</IconCheckText>
-            <IconCheckText iconColor={colorIconCheck} textColor={colorText}>Esclarecimento de Dúvidas: Estou a disposição para responder às suas perguntas e oferecer orientações claras e precisas.</IconCheckText>
-            <IconCheckText iconColor={colorIconCheck} textColor={colorText}>Suporte e Acompanhamento: Precisando de um pouco de apoio extra? Estou aqui para ouvir e ajudar.</IconCheckText>                    
+            <IconCheckText iconColor={colorIconCheck} textColor={colorText}><b>Agendamento de Consultas:</b> Marque uma consulta no horário e local que melhor se adequem à sua rotina.</IconCheckText>
+            <IconCheckText iconColor={colorIconCheck} textColor={colorText}><b>Esclarecimento de Dúvidas:</b> Estou a disposição para responder às suas perguntas e oferecer orientações claras e precisas.</IconCheckText>
+            <IconCheckText iconColor={colorIconCheck} textColor={colorText}><b>Suporte e Acompanhamento:</b> Precisando de um pouco de apoio extra? Estou aqui para ouvir e ajudar.</IconCheckText>                    
           </ContainerList>                    
         </SectionTextColumnStyle>
         
