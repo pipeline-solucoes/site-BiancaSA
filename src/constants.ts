@@ -9,6 +9,7 @@ export const numberPhone: string = "(21) 98131-4001";
 export const numberWhatsapp: string = "5521981314001";
 export const tokenFormulario = "";
 export const urlInstagram = "https://www.instagram.com/biancasouzaaguiarfisio/"
+export const email = 'contato@biancasouzaaguiar.com.br'
 
 export const itemsMenu : ItemMenuProps[] = [
     {url: '#sobre', text: 'Sobre'},

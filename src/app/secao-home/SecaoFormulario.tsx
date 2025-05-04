@@ -53,8 +53,8 @@ const SecaoFormulario: React.FC = () => {
               color_message_sucess={theme.palette.success.main}
             />
             <ContainerList>
-              <Telefone color={theme.palette.text.primary}></Telefone>
-              <Email color={theme.palette.text.primary}></Email>
+              <Telefone color={theme.palette.primary.main}></Telefone>
+              <Email color={theme.palette.primary.main}></Email>
               <SocialMedia position="faleconosco"></SocialMedia>
             </ContainerList>                        
         </Box>              

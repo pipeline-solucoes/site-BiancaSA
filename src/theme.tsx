@@ -17,6 +17,8 @@ declare module '@mui/material/styles' {
       colorHoverButtonCTA: string,
       borderRadiusButtonCTA: string,
 
+      borderColor?: string;
+
       carouselColorIndicators: string,
       carouselColorFocus: string,
     };
@@ -34,6 +36,8 @@ declare module '@mui/material/styles' {
       colorButtonCTA: string,
       colorHoverButtonCTA: string,
       borderRadiusButtonCTA: string,
+
+      borderColor?: string;
 
       carouselColorIndicators: string,
       carouselColorFocus: string,
@@ -53,7 +57,7 @@ const theme = createTheme({
     }, 
   },  
   shape: { 
-    borderRadius: 8,  
+    borderRadius: 8  
   },
   palette: {
     primary: {
@@ -70,7 +74,7 @@ const theme = createTheme({
       primary: '#707070',
       secondary: '#ffffff',
       disabled: '#A9A9A9',
-    },       
+    },          
     custom: {
       transparent: '#00000000',
 
@@ -82,6 +86,8 @@ const theme = createTheme({
       colorButtonCTA: '#ffffff',
       colorHoverButtonCTA: '#ffffff',
       borderRadiusButtonCTA: "25px",  
+
+      borderColor: 'gray',
       
       carouselColorIndicators: 'gray',
       carouselColorFocus: '#336dd5',

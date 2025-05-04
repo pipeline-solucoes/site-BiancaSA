@@ -5,23 +5,33 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { styled, Typography, useTheme } from '@mui/material';
 import { ImageCard, Location } from 'pipesolcomponents';
 
-const ContentCard = styled('div')({  
-  padding: '16px',
+const ContentCard = styled('div')({   
   width: '340px',
-  height: '150px',
+  height: '156px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
-  alignItems: 'flex-start',
-  gap: '8px'
+  alignItems: 'flex-start',  
+  padding: '16px',
+  gap: '16px'  
 });
 
-const StyledDivText = styled('div')({
+const Titulo = styled('h4')(({ theme }) => ({
   width: '100%',
-  height: '100%', 
-  flex: '1',
-  textAlign: 'left',
-});
+  height: 'auto',     
+  textAlign: 'center',  
+  color: theme.palette.primary.main,  
+
+  // Tipografia
+  fontFamily: theme.typography.fontFamily,
+  fontWeight: theme.typography.h4?.fontWeight,
+  fontStyle: theme.typography.h4?.fontStyle,
+  lineHeight: theme.typography.h4?.lineHeight,
+  letterSpacing: theme.typography.h4?.letterSpacing,
+  fontSize: theme.typography.h4?.fontSize,
+  margin: theme.typography.h4?.margin,
+}));
+
 
 interface CardBookProps {  
   src: string;  
@@ -42,19 +52,21 @@ const CardAtendimento : React.FC<CardBookProps> = ({src, alt, titulo, text, ende
   
   return (
 
-    <ImageCard src={src} alt={alt} margin="auto" widthImage={340} heightImage={340} border_radius='10px'>
+    <ImageCard src={src} alt={alt} margin="auto" 
+      widthImage={340} heightImage={340} 
+      border_radius='10px' 
+      background_color={theme.palette.custom.backgroundSectionMain}>
         
-        <ContentCard>            
-            <StyledDivText>
-              <Typography variant='body2' component='h4' color={theme.palette.primary.main}>{titulo}</Typography>              
-            </StyledDivText>
+      <ContentCard>
+
+        <Titulo>{titulo}</Titulo>
+            
+        { text && <Typography variant='body1' component='p' color={colorText}>{text}</Typography>}   
+        { endereco && bairro && cidade && uf && cep &&
+          <Location iconColor={theme.palette.primary.main} textColor={colorText}  
+            endereco={endereco} bairro={bairro} cidade={cidade} uf={uf} cep={cep}/>  }
               
-            { text && <Typography variant='body1' component='div' color={colorText}>{text}</Typography>}   
-            { endereco && bairro && cidade && uf && cep &&
-              <Location iconColor={theme.palette.primary.main} textColor={colorText}  
-                endereco={endereco} bairro={bairro} cidade={cidade} uf={uf} cep={cep}/>              
-            }                       
-        </ContentCard>
+      </ContentCard>
 
     </ImageCard>
   

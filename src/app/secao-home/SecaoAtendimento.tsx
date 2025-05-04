@@ -39,7 +39,7 @@ const SecaoAtendimento: React.FC = () => {
           bairro="Tijuca"
           cidade="Rio de Janeiro"
           uf="RJ"
-          cep="99999-650">        
+          cep="99999-999">        
         </CardAtendimento>
 
         <CardAtendimento 
@@ -50,7 +50,7 @@ const SecaoAtendimento: React.FC = () => {
           bairro="Centro"
           cidade="São Gonçalo"
           uf="RJ"
-          cep="99999-650">
+          cep="99999-999">
         </CardAtendimento>
 
       </ContentSectionWrapStyled>
