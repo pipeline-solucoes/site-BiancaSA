@@ -3,16 +3,26 @@
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { styled, Typography, useTheme } from '@mui/material';
-import { ImageCard, Location } from 'pipesolcomponents';
+import { ImageCard, Location, MapCard } from 'pipesolcomponents';
 
 const ContentCard = styled('div')({   
   width: '340px',
-  height: '156px',
+  height: '188px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
   alignItems: 'flex-start',  
   padding: '16px',
+  gap: '16px'  
+});
+
+const ContentCardMapa = styled('div')({   
+  width: '100%',
+  height: '156px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',    
   gap: '16px'  
 });
 
@@ -34,7 +44,8 @@ const Titulo = styled('h4')(({ theme }) => ({
 
 
 interface CardBookProps {  
-  src: string;  
+  src?: string;
+  srcMap?: string;  
   alt: string;   
   titulo: string;  
   text?: string;
@@ -45,32 +56,45 @@ interface CardBookProps {
   cep?:string;
 }
 
-const CardAtendimento : React.FC<CardBookProps> = ({src, alt, titulo, text, endereco, bairro, cidade, uf, cep})  => {
+const CardAtendimento : React.FC<CardBookProps> = ({src, srcMap, alt, titulo, text, endereco, bairro, cidade, uf, cep})  => {
 
   const theme = useTheme();
   const colorText = theme.palette.text.primary;
   
-  return (
+  if (src)
+  {
+    return (
+      <ImageCard src={src} alt={alt} margin="auto" 
+        widthImage={340} heightImage={300} 
+        border_radius='10px' 
+        background_color={theme.palette.custom.backgroundSectionMain}>          
+        <ContentCard>
+          <Titulo>{titulo}</Titulo>              
+          <Typography variant='body1' component='p' color={colorText}>{text}</Typography>                          
+        </ContentCard>
+      </ImageCard>    
+    );
+  }
 
-    <ImageCard src={src} alt={alt} margin="auto" 
-      widthImage={340} heightImage={300} 
-      border_radius='10px' 
-      background_color={theme.palette.custom.backgroundSectionMain}>
-        
-      <ContentCard>
-
-        <Titulo>{titulo}</Titulo>
-            
-        { text && <Typography variant='body1' component='p' color={colorText}>{text}</Typography>}   
-        { endereco && bairro && cidade && uf && cep &&
-          <Location iconColor={theme.palette.primary.main} textColor={colorText}  
-            endereco={endereco} bairro={bairro} cidade={cidade} uf={uf} cep={cep}/>  }
-              
-      </ContentCard>
-
-    </ImageCard>
+  else if (srcMap) {
+    return (
+      <MapCard 
+        srcGoogle={srcMap}
+        margin="auto" 
+        width="340px" height_map="300px" 
+        border_radius='10px' 
+        background_color={theme.palette.custom.backgroundSectionMain}       
+        >          
+        <ContentCardMapa>
+          <Titulo>{titulo}</Titulo>                        
+          { endereco && bairro && cidade && uf && cep &&
+            <Location iconColor={theme.palette.primary.main} textColor={colorText}  
+              endereco={endereco} bairro={bairro} cidade={cidade} uf={uf} cep={cep}/>  }                
+        </ContentCardMapa>  
+      </MapCard>    
+    );
+  }
   
-  );
 };
 
 export default CardAtendimento;
