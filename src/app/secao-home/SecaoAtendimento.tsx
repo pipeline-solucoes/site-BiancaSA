@@ -41,16 +41,16 @@ const SecaoAtendimento: React.FC = () => {
           uf="RJ"
           cep="20520-901">
         </CardAtendimento>
-      
+             
         <CardAtendimento 
           alt="atendimento" 
           srcMap="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117652.20006841299!2d-43.209280103317504!3d-22.85312829351251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x999af531d40b61%3A0xbbdbe1fcd22771e8!2sIcon%20Business%20%26%20Mall!5e0!3m2!1spt-BR!2sbr!4v1746460045180!5m2!1spt-BR!2sbr"
           titulo="São Gonçalo" 
-          endereco="Rua XPT, 123 sala 05"
-          bairro="Centro"
+          endereco="Av. Pres. Kennedy, 735"
+          bairro="Estrela do Norte"
           cidade="São Gonçalo"
           uf="RJ"
-          cep="99999-999">
+          cep="24445-795">
         </CardAtendimento>
 
       </ContentSectionWrapStyled>

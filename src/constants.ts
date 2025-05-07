@@ -17,18 +17,18 @@ export const itemsMenu : ItemMenuProps[] = [
     {url: '#formulario', text: 'Fale com a Bianca'},
     {url: '#atendimento', text: 'Atendimento'},
     {url: '#depoimentos', text: 'Depoimentos'},
-    {url: '#informativos', text: 'Informativos'},
+    {url: '#podcasts', text: 'Podcasts'},
   ];
 
-  // export const itemsMenuPage : ItemMenuProps[] = [
-  //   {url: '/', text: 'Home'},    
-  //   {url: '/#sobre', text: 'Sobre'},
-  //   {url: '/#servicos', text: 'Serviços'},
-  //   {url: '/#depoimentos', text: 'Depoimentos'},
-  //   {url: '/#formulario', text: 'Fale com a Bianca'}  
-  // ];  
-
- 
+  export const itemsMenuPage : ItemMenuProps[] = [
+    {url: '/', text: 'Home'},
+    {url: '/#sobre', text: 'Sobre'},
+    {url: '/#servicos', text: 'Serviços'},
+    {url: '/#formulario', text: 'Fale com a Bianca'},
+    {url: '/#atendimento', text: 'Atendimento'},
+    {url: '/#depoimentos', text: 'Depoimentos'},
+    {url: '/#podcasts', text: 'Podcasts'},
+  ];  
 
 export const itemsMenuTermoPolitica : ItemMenuProps[] = []; 
 

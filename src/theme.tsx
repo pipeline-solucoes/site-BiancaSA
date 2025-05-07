@@ -63,7 +63,8 @@ const theme = createTheme({
     primary: {
       main: "#336dd5" , //Azul
       dark: "#0e2244" , //Azul mais escuro
-      contrastText: "#ffffff" //Branco
+      light: "#7da7eb", //Azul mais claro
+      contrastText: "#ffffff" //Branco      
     },
     secondary: {
       main: '#8c6d32', // Dourado 
@@ -87,7 +88,7 @@ const theme = createTheme({
       colorHoverButtonCTA: '#ffffff',
       borderRadiusButtonCTA: "25px",  
 
-      borderColor: 'gray',
+      borderColor: '#eeeeee',
       
       carouselColorIndicators: 'gray',
       carouselColorFocus: '#336dd5',

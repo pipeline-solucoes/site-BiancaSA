@@ -12,6 +12,7 @@ import { HeaderBarTop, useResponsive, WhatsAppButton } from "pipesolcomponents";
 import { itemsMenu, numberWhatsapp } from "@/constants";
 import SecaoAtendimento from "./secao-home/SecaoAtendimento";
 import SecaoServicos from "./secao-home/SecaoServicos";
+import SecaoVideos from "./secao-home/SecaoVideos";
 
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
       <main>
         <SecaoSobre isXs={isXs} isSm={isSm}></SecaoSobre> 
         <SecaoServicos></SecaoServicos>
+        <SecaoVideos></SecaoVideos>
         <SecaoFormulario></SecaoFormulario>
         <SecaoAtendimento></SecaoAtendimento>
         <SecaoDepoimentos></SecaoDepoimentos>                                                       

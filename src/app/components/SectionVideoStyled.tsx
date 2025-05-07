@@ -5,7 +5,6 @@ export const ContentColumnVideo = styled('div')(() => ({
   height: 'auto'
 }));
 
-
 export const ContentColumnCard = styled('div')(() => ({    
     display: 'flex',
     flexDirection: 'column',    
