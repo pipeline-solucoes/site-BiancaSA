@@ -20,8 +20,8 @@ const TitleSectionCenter: React.FC<TitleSectionProps> = ({title_text, subtitle_t
 
     const theme = useTheme();
 
-    const colorTitle = color_default ? theme.palette.primary.main : theme.palette.primary.contrastText;
-    const colorSubTitle = color_default ? theme.palette.text.primary : theme.palette.primary.contrastText;
+    const colorTitle = color_default ? theme.palette.primary.main : theme.palette.primary.dark;
+    const colorSubTitle = color_default ? theme.palette.text.primary : theme.palette.primary.dark;
 
     return(
         <Container>

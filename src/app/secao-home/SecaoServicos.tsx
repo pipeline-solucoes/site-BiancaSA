@@ -1,7 +1,7 @@
 "use client";
 
 import { ContentSectionWrapStyled, GradientCard, NavigationButton, Section } from "pipesolcomponents";
-import { useTheme } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import TitleSectionCenter from "../components/TitleSectionCenter";
 
 interface IServico {
@@ -66,6 +66,20 @@ const SecaoServicos: React.FC = () => {
         ))}
 
       </ContentSectionWrapStyled>
+      
+      <br/>
+      <NavigationButton 
+          url="#formulario"             
+          width="auto"
+          background_color={theme.palette.custom.backgroundButtonCTA} 
+          background_color_hover={theme.palette.custom.backgroundHoverButtonCTA}
+          color={theme.palette.custom.colorButtonCTA} 
+          border_radius={theme.palette.custom.borderRadiusButtonCTA}
+          aria_label='botao CTA Agendar Avaliação'
+          layout='button'
+          text_decoration='none'>
+          <Typography variant='body1'>Agendar Avaliação</Typography>
+      </NavigationButton>
 
     </Section>            
   );  

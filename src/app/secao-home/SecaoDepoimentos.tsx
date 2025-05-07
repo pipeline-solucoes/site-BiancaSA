@@ -6,7 +6,7 @@ import {
   TestimonialCard
 } from "pipesolcomponents";
 import { ReactElement } from "react";
-import { Typography, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material";
 import * as React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import TitleSectionCenter from "../components/TitleSectionCenter";
@@ -48,10 +48,8 @@ const SecaoDepoimentos: React.FC = () => {
             color={theme.palette.text.primary}
             color_icon={theme.palette.primary.main}
             color_boxshadow="transparent"
-          >
-            <Typography variant="body1" color={theme.palette.text.primary}>
-              {item.texto}
-            </Typography>
+          >            
+            {item.texto}            
           </TestimonialCard>
         ))}
       </CarouselStyled>
