@@ -47,7 +47,7 @@ const SecaoDepoimentos: React.FC = () => {
             socialMedia=" "
             color={theme.palette.text.primary}
             color_icon={theme.palette.primary.main}
-            color_boxshadow="transparent"
+            color_boxshadow="#00000020"                       
           >            
             {item.texto}            
           </TestimonialCard>
@@ -85,7 +85,7 @@ const SecaoDepoimentos: React.FC = () => {
   ];
 
   return (
-    <Section section_id="depoimentos" background_color={theme.palette.custom?.backgroundSectionMain}>
+    <Section section_id="depoimentos" background_color={theme.palette.custom?.backgroundSectionAlternative}>
       <TitleSectionCenter 
         title_text="Histórias de Superação e Esperança"
         subtitle_text="Palavras dos meus pacientes"

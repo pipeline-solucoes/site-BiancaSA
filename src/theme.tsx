@@ -72,7 +72,7 @@ const theme = createTheme({
       contrastText: "#ffffff" //Branco
     },    
     text: {
-      primary: '#707070',
+      primary: '#8c8c8c',
       secondary: '#ffffff',
       disabled: '#A9A9A9',
     },          
@@ -80,7 +80,8 @@ const theme = createTheme({
       transparent: '#00000000',
 
       backgroundSectionMain: '#ffffff',
-      backgroundSectionAlternative: '#e6ebff',      
+      backgroundSectionAlternative: '#f2f5f7',
+      backgroundSectionHighlight: '#f2f5f7',      
 
       backgroundButtonCTA: "#6aa754",
       backgroundHoverButtonCTA: '#6aa754',
@@ -88,7 +89,7 @@ const theme = createTheme({
       colorHoverButtonCTA: '#ffffff',
       borderRadiusButtonCTA: "25px",  
 
-      borderColor: '#eeeeee',
+      borderColor: '#8c8c8c',
       
       carouselColorIndicators: 'gray',
       carouselColorFocus: '#336dd5',

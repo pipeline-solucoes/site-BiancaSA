@@ -41,7 +41,7 @@ const SecaoServicos: React.FC = () => {
             <GradientCard 
               key={item.text}
               width="320px" height="260px"  
-              color_title={theme.palette.text.primary}
+              color_title={theme.palette.primary.main}
               color_description={theme.palette.text.primary}
               border_radius="10px"
               color1={theme.palette.custom.backgroundSectionMain} 

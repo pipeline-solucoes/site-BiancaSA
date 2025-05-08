@@ -13,7 +13,7 @@ const SecaoAtendimento: React.FC = () => {
   
 
   return (
-    <Section section_id="atendimento" background_color={theme.palette.custom?.backgroundSectionAlternative}>
+    <Section section_id="atendimento" background_color={theme.palette.custom.backgroundSectionMain}>
       
       <TitleSectionCenter 
         title_text="Atendimento Personalizado" 

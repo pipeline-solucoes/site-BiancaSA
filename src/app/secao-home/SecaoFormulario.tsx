@@ -19,16 +19,15 @@ const SecaoFormulario: React.FC = () => {
 
   return (
     
-    <Section section_id="formulario" background_color={theme.palette.custom?.backgroundSectionMain}>
+    <Section section_id="formulario" background_color={theme.palette.custom?.backgroundSectionAlternative}>
 
-      <TitleSection 
-        title_text="Fale com a Bianca" 
-        subtitle_text="Estou aqui para ajudar">          
-      </TitleSection>
-
-      <ContentSectionWrapStyled>        
+      <ContentSectionWrapStyled>
         
         <SectionTextColumnStyle textColor={colorText}>
+          <TitleSection 
+            title_text="Fale com a Bianca" 
+            subtitle_text="Estou aqui para ajudar">          
+          </TitleSection> 
           <p>Meu compromisso é oferecer um atendimento personalizado e humanizado, tanto no conforto do seu lar quanto no acolhimento do nosso consultório. Acredito que um ambiente de confiança e empatia é fundamental para um tratamento eficaz.</p>          
           <ContainerList>
             <IconCheckText typeCheck="VerifiedIcon" marginLeft="0px" iconColor={colorIconCheck} textColor={colorText}><b>Agendamento de Consultas:</b> Marque uma consulta no horário e local que melhor se adequem à sua rotina.</IconCheckText>
@@ -37,10 +36,11 @@ const SecaoFormulario: React.FC = () => {
           </ContainerList>                    
         </SectionTextColumnStyle>
         
-        <Box display="flex" flexDirection='column' justifyContent="center" 
-          gap="24px" marginTop='8px' flex={1}>
+        <Box display="flex" flexDirection='column' justifyContent="center" gap="24px" marginTop='8px' flex={1} 
+          sx={{ backgroundColor: theme.palette.custom.backgroundSectionAlternative, padding: "24px", borderRadius: '10px' }} >
+
             <Form token={tokenFormulario}
-              background_color={theme.palette.custom.backgroundSectionAlternative} 
+              background_color="#e6ebff" 
               color={colorText} 
               border_radius="10px" 
               background_color_button={theme.palette.primary.main} 
