@@ -7,7 +7,7 @@ import TitleSectionCenter from "../components/TitleSectionCenter";
 const SecaoVideos: React.FC = () => {
 
   const theme = useTheme();
-  const background = theme.palette.text.secondary;
+  const background = theme.palette.custom.backgroundSectionAlternative;
   const borderRadius = "10px";
   const width = "580px";
   const height = "400px";
@@ -28,7 +28,7 @@ const SecaoVideos: React.FC = () => {
             border_radius={borderRadius}
             srcYoutube='https://www.youtube.com/embed/tvPg_N7Vw88?si=uYLp9C4-RLb5_dht'
             width={width} 
-            height_video={height}
+            height_video={height}            
           >            
               <Typography variant="body1" color={theme.palette.text.primary} component="div" sx={{height: '270px'}}>
                 <p>Fui convidada a participar do podcast da <b>WEFY</b>, junto com <b>nutricionista Priscilla Faria Goretti (@nutriprigoretti)</b>, para uma conversa especial sobre o <b>Outubro Rosa</b> e a importância da conscientização sobre o <b>câncer de mama</b>.</p>

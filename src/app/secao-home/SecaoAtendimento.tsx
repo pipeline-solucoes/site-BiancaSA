@@ -1,7 +1,7 @@
 "use client";
 
-import { ContentSectionWrapStyled, Section } from "pipesolcomponents";
-import { useTheme } from "@mui/material";
+import { ContentSectionWrapStyled, NavigationButton, Section } from "pipesolcomponents";
+import { Typography, useTheme } from "@mui/material";
 import TitleSectionCenter from "../components/TitleSectionCenter";
 import CardAtendimento from "../components/cardAtendimento";
 
@@ -13,7 +13,7 @@ const SecaoAtendimento: React.FC = () => {
   
 
   return (
-    <Section section_id="atendimento" background_color={theme.palette.custom.backgroundSectionMain}>
+    <Section section_id="atendimento" background_color={theme.palette.custom.backgroundSectionAlternative}>
       
       <TitleSectionCenter 
         title_text="Atendimento Personalizado" 
@@ -54,6 +54,20 @@ const SecaoAtendimento: React.FC = () => {
         </CardAtendimento>
 
       </ContentSectionWrapStyled>
+      
+      <br/>
+      <NavigationButton 
+          url="#formulario"             
+          width="auto"
+          background_color={theme.palette.custom.backgroundButtonCTA} 
+          background_color_hover={theme.palette.custom.backgroundHoverButtonCTA}
+          color={theme.palette.custom.colorButtonCTA} 
+          border_radius={theme.palette.custom.borderRadiusButtonCTA}
+          aria_label='botao CTA Agendar Avaliação'
+          layout='button'
+          text_decoration='none'>
+          <Typography variant='body1'>Quero Agendar Avaliação</Typography>
+      </NavigationButton>
 
     </Section>            
   );  

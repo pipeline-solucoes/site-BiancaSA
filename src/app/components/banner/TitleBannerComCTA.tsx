@@ -30,7 +30,7 @@ const TitleBannerComCTA: React.FC = () => {
                         layout='button'
                         text_decoration='none'             
                     >
-                        <Typography variant='body1'>Agendar Avaliação</Typography>
+                        <Typography variant='body1'>Quero Agendar Avaliação</Typography>
                     </NavigationButton>
                                          
             </TitleBannerWithImage> 
