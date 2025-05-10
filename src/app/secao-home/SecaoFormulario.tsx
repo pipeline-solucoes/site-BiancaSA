@@ -38,7 +38,7 @@ const SecaoFormulario: React.FC = () => {
         
         <Box display="flex" flexDirection='column' justifyContent="center" gap="24px" marginTop='8px' flex={1} 
           sx={{ backgroundColor: theme.palette.custom.backgroundSectionAlternative, padding: "24px", borderRadius: '10px' }} >
-
+            {/* reCAPTCHA: 6LfNNjQrAAAAAJdYsNsPL8RFXM6krfURGLX9Ze98  */}
             <Form token={tokenFormulario}
               background_color="#e6ebff" 
               color={colorText} 

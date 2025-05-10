@@ -15,11 +15,16 @@ const BannerCustomSemCTA: React.FC<BannerCustomSemCTAProps> = ({
     
       <ResponsiveBanner
         srcSet={{
-          xs: '/banner-600.webp',  // Para telas extra pequenas 0 - 600
-          sm: '/banner-960.webp',  // Para telas pequenas 601 - 960
-          md: '/banner-1280.webp', // Para desktops médios 961 - 1280
-          lg: '/banner-1920.webp', // Para desktops grandes 1281 - 1920
-          xl: '/banner-2560.webp'  // Para telas extra grandes 1920 - ...
+          xs: '/banner.png',  // Para telas extra pequenas
+          sm: '/banner.png',  // Para telas pequenas
+          md: '/banner.png', // Para desktops médios
+          lg: '/banner.png', // Para desktops grandes
+          xl: '/banner.png'  // Para telas extra grandes
+          // xs: '/banner-600.webp',  // Para telas extra pequenas 0 - 600
+          // sm: '/banner-960.webp',  // Para telas pequenas 601 - 960
+          // md: '/banner-1280.webp', // Para desktops médios 961 - 1280
+          // lg: '/banner-1920.webp', // Para desktops grandes 1281 - 1920
+          // xl: '/banner-2560.webp'  // Para telas extra grandes 1920 - ...
           }}
       >
         {(!isSm) &&          
