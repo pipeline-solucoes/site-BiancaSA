@@ -1,6 +1,6 @@
 "use client";
 
-import { ContentSectionWrapStyled, GradientCard, NavigationButton, Section } from "pipesolcomponents";
+import { ContainerAnimatedCard, ContentSectionWrapStyled, GradientCard, NavigationButton, Section } from "pipesolcomponents";
 import { Typography, useTheme } from "@mui/material";
 import TitleSectionCenter from "../components/TitleSectionCenter";
 
@@ -31,55 +31,59 @@ const SecaoServicos: React.FC = () => {
   return (
     <Section section_id="servicos" background_color={theme.palette.custom?.backgroundSectionAlternative}>
       
-      <TitleSectionCenter title_text="Serviços" subtitle_text="Atendimento em consultório e domicílio, com foco em excelência e cuidado humanizado.">
-      </TitleSectionCenter>
-      <br/>            
-      <ContentSectionWrapStyled>
-
-        {servicos.map((item) => (
-
-            <GradientCard 
-              key={item.text}
-              width="320px" height="260px"  
-              color_title={theme.palette.primary.main}
-              color_description={theme.palette.text.primary}
-              border_radius="10px"
-              color1={theme.palette.custom.backgroundSectionMain} 
-              color2={theme.palette.custom.backgroundSectionMain} 
-              color3={theme.palette.custom.backgroundSectionAlternative} 
-              title= {item.text}
-              description= {item.description}
-
-            >
-             <NavigationButton                             
-              color={theme.palette.primary.main} 
-              border_color={theme.palette.primary.main}               
-              width="auto" 
-              url={item.url} 
-              aria_label={`botao ${item.text}`}              
-              layout="link" 
-              text_decoration="underline"                 
-             >
-                Ler mais
-             </NavigationButton>
-            </GradientCard>                                                 
-        ))}
-
-      </ContentSectionWrapStyled>
       
-      <br/>
-      <NavigationButton 
-          url="#formulario"             
-          width="auto"
-          background_color={theme.palette.custom.backgroundButtonCTA} 
-          background_color_hover={theme.palette.custom.backgroundHoverButtonCTA}
-          color={theme.palette.custom.colorButtonCTA} 
-          border_radius={theme.palette.custom.borderRadiusButtonCTA}
-          aria_label='botao CTA Agendar Avaliação'
-          layout='button'
-          text_decoration='none'>
-          <Typography variant='body1'>Quero Agendar Avaliação</Typography>
-      </NavigationButton>
+
+        <TitleSectionCenter title_text="Serviços" subtitle_text="Atendimento em consultório e domicílio, com foco em excelência e cuidado humanizado.">
+        </TitleSectionCenter>
+        <br/>  
+                  
+        <ContentSectionWrapStyled>
+
+            {servicos.map((item) => (
+                <ContainerAnimatedCard key={item.text}>                
+                  <GradientCard                     
+                    width="320px" height="260px"  
+                    color_title={theme.palette.primary.main}
+                    color_description={theme.palette.text.primary}
+                    border_radius="10px"
+                    color1={theme.palette.custom.backgroundSectionMain} 
+                    color2={theme.palette.custom.backgroundSectionMain} 
+                    color3={theme.palette.custom.backgroundSectionAlternative} 
+                    title= {item.text}
+                    description= {item.description}
+                  >
+                    <NavigationButton                             
+                      color={theme.palette.primary.main} 
+                      border_color={theme.palette.primary.main}               
+                      width="auto" 
+                      url={item.url} 
+                      aria_label={`botao ${item.text}`}              
+                      layout="link" 
+                      text_decoration="underline"                 
+                    >
+                        Ler mais
+                    </NavigationButton>
+                  </GradientCard>  
+                </ContainerAnimatedCard>                                               
+            ))}
+
+        </ContentSectionWrapStyled>
+                
+        <br/>
+        <NavigationButton 
+            url="#formulario"             
+            width="auto"
+            background_color={theme.palette.custom.backgroundButtonCTA} 
+            background_color_hover={theme.palette.custom.backgroundHoverButtonCTA}
+            color={theme.palette.custom.colorButtonCTA} 
+            border_radius={theme.palette.custom.borderRadiusButtonCTA}
+            aria_label='botao CTA Agendar Avaliação'
+            layout='button'
+            text_decoration='none'>
+            <Typography variant='body1'>Quero Agendar Avaliação</Typography>
+        </NavigationButton>
+
+      
 
     </Section>            
   );  

@@ -23,7 +23,7 @@ const PageServico: React.FC<PageServicoProps> = ({servico})  => {
     const colorText =  theme.palette.text.primary; 
     
     let itemMenuLateral: ItemMenuProps[] = [        
-        {url: '/#cuidadospaliativos', text: 'Cuidados Paliativos'},
+        {url: '/#cuidados-paliativos', text: 'Cuidados Paliativos'},
         {url: '/#1', text: 'Fotobiomodulação'},
         {url: '/#2', text: 'Perícia Judicial'},
         {url: '/#3', text: 'Pós Operatório'},

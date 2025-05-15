@@ -80,7 +80,7 @@ const theme = createTheme({
       transparent: '#00000000',
 
       backgroundSectionMain: '#ffffff',
-      backgroundSectionAlternative: '#f2f5f7',
+      backgroundSectionAlternative: '#f2f4f7',
       backgroundSectionHighlight: '#f2f5f7',      
 
       backgroundButtonCTA: "#6aa754",
