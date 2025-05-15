@@ -1,21 +1,25 @@
 "use client";
 
-import { ContainerList, ContentSectionWrapStyled, Form, IconCheckText, Section, SectionTextColumnStyle } from "pipesolcomponents";
+import { ContainerAnimatedCard, ContainerList, ContentSectionWrapStyled, Form, IconCheckText, Section, SectionTextColumnStyle, ShadowCard } from "pipesolcomponents";
 import TitleSection from "../components/TitleSection";
 import { Box, useTheme } from "@mui/material";
 import Email from "../components/contatos/Email";
 import SocialMedia from "../components/contatos/SocialMedia";
-import { tokenFormulario } from "@/constants";
+import { sombraClara, sombraEscura, tokenFormulario } from "@/constants";
 import Telefone from "../components/contatos/Telefone";
 
+interface SecaoFormularioProps{
+  isXs: boolean,
+  isSm: boolean,     
+}
 
-
-const SecaoFormulario: React.FC = () => {
+const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs, isSm}) => {
    
   const theme = useTheme();
 
   const colorIconCheck = theme.palette.primary.main;
   const colorText = theme.palette.text.primary;
+  const widthForm = (isXs || isSm) ? '340px' : '560px';
 
   return (
     
@@ -36,29 +40,34 @@ const SecaoFormulario: React.FC = () => {
           </ContainerList>                    
         </SectionTextColumnStyle>
         
-        <Box display="flex" flexDirection='column' justifyContent="center" gap="24px" marginTop='8px' flex={1} 
-          sx={{ backgroundColor: theme.palette.custom.backgroundSectionAlternative, padding: "24px", borderRadius: '10px' }} >
-            {/* reCAPTCHA: 6LfNNjQrAAAAAJdYsNsPL8RFXM6krfURGLX9Ze98  */}
-            <Form token={tokenFormulario}
-              background_color="#e6ebff" 
-              color={colorText} 
-              border_radius="10px" 
-              background_color_button={theme.palette.primary.main} 
-              border_radius_button={theme.palette.custom.borderRadiusButtonCTA}
-              color_button={theme.palette.primary.contrastText} 
-              text_button="Enviar mensagem" 
-              message_sucess="Agradeço pelo seu contato. Em breve, responderei com atenção. Até logo!"
-              message_erro="Houve um problema ao enviar sua mensagem. Por favor, verifique sua conexão e tente novamente mais tarde. 
-              Caso o erro persista, saiba que você também pode me contatar pelos outros canais disponíveis."
-              color_message_erro={theme.palette.error.main}
-              color_message_sucess={theme.palette.success.main}
-            />
-            <ContainerList>
-              <Telefone color={theme.palette.primary.main}></Telefone>
-              <Email color={theme.palette.primary.main}></Email>
-              <SocialMedia position="faleconosco"></SocialMedia>
-            </ContainerList>                        
-        </Box>              
+        <ContainerAnimatedCard>
+          <ShadowCard sombraClara={sombraClara} sombraEscura={sombraEscura} width={widthForm} height="fit-content" border_radius="20px">
+            <Box display="flex" flexDirection='column' justifyContent="center" gap="24px" marginTop='8px' flex={1} 
+              sx={{ backgroundColor: theme.palette.custom.backgroundSectionAlternative, padding: "24px", borderRadius: '10px' }} >
+                {/* reCAPTCHA: 6LfNNjQrAAAAAJdYsNsPL8RFXM6krfURGLX9Ze98  */}
+                <Form token={tokenFormulario}
+                  background_color="#e6ebff" 
+                  color={colorText} 
+                  border_radius="10px" 
+                  background_color_button={theme.palette.primary.main} 
+                  border_radius_button={theme.palette.custom.borderRadiusButtonCTA}
+                  color_button={theme.palette.primary.contrastText} 
+                  text_button="Enviar mensagem" 
+                  message_sucess="Agradeço pelo seu contato. Em breve, responderei com atenção. Até logo!"
+                  message_erro="Houve um problema ao enviar sua mensagem. Por favor, verifique sua conexão e tente novamente mais tarde. 
+                  Caso o erro persista, saiba que você também pode me contatar pelos outros canais disponíveis."
+                  color_message_erro={theme.palette.error.main}
+                  color_message_sucess={theme.palette.success.main}
+                />
+                <ContainerList>
+                  <Telefone color={theme.palette.primary.main}></Telefone>
+                  <Email color={theme.palette.primary.main}></Email>
+                  <SocialMedia position="faleconosco"></SocialMedia>
+                </ContainerList>                        
+            </Box>
+          </ShadowCard>
+        </ContainerAnimatedCard> 
+
       </ContentSectionWrapStyled>
             
     </Section>            

@@ -48,7 +48,7 @@ const PageServico: React.FC<PageServicoProps> = ({servico})  => {
 
             <Section section_id='termo' background_color={theme.palette.custom?.backgroundSectionMain}>
 
-                <ContentSectionWrapStyled>
+                <ContentSectionWrapStyled marginTop="0px" marginBottom="0px">
 
                     <Box sx={{width: 'auto', marginRight: '32px'}}>
                         <SiteMap listaItemMenu={itemMenuLateral} 

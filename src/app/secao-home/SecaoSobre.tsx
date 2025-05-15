@@ -22,7 +22,7 @@ const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs, isSm}) => {
       background_color={theme.palette.custom?.backgroundSectionMain}>      
 
       <ContainerAnimatedScroll>
-        <ContentSectionWrapStyled>                     
+        <ContentSectionWrapStyled marginTop="0px" marginBottom="0px">                     
           <SectionTextColumnStyle textColor={colorText}>
             <TitleSection 
               title_text="Bianca Souza Aguiar" 

@@ -4,6 +4,7 @@ import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { styled, Typography, useTheme } from '@mui/material';
 import { ContainerAnimatedCard, ImageCard, Location, MapCard } from 'pipesolcomponents';
+import { sombraClara, sombraEscura } from '@/constants';
 
 const ContentCard = styled('div')({   
   width: '340px',
@@ -44,6 +45,7 @@ const Titulo = styled('h4')(({ theme }) => ({
 
 
 interface CardBookProps {  
+  index: number;
   src?: string;
   srcMap?: string;  
   alt: string;   
@@ -53,10 +55,10 @@ interface CardBookProps {
   bairro?: string;
   cidade?: string;
   uf?: string;
-  cep?:string;
+  cep?:string;  
 }
 
-const CardAtendimento : React.FC<CardBookProps> = ({src, srcMap, alt, titulo, text, endereco, bairro, cidade, uf, cep})  => {
+const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, titulo, text, endereco, bairro, cidade, uf, cep})  => {
 
   const theme = useTheme();
   const colorText = theme.palette.text.primary;
@@ -64,28 +66,33 @@ const CardAtendimento : React.FC<CardBookProps> = ({src, srcMap, alt, titulo, te
   if (src)
   {
     return (
-      <ImageCard src={src} alt={alt} margin="0px" 
-        widthImage={340} heightImage={300} 
-        border_radius='10px' 
-        background_color={theme.palette.custom.backgroundSectionMain}>          
-        <ContentCard>
-          <Titulo>{titulo}</Titulo>              
-          <Typography variant='body1' component='p' color={colorText}>{text}</Typography>                          
-        </ContentCard>
-      </ImageCard>    
+      <ContainerAnimatedCard index={index}>
+        <ImageCard src={src} alt={alt}
+          widthImage={340} heightImage={300} 
+          border_radius='20px' 
+          background_color={theme.palette.custom.backgroundSectionAlternative}
+          sombraClara={sombraClara}
+          sombraEscura={sombraEscura} 
+        >          
+          <ContentCard>
+            <Titulo>{titulo}</Titulo>              
+            <Typography variant='body1' component='p' color={colorText}>{text}</Typography>                          
+          </ContentCard>
+        </ImageCard>  
+      </ContainerAnimatedCard>        
     );
   }
 
   else if (srcMap) {
     return (
-
-      <ContainerAnimatedCard>
+      <ContainerAnimatedCard index={index}>
         <MapCard 
-          srcGoogle={srcMap}
-          margin="auto" 
+          srcGoogle={srcMap}         
           width="340px" height_map="300px" 
-          border_radius='10px' 
-          background_color={theme.palette.custom.backgroundSectionMain}       
+          border_radius='20px' 
+          background_color={theme.palette.custom.backgroundSectionAlternative} 
+          sombraClara={sombraClara}
+          sombraEscura={sombraEscura}                
           >          
           <ContentCardMapa>
             <Titulo>{titulo}</Titulo>                        
