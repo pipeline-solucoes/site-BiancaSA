@@ -3,6 +3,7 @@
 import {
   CarouselStyled,
   ContainerAnimatedScroll,
+  ContentSectionWrapCenterStyled,  
   Section,
   TestimonialCard
 } from "pipesolcomponents";
@@ -57,7 +58,7 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({isXs, isSm}) => {
             socialMedia=" "
             color={theme.palette.text.primary}
             color_icon={theme.palette.primary.main}            
-            background_color={theme.palette.custom.backgroundSectionAlternative}                      
+            background_color='transparent'                      
           >            
             {item.texto}            
           </TestimonialCard>
@@ -95,15 +96,18 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({isXs, isSm}) => {
   ];
 
   return (
-    <Section section_id="depoimentos" background_color={theme.palette.custom?.backgroundSectionMain}>      
-      <ContainerAnimatedScroll>
-        <TitleSectionCenter 
-          title_text="Histórias de Superação e Esperança"
-          subtitle_text="Palavras dos meus pacientes"
-        >
-        </TitleSectionCenter>
-        {renderCards(depoimentosObras)} 
-      </ContainerAnimatedScroll>
+    <Section section_id="depoimentos" background_color={theme.palette.custom?.backgroundSectionMain}>
+      <ContentSectionWrapCenterStyled>
+          <ContainerAnimatedScroll>
+            <TitleSectionCenter 
+              title_text="Histórias de Superação e Esperança"
+              subtitle_text="Palavras dos meus pacientes"
+            >
+            </TitleSectionCenter>
+            {renderCards(depoimentosObras)} 
+          </ContainerAnimatedScroll>
+      </ContentSectionWrapCenterStyled>
+      
     </Section>
   );
 };

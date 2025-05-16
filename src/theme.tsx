@@ -105,7 +105,7 @@ const theme = createTheme({
     }    
   },
   typography: {
-    fontFamily: 'Inter, Arial, sans-serif',
+    fontFamily: 'Montserrat, Arial, sans-serif',
     h1: {         
       fontSize: '44px', // Desktop     
       lineHeight: '1.0',
