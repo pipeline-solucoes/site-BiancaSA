@@ -26,9 +26,9 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({isXs, isSm}) => {
 
   const theme = useTheme();
     
-  const width_card = (isXs || isSm) ? '340px' : '80%';
-  const width_carrossel = (isXs || isSm) ? '340px' : '100%';
-  const height_carrossel = (isXs || isSm) ? '610px' : '430px';
+  const width_card = (isXs) ? '340px' : '80%';
+  const width_carrossel = (isXs) ? '340px' : '100%';
+  const height_carrossel = (isXs) ? '610px' : '430px';
 
   const renderCards = (depoimentos: DepoimentoProps[]): ReactElement => {
     
