@@ -5,18 +5,18 @@ import { ResponsiveBanner } from 'pipesolcomponents';
 import TitleBannerSemCTA from './TitleBannerSemCTA';
 
 interface BannerCustomSemCTAProps {    
-  isSm: boolean,    
+  isXs: boolean,    
 }
 
 const BannerCustomSemCTA: React.FC<BannerCustomSemCTAProps> = ({
-  isSm }) => {   
+  isXs }) => {   
   
     return(
     
       <ResponsiveBanner
         srcSet={{
-          xs: { image:'/Banner.png', height: '900px' }, // Para telas extra pequenas
-          sm: { image:'/Banner.png', height: '600px' }, // Para telas pequenas
+          xs: { image:'/Banner.png', height: '800px' }, // Para telas extra pequenas
+          sm: { image:'/Banner.png', height: '800px' }, // Para telas pequenas
           md: { image:'/Banner.png', height: '600px' }, // Para desktops médios
           lg: { image:'/Banner.png', height: '600px' }, // Para desktops grandes
           xl: { image:'/Banner.png', height: '600px' }, // Para telas extra grandes
@@ -27,7 +27,7 @@ const BannerCustomSemCTA: React.FC<BannerCustomSemCTAProps> = ({
           // xl: '/banner-2560.webp'  // Para telas extra grandes 1920 - ...
           }}
       >
-        <TitleBannerSemCTA isXs={isSm} isSm={isSm}/>                         
+        <TitleBannerSemCTA isXs={isXs}/>                         
       </ResponsiveBanner>
     )    
 };

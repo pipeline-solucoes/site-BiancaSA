@@ -41,7 +41,7 @@ const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs, isSm}) => {
         </SectionTextColumnStyle>
         
         <ContainerAnimatedCard>
-          <ShadowCard sombraClara={sombraClara} sombraEscura={sombraEscura} width={widthForm} height="fit-content" border_radius="20px">
+          <ShadowCard sombraClara={sombraClara} sombraEscura={sombraEscura} width={widthForm} height="fit-content" border_radius="20px" padding="0px">
             <Box display="flex" flexDirection='column' justifyContent="center" gap="24px" marginTop='8px' flex={1} 
               sx={{ backgroundColor: theme.palette.custom.backgroundSectionAlternative, padding: "24px", borderRadius: '10px' }} >
                 {/* reCAPTCHA: 6LfNNjQrAAAAAJdYsNsPL8RFXM6krfURGLX9Ze98  */}

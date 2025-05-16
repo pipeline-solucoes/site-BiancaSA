@@ -6,10 +6,10 @@ import TitleBannerComCTA from './TitleBannerComCTA';
 
 
 interface BannerCustomComCTAProps {  
-  isSm: boolean 
+  isXs: boolean 
 }
 
-const BannerCustomComCTA: React.FC<BannerCustomComCTAProps> = ({isSm}) => {   
+const BannerCustomComCTA: React.FC<BannerCustomComCTAProps> = ({isXs}) => {   
 
   return(
     
@@ -23,7 +23,7 @@ const BannerCustomComCTA: React.FC<BannerCustomComCTAProps> = ({isSm}) => {
         }}
     >
              
-      <TitleBannerComCTA isXs={isSm} isSm={isSm}/>                        
+      <TitleBannerComCTA isXs={isXs}/>                        
       
     </ResponsiveBanner>
   )

@@ -4,14 +4,13 @@ import { Typography, useTheme } from '@mui/material';
 import { subTituloBanner, tituloBanner } from '@/constants';
 
 interface TitleBannerComCTAProps{
-  isXs: boolean,
-  isSm: boolean,     
+  isXs: boolean,       
 }
 
-const TitleBannerComCTA: React.FC<TitleBannerComCTAProps> = ({isXs, isSm}) => {                
+const TitleBannerComCTA: React.FC<TitleBannerComCTAProps> = ({isXs}) => {                
 
     const theme = useTheme();
-    const widthImage = (isXs || isSm) ? 340 : 400;    
+    const widthImage = (isXs) ? 300 : 400;    
                           
     return (
         <ContentBanner2Columns>
@@ -21,7 +20,7 @@ const TitleBannerComCTA: React.FC<TitleBannerComCTAProps> = ({isXs, isSm}) => {
                 textTitle={tituloBanner}                                 
                 textSubtitle={subTituloBanner}
                 src='/servicos.png'
-                width_image={400}
+                width_image={widthImage}
                 height_image={80}>
                                   
                     <NavigationButton 

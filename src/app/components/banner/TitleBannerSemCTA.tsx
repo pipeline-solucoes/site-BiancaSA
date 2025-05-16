@@ -3,14 +3,13 @@ import { ContentBanner2Columns, ImageCover, TitleBannerWithImage } from 'pipesol
 import { subTituloBanner, tituloBanner } from '@/constants';
 
 interface TitleBannerSemCTAProps{
-  isXs: boolean,
-  isSm: boolean,     
+  isXs: boolean,      
 }
 
 
-const TitleBannerSemCTA: React.FC<TitleBannerSemCTAProps> = ({isXs, isSm}) => {            
+const TitleBannerSemCTA: React.FC<TitleBannerSemCTAProps> = ({isXs }) => {            
                                      
-    const widthImage = (isXs || isSm) ? 340 : 400; 
+    const widthImage = (isXs) ? 300 : 400; 
 
     return (
         <ContentBanner2Columns>
@@ -20,7 +19,7 @@ const TitleBannerSemCTA: React.FC<TitleBannerSemCTAProps> = ({isXs, isSm}) => {
                 textTitle={tituloBanner}                                 
                 textSubtitle={subTituloBanner}
                 src='/servicos.png'
-                width_image={400}
+                width_image={widthImage}
                 height_image={80}>                                                                    
             </TitleBannerWithImage> 
             

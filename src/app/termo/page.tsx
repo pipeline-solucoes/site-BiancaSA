@@ -20,7 +20,7 @@ const TermoDeUso: React.FC = ()  => {
         <>
             <HeaderBarTop                       
                 renderBar={() => <BarraFerramentasCustom isXs={isXs} isSm={isSm} itens_menu={itemsMenuTermoPolitica}></BarraFerramentasCustom>}
-                renderBanner={() => <BannerCustomSemCTA isSm={isSm}></BannerCustomSemCTA>}>        
+                renderBanner={() => <BannerCustomSemCTA isXs={isXs}></BannerCustomSemCTA>}>        
             </HeaderBarTop>
 
             <Section section_id='termo' background_color={theme.palette.custom?.backgroundSectionMain}>

@@ -31,7 +31,7 @@ const ContainerPageServico: React.FC<ContainerPageServicoProps> = ({ title })  =
         <>        
             <HeaderBarTop               
                 renderBar={() => <BarraFerramentasCustom isXs={isXs} isSm={isSm} itens_menu={itemsMenuPage}></BarraFerramentasCustom>}
-                renderBanner={() => <BannerCustomSemCTA isSm={isSm}></BannerCustomSemCTA>}
+                renderBanner={() => <BannerCustomSemCTA isXs={isXs}></BannerCustomSemCTA>}
             ></HeaderBarTop> 
 
             <Section section_id='servico' background_color={theme.palette.custom?.backgroundSectionMain}>   
