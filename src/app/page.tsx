@@ -31,7 +31,7 @@ export default function Home() {
         <SecaoDepoimentos></SecaoDepoimentos> 
         <SecaoAtendimento></SecaoAtendimento>
         <SecaoVideos></SecaoVideos>
-        <SecaoFormulario></SecaoFormulario>                                                                      
+        <SecaoFormulario isXs={isXs} isSm={isSm}></SecaoFormulario>                                                                      
       </main>
 
       <FooterCustom itens_menu={itemsMenu}></FooterCustom>
