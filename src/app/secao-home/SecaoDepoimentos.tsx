@@ -14,13 +14,22 @@ import TitleSectionCenter from "../components/TitleSectionCenter";
 
 interface DepoimentoProps {
   nome: string;
-  texto: string;
+  texto: string;   
 }
 
-const SecaoDepoimentos: React.FC = () => {
+interface SecaoDepoimentosProps{
+  isXs: boolean,
+  isSm: boolean,     
+}
+
+const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({isXs, isSm}) => {
 
   const theme = useTheme();
-      
+    
+  const width_card = (isXs || isSm) ? '340px' : '80%';
+  const width_carrossel = (isXs || isSm) ? '340px' : '100%';
+  const height_carrossel = (isXs || isSm) ? '610px' : '430px';
+
   const renderCards = (depoimentos: DepoimentoProps[]): ReactElement => {
     
       return (
@@ -33,22 +42,21 @@ const SecaoDepoimentos: React.FC = () => {
           centerMode={true}
           centerSlidePercentage={100}
           showThumbs={false}        
-          height="430px"
-          width='100%'
-          margin="32px"
+          height={height_carrossel}
+          width={width_carrossel}
+          margin="auto"
           color_indicators={theme.palette.primary.main}
           color_indicator_focus={theme.palette.primary.main}
       >
         {depoimentos.map((item, index) => (
           <TestimonialCard
             key={index}
-            width="80%"
+            width={width_card}
             height="100%"
             name={item.nome}
             socialMedia=" "
             color={theme.palette.text.primary}
-            color_icon={theme.palette.primary.main}
-            color_boxshadow="#00000020" 
+            color_icon={theme.palette.primary.main}            
             background_color={theme.palette.custom.backgroundSectionAlternative}                      
           >            
             {item.texto}            
