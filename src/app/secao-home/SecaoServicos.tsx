@@ -1,33 +1,59 @@
 "use client";
 
-import { ContainerAnimatedCard, ContentCardDescription, ContentSectionWrapStyled, NavigationButton, Section, ShadowCard } from "pipesolcomponents";
+import { AnimatedCardData, AnimatedCardGroup, ContentSectionWrapStyled, NavigationButton, Section } from "pipesolcomponents";
 import { Typography, useTheme } from "@mui/material";
 import TitleSectionCenter from "../components/TitleSectionCenter";
 import { sombraClara, sombraEscura } from "@/constants";
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 
-interface IServico {
-  url: string;
-  title: string;
-  description: string;
+// interface IServico {
+//   url: string;
+//   title: string;
+//   description: string;
+// }
+
+// const servicos : IServico[] = [
+//     {url: '/servicos/cuidadospaliativos', title: 'Cuidados Paliativos', description: 'Assistência focada no alívio da dor e promoção de conforto físico e emocional para pacientes com doenças crônicas ou em estágio avançado.'},
+//     {url: '#sobre', title: 'Fotobiomodulação', description: 'Terapia com luz de baixa intensidade que estimula a regeneração celular, alivia dores e inflamações, acelerando a cicatrização.'},
+//     {url: '#sobre', title: 'Perícia Judicial', description: 'Avaliação técnica especializada para processos judiciais, com emissão de laudos precisos e embasados na prática fisioterapêutica.'},
+//     {url: '#sobre', title: 'Pós Operatório', description: 'Acelera a recuperação após cirurgias, aliviando dores, reduzindo inchaços e restaurando movimentos e funções do corpo.'},
+//     {url: '#sobre', title: 'Pré Habilitação', description: 'Preparação física e funcional antes de cirurgias para melhorar os resultados e reduzir o tempo de recuperação no pós-operatório.'},
+//     {url: '#sobre', title: 'Reabilitação', description: 'Foca na recuperação funcional após traumas ou doenças, promovendo autonomia, qualidade de vida e prevenção de novas lesões.'},
+//     {url: '#sobre', title: 'Reabilitação Oncológica', description: 'Cuidados personalizados para pacientes com câncer, promovendo mobilidade, controle da dor e qualidade de vida durante e após o tratamento.'},
+//     {url: '#sobre', title: 'Reabilitação Geriátrica', description: 'Atendimento voltado à pessoa idosa, com foco na prevenção de quedas, manutenção da autonomia e melhora da mobilidade e funcionalidade.'},
+//     {url: '#sobre', title: 'Tratamento de Disfunções Linfáticas', description: 'Abordagem para controle de edemas (como o linfedema), por meio de drenagem linfática, exercícios e cuidados específicos.'},
+//     {url: '#sobre', title: 'Tratamento de Disfunções Vasculares', description: 'Intervenções que visam melhorar a circulação sanguínea, aliviar sintomas de insuficiência venosa e prevenir complicações.'},
+//     {url: '#sobre', title: 'Tratamento da Neuropatia Periférica', description: 'Terapias para alívio da dor, formigamento e fraqueza causados por lesões nos nervos periféricos, com foco em funcionalidade e bem-estar.'},    
+//   ];        
+
+const cards: AnimatedCardData[] = [
+
+  {id: 0, icon: ExpandCircleDownIcon, title: 'Cuidados Paliativos', description: 'Assistência focada no alívio da dor e promoção de conforto físico e emocional para pacientes com doenças crônicas ou em estágio avançado.'},
+  {id: 1, icon: ExpandCircleDownIcon, title: 'Fotobiomodulação', description: 'Terapia com luz de baixa intensidade que estimula a regeneração celular, alivia dores e inflamações, acelerando a cicatrização.'},
+  {id: 2, icon: ExpandCircleDownIcon, title: 'Perícia Judicial', description: 'Avaliação técnica especializada para processos judiciais, com emissão de laudos precisos e embasados na prática fisioterapêutica.'},
+  {id: 3, icon: ExpandCircleDownIcon, title: 'Pós Operatório', description: 'Acelera a recuperação após cirurgias, aliviando dores, reduzindo inchaços e restaurando movimentos e funções do corpo.'},
+  {id: 4, icon: ExpandCircleDownIcon, title: 'Pré Habilitação', description: 'Preparação física e funcional antes de cirurgias para melhorar os resultados e reduzir o tempo de recuperação no pós-operatório.' },
+  {id: 5, icon: ExpandCircleDownIcon, title: 'Reabilitação' , description: 'Foca na recuperação funcional após traumas ou doenças, promovendo autonomia, qualidade de vida e prevenção de novas lesões.'},
+  {id: 6, icon: ExpandCircleDownIcon, title: 'Reabilitação Geriátrica', description: 'Atendimento voltado à pessoa idosa, com foco na prevenção de quedas, manutenção da autonomia e melhora da mobilidade e funcionalidade.' },
+  {id: 7, icon: ExpandCircleDownIcon, title: 'Reabilitação Oncológica', description: 'Cuidados personalizados para pacientes com câncer, promovendo mobilidade, controle da dor e qualidade de vida durante e após o tratamento.'},
+  {id: 8, icon: ExpandCircleDownIcon, title: 'Tratamento de Disfunções Linfáticas', description: 'Abordagem para controle de edemas (como o linfedema), por meio de drenagem linfática, exercícios e cuidados específicos.'},
+  {id: 9, icon: ExpandCircleDownIcon, title: 'Tratamento de Disfunções Vasculares', description: 'Intervenções que visam melhorar a circulação sanguínea, aliviar sintomas de insuficiência venosa e prevenir complicações.'},
+  {id: 10, icon: ExpandCircleDownIcon, title: 'Tratamento da Neuropatia Periférica', description: 'Terapias para alívio da dor, formigamento e fraqueza causados por lesões nos nervos periféricos, com foco em funcionalidade e bem-estar.'},  
+]
+
+interface SecaoServicosProps{
+  isXs: boolean,
+  isSm: boolean,     
 }
 
-const servicos : IServico[] = [
-    {url: '/servicos/cuidadospaliativos', title: 'Cuidados Paliativos', description: 'Assistência focada no alívio da dor e promoção de conforto físico e emocional para pacientes com doenças crônicas ou em estágio avançado.'},
-    {url: '#sobre', title: 'Fotobiomodulação', description: 'Terapia com luz de baixa intensidade que estimula a regeneração celular, alivia dores e inflamações, acelerando a cicatrização.'},
-    {url: '#sobre', title: 'Perícia Judicial', description: 'Avaliação técnica especializada para processos judiciais, com emissão de laudos precisos e embasados na prática fisioterapêutica.'},
-    {url: '#sobre', title: 'Pós Operatório', description: 'Acelera a recuperação após cirurgias, aliviando dores, reduzindo inchaços e restaurando movimentos e funções do corpo.'},
-    {url: '#sobre', title: 'Pré Habilitação', description: 'Preparação física e funcional antes de cirurgias para melhorar os resultados e reduzir o tempo de recuperação no pós-operatório.'},
-    {url: '#sobre', title: 'Reabilitação', description: 'Foca na recuperação funcional após traumas ou doenças, promovendo autonomia, qualidade de vida e prevenção de novas lesões.'},
-    {url: '#sobre', title: 'Reabilitação Oncológica', description: 'Cuidados personalizados para pacientes com câncer, promovendo mobilidade, controle da dor e qualidade de vida durante e após o tratamento.'},
-    {url: '#sobre', title: 'Reabilitação Geriátrica', description: 'Atendimento voltado à pessoa idosa, com foco na prevenção de quedas, manutenção da autonomia e melhora da mobilidade e funcionalidade.'},
-    {url: '#sobre', title: 'Tratamento de Disfunções Linfáticas', description: 'Abordagem para controle de edemas (como o linfedema), por meio de drenagem linfática, exercícios e cuidados específicos.'},
-    {url: '#sobre', title: 'Tratamento de Disfunções Vasculares', description: 'Intervenções que visam melhorar a circulação sanguínea, aliviar sintomas de insuficiência venosa e prevenir complicações.'},
-    {url: '#sobre', title: 'Tratamento da Neuropatia Periférica', description: 'Terapias para alívio da dor, formigamento e fraqueza causados por lesões nos nervos periféricos, com foco em funcionalidade e bem-estar.'},    
-  ];        
 
-const SecaoServicos: React.FC = () => {
+const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
 
   const theme = useTheme();
+
+  const width_card = (isXs || isSm) ? '100%' : 'calc(50% - 8px)';
+  const max_height_card = (isXs || isSm) ? '200px' : '230px';
+
     
   return (
     <Section section_id="servicos" background_color={theme.palette.custom?.backgroundSectionAlternative}>
@@ -36,14 +62,27 @@ const SecaoServicos: React.FC = () => {
         </TitleSectionCenter>         
                   
         <ContentSectionWrapStyled marginTop="40px" marginBottom="40px">
-            {                                          
+
+          <AnimatedCardGroup cards={cards} 
+            background_color='transparent' 
+            background_color_hover={theme.palette.primary.main} 
+            color={theme.palette.primary.main} 
+            color_hover={theme.palette.custom?.backgroundSectionAlternative}
+            border_radius="20px"
+            width_card={width_card}
+            min_height_card="30px"
+            max_height_card={max_height_card}
+            sombraClara={sombraClara}
+            sombraEscura={sombraEscura}
+          />     
+
+            {/* {  
               servicos.map((item, index) => (
                 <ContainerAnimatedCard key={item.title} index={index}>                
                   <ShadowCard                     
                     width="320px" 
                     height="280px"                      
-                    border_radius="10px"
-                    background_color=""
+                    border_radius="10px"                    
                     sombraClara={sombraClara}
                     sombraEscura={sombraEscura}
                   >                    
@@ -66,8 +105,11 @@ const SecaoServicos: React.FC = () => {
                     </ContentCardDescription>                    
                   </ShadowCard>  
                 </ContainerAnimatedCard>                                               
-            ))}
+            ))} */}
+
         </ContentSectionWrapStyled>
+
+        
                         
         <NavigationButton 
             url="#formulario"             
