@@ -4,6 +4,7 @@ import { ResponsiveBanner } from 'pipesolcomponents';
 import React from 'react';
 import TitleBannerComCTA from './TitleBannerComCTA';
 
+
 interface BannerCustomComCTAProps {  
   isSm: boolean 
 }
@@ -14,19 +15,16 @@ const BannerCustomComCTA: React.FC<BannerCustomComCTAProps> = ({isSm}) => {
     
     <ResponsiveBanner
       srcSet={{
-        xs: '/Banner.png',  // Para telas extra pequenas
-        sm: '/Banner.png',  // Para telas pequenas
-        md: '/Banner.png', // Para desktops médios
-        lg: '/Banner.png', // Para desktops grandes
-        xl: '/Banner.png'  // Para telas extra grandes
+        xs: { image:'/Banner.png', height: '800px' }, // Para telas extra pequenas
+        sm: { image:'/Banner.png', height: '800px' }, // Para telas pequenas
+        md: { image:'/Banner.png', height: '600px' }, // Para desktops médios
+        lg: { image:'/Banner.png', height: '600px' }, // Para desktops grandes
+        xl: { image:'/Banner.png', height: '600px' }, // Para telas extra grandes
         }}
     >
-      {(!isSm) &&        
-        <TitleBannerComCTA/>                  
-      }
-      {(isSm) &&              
-        <TitleBannerComCTA/>                                   
-      }
+             
+      <TitleBannerComCTA isXs={isSm} isSm={isSm}/>                        
+      
     </ResponsiveBanner>
   )
 };

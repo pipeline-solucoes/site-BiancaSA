@@ -2,8 +2,16 @@ import React from 'react';
 import { ContentBanner2Columns, ImageCover, TitleBannerWithImage } from 'pipesolcomponents';
 import { subTituloBanner, tituloBanner } from '@/constants';
 
-const TitleBannerSemCTA: React.FC = () => {            
-                                                          
+interface TitleBannerSemCTAProps{
+  isXs: boolean,
+  isSm: boolean,     
+}
+
+
+const TitleBannerSemCTA: React.FC<TitleBannerSemCTAProps> = ({isXs, isSm}) => {            
+                                     
+    const widthImage = (isXs || isSm) ? 340 : 400; 
+
     return (
         <ContentBanner2Columns>
     
@@ -16,7 +24,7 @@ const TitleBannerSemCTA: React.FC = () => {
                 height_image={80}>                                                                    
             </TitleBannerWithImage> 
             
-            <ImageCover src="/fotoPerfil.png" alt="foto Bianca Souza Aguiar" height={400} width={400}>
+            <ImageCover src="/fotoPerfil.png" alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage}>
             </ImageCover> 
 
         </ContentBanner2Columns> );     

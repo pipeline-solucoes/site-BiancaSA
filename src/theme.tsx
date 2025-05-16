@@ -72,7 +72,7 @@ const theme = createTheme({
       contrastText: "#ffffff" //Branco
     },    
     text: {
-      primary: '#8c8c8c',
+      primary: '#60697B',
       secondary: '#ffffff',
       disabled: '#A9A9A9',
     },          

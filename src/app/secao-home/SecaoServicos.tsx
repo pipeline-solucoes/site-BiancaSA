@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatedCardData, AnimatedCardGroup, ContentSectionWrapStyled, NavigationButton, Section } from "pipesolcomponents";
+import { AnimatedCardData, AnimatedCardGroup, ContainerAnimatedScroll, ContentSectionWrapStyled, NavigationButton, Section } from "pipesolcomponents";
 import { Typography, useTheme } from "@mui/material";
 import TitleSectionCenter from "../components/TitleSectionCenter";
 import { sombraClara, sombraEscura } from "@/constants";
@@ -46,7 +46,6 @@ interface SecaoServicosProps{
   isSm: boolean,     
 }
 
-
 const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
 
   const theme = useTheme();
@@ -62,19 +61,20 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
         </TitleSectionCenter>         
                   
         <ContentSectionWrapStyled marginTop="40px" marginBottom="40px">
-
-          <AnimatedCardGroup cards={cards} 
-            background_color='transparent' 
-            background_color_hover={theme.palette.primary.main} 
-            color={theme.palette.primary.main} 
-            color_hover={theme.palette.custom?.backgroundSectionAlternative}
-            border_radius="20px"
-            width_card={width_card}
-            min_height_card="30px"
-            max_height_card={max_height_card}
-            sombraClara={sombraClara}
-            sombraEscura={sombraEscura}
-          />     
+          <ContainerAnimatedScroll>          
+            <AnimatedCardGroup cards={cards} 
+              background_color='transparent' 
+              background_color_hover={theme.palette.primary.main} 
+              color={theme.palette.primary.main} 
+              color_hover={theme.palette.custom?.backgroundSectionAlternative}
+              border_radius="20px"
+              width_card={width_card}
+              min_height_card="30px"
+              max_height_card={max_height_card}
+              sombraClara={sombraClara}
+              sombraEscura={sombraEscura}
+            />  
+          </ContainerAnimatedScroll>   
 
             {/* {  
               servicos.map((item, index) => (
@@ -108,9 +108,7 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
             ))} */}
 
         </ContentSectionWrapStyled>
-
-        
-                        
+                                
         <NavigationButton 
             url="#formulario"             
             width="auto"

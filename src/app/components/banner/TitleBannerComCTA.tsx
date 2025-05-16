@@ -3,10 +3,15 @@ import { ContentBanner2Columns, ImageCover, NavigationButton, TitleBannerWithIma
 import { Typography, useTheme } from '@mui/material';
 import { subTituloBanner, tituloBanner } from '@/constants';
 
+interface TitleBannerComCTAProps{
+  isXs: boolean,
+  isSm: boolean,     
+}
 
-const TitleBannerComCTA: React.FC = () => {            
+const TitleBannerComCTA: React.FC<TitleBannerComCTAProps> = ({isXs, isSm}) => {                
 
-    const theme = useTheme();    
+    const theme = useTheme();
+    const widthImage = (isXs || isSm) ? 340 : 400;    
                           
     return (
         <ContentBanner2Columns>
@@ -35,7 +40,7 @@ const TitleBannerComCTA: React.FC = () => {
                                          
             </TitleBannerWithImage> 
         
-            <ImageCover src="/fotoPerfil.png" alt="foto Bianca Souza Aguiar" height={400} width={400}>
+            <ImageCover src="/fotoPerfil.png" alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage}>
             </ImageCover>            
         </ContentBanner2Columns>          
     );

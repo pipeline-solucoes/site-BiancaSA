@@ -20,7 +20,8 @@ export default function Home() {
   const { isXs, isSm } = useResponsive();  
   return (    
     <>
-      <HeaderBarTop                
+      <HeaderBarTop
+        height_xs="880px" height_sm="880px" height_md="660px" height_lg="660px" height_xl="660px"                
         renderBar={() => <BarraFerramentasCustom isXs={isXs} isSm={isSm} itens_menu={itemsMenu}></BarraFerramentasCustom>}
         renderBanner={() => <BannerCustomComCTA isSm={isSm}></BannerCustomComCTA>}>        
       </HeaderBarTop>
