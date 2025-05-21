@@ -29,10 +29,10 @@ export default function Home() {
       <main>
         <SecaoSobre isXs={isXs} isSm={isSm}></SecaoSobre> 
         <SecaoServicos isXs={isXs} isSm={isSm}></SecaoServicos>
-        <SecaoDepoimentos isXs={isXs} isSm={isSm}></SecaoDepoimentos> 
+        <SecaoDepoimentos isXs={isXs}></SecaoDepoimentos> 
         <SecaoAtendimento></SecaoAtendimento>
-        <SecaoVideos isXs={isXs} isSm={isSm}></SecaoVideos>
-        <SecaoFormulario isXs={isXs} isSm={isSm}></SecaoFormulario>                                                                      
+        <SecaoVideos isXs={isXs}></SecaoVideos>
+        <SecaoFormulario isXs={isXs}></SecaoFormulario>                                                                      
       </main>
 
       <FooterCustom itens_menu={itemsMenu}></FooterCustom>

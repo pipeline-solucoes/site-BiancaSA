@@ -1,16 +1,15 @@
 'use client';
 
-import { ContentColFooter, Footer, NavigationButton, SiteMap, TitleFooterStyle } from 'pipesolcomponents';
+import { ContentColFooter, Footer, ItemMenuConfig, NavigationButton, SiteMap, TitleFooterStyle } from 'pipesolcomponents';
 import React, { ReactElement } from 'react';
 import Copywriter from './Copywriter';
 import { Box, Typography, useTheme } from '@mui/material';
-import { ItemMenuProps } from 'pipesolcomponents/dist/components/menu/ItemMenuProps';
 import SocialMedia from '../contatos/SocialMedia';
 import Email from '../contatos/Email';
 import Telefone from '../contatos/Telefone';
 
 interface FooterCustomProps{
-  itens_menu: ItemMenuProps[];   
+  itens_menu: ItemMenuConfig[];   
 }
 
 const FooterCustom: React.FC<FooterCustomProps> = ({itens_menu}) => { 

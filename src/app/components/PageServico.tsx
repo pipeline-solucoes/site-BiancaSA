@@ -1,13 +1,12 @@
 "use client";
 
-import { ContentSectionWrapStyled, HeaderBarTop, Section, SectionTextColumnStyle, SiteMap, useResponsive } from "pipesolcomponents";
+import { ContentSectionWrapStyled, HeaderBarTop, ItemMenuConfig, Section, SectionTextColumnStyle, SiteMap, useResponsive } from "pipesolcomponents";
 import { Box, Typography, useTheme } from "@mui/material";
 import { itemsMenuPage } from "@/constants";
 import BarraFerramentasCustom from "@/app/components/banner/BarraFerramentasCustom";
 import BannerCustomSemCTA from "@/app/components/banner/BannerCustomSemCTA";
 import TitleSection from "@/app/components/TitleSection";
 import FooterCustom from "@/app/components/footer/FooterCustom";
-import { ItemMenuProps } from "pipesolcomponents/dist/components/menu/ItemMenuProps";
 
 interface PageServicoProps{    
     servico: 'Cuidados Paliativos' | 'Fotobiomodulação' | 'Perícia Judicial' | 'Pós Operatório' |
@@ -22,7 +21,7 @@ const PageServico: React.FC<PageServicoProps> = ({servico})  => {
     const { isXs, isSm } = useResponsive();   
     const colorText =  theme.palette.text.primary; 
     
-    let itemMenuLateral: ItemMenuProps[] = [        
+    let itemMenuLateral: ItemMenuConfig[] = [        
         {url: '/#cuidados-paliativos', text: 'Cuidados Paliativos'},
         {url: '/#1', text: 'Fotobiomodulação'},
         {url: '/#2', text: 'Perícia Judicial'},

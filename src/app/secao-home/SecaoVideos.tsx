@@ -1,24 +1,22 @@
 "use client";
 
-import { ContainerAnimatedCard, ContentSectionWrapStyled, Section, YoutubeCard } from "pipesolcomponents";
+import { ContainerAnimatedIndex, ContentSectionWrapStyled, Section, YoutubeCard } from "pipesolcomponents";
 import { Typography, useTheme } from "@mui/material";
 import TitleSectionCenter from "../components/TitleSectionCenter";
-import { sombraClara, sombraEscura } from "@/constants";
 
 interface SecaoVideosProps{
-  isXs: boolean,
-  isSm: boolean,     
+  isXs: boolean,  
 }
 
-const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
+const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs}) => {
 
   const theme = useTheme();
   const background = 'rgba(255, 255, 255, 0.25)';
   const borderRadius = "20px";
-  const width = (isXs || isSm) ? '340px' : "580px";
-  const height = (isXs || isSm) ? '340px' : "400px";
-
-  const height_text = (isXs || isSm) ? '400px' : "270px";
+  const width = (isXs) ? '340px' : "580px";
+  const height = (isXs) ? '340px' : "400px";
+  const height_text = (isXs) ? "400px" : "270px";
+  const flexDirectionCard = 'column';
   
   return (
     <Section section_id="servicos" background_color={theme.palette.custom.backgroundSectionMain}>      
@@ -31,15 +29,14 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
 
       <ContentSectionWrapStyled>
         
-          <ContainerAnimatedCard key={0} index={0}>
+          <ContainerAnimatedIndex key={0} index={0}>
             <YoutubeCard               
               background_color={background}
               border_radius={borderRadius}
               srcYoutube='https://www.youtube.com/embed/tvPg_N7Vw88?si=uYLp9C4-RLb5_dht'
               width={width} 
               height_video={height}
-              sombraClara={sombraClara}
-              sombraEscura={sombraEscura}
+              flex_direction={flexDirectionCard}
             >            
               <Typography variant="body1" color={theme.palette.text.primary} component="div" sx={{height: height_text}}>
                 <p>Fui convidada a participar do podcast da <b>WEFY</b>, junto com <b>nutricionista Priscilla Faria Goretti (@nutriprigoretti)</b>, para uma conversa especial sobre o <b>Outubro Rosa</b> e a importância da conscientização sobre o <b>câncer de mama</b>.</p>
@@ -47,17 +44,16 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
                 <p>O episódio está disponível no canal da <b>WEFY</b> no YouTube - aproveite para assistir e se inscrever no canal para acompanhar outros conteúdos incríveis! </p>
               </Typography>
             </YoutubeCard>
-          </ContainerAnimatedCard>
+          </ContainerAnimatedIndex>
 
-          <ContainerAnimatedCard key={1} index={1}>
+          <ContainerAnimatedIndex key={1} index={1}>
             <YoutubeCard               
               background_color={background}
               border_radius={borderRadius}
               srcYoutube='https://www.youtube.com/embed/lSLx_qQBpbQ?si=eBcOr2S2QSEOoLkN'
               width={width} 
               height_video={height}
-              sombraClara={sombraClara}
-              sombraEscura={sombraEscura}
+              flex_direction={flexDirectionCard}
             >
               <Typography variant="body1" color={theme.palette.text.primary} component="div" sx={{height: height_text}}>
                 <p>Fui convidada a participar do podcast da <b>WEFY</b> para conversar sobre um tema muito importante: <b>Cuidados Paliativos</b>. </p>
@@ -65,7 +61,7 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
                 <p>O episódio já está disponível no canal da <b>WEFY</b> no YouTube. Assista, curta e inscreva-se no canal para apoiar esse trabalho tão necessário!</p>
               </Typography>
             </YoutubeCard> 
-          </ContainerAnimatedCard>       
+          </ContainerAnimatedIndex>       
                                
       </ContentSectionWrapStyled>       
 

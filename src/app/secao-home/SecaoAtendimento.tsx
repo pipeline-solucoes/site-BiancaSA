@@ -26,7 +26,7 @@ const SecaoAtendimento: React.FC = () => {
             alt="atendimento" 
             src="/atendimento-domiciliar.jpeg" 
             titulo="Domiciliar" 
-            text="Realizo atendimento domiciliar em Niterói, São Gonçalo e em toda a região do Grande Rio.">        
+            text="Realizo atendimento domiciliar em Niterói, Tijuca e Zona Sul do Rio de Janeiro.">        
           </CardAtendimento>
         
           <CardAtendimento index={1}

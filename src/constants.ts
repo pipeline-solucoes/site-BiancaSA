@@ -1,5 +1,4 @@
-import { ShadowConfig } from "pipesolcomponents";
-import { ItemMenuProps } from "pipesolcomponents/dist/components/menu/ItemMenuProps";
+import { ItemMenuConfig, ShadowConfig } from "pipesolcomponents";
 
 export const tituloBanner: string = "Fisioterapia Humanizada no Rio de Janeiro, Niterói e São Gonçalo";
 export const subTituloBanner: string = "Cuidado especializado em cada fase da vida";
@@ -26,7 +25,7 @@ export const sombraEscura: ShadowConfig = {
     color: 'rgba(0, 0, 0, 0.25)'
   }
 
-export const itemsMenu : ItemMenuProps[] = [
+export const itemsMenu : ItemMenuConfig[] = [
     {url: '#sobre', text: 'Sobre'},
     {url: '#servicos', text: 'Serviços'},
     {url: '#formulario', text: 'Fale com a Bianca'},
@@ -35,7 +34,7 @@ export const itemsMenu : ItemMenuProps[] = [
     {url: '#podcasts', text: 'Podcasts'},
   ];
 
-  export const itemsMenuPage : ItemMenuProps[] = [
+  export const itemsMenuPage : ItemMenuConfig[] = [
     {url: '/', text: 'Home'},
     {url: '/#sobre', text: 'Sobre'},
     {url: '/#servicos', text: 'Serviços'},
@@ -45,7 +44,7 @@ export const itemsMenu : ItemMenuProps[] = [
     {url: '/#podcasts', text: 'Podcasts'},
   ];  
 
-export const itemsMenuTermoPolitica : ItemMenuProps[] = []; 
+export const itemsMenuTermoPolitica : ItemMenuConfig[] = []; 
 
 
 

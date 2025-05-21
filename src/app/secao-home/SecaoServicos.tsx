@@ -3,8 +3,8 @@
 import { AnimatedCardData, AnimatedCardGroup, ContainerAnimatedScroll, ContentSectionWrapStyled, NavigationButton, Section } from "pipesolcomponents";
 import { Typography, useTheme } from "@mui/material";
 import TitleSectionCenter from "../components/TitleSectionCenter";
-import { sombraClara, sombraEscura } from "@/constants";
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+import { sombraClara, sombraEscura } from "@/constants";
 
 // interface IServico {
 //   url: string;
@@ -72,7 +72,7 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
               min_height_card="30px"
               max_height_card={max_height_card}
               sombraClara={sombraClara}
-              sombraEscura={sombraEscura}
+              sombraEscura={sombraEscura}             
             />  
           </ContainerAnimatedScroll>   
 

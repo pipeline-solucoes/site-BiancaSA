@@ -9,20 +9,18 @@ interface SecaoSobreProps {
   isSm: boolean
 }
 
-const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs, isSm}) => {
+const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs}) => {
 
   const theme = useTheme();
   const colorText = theme.palette.text.primary;
 
-  const width_image = (isXs || isSm ) ? 340 : 500;
-  const height_image = (isXs || isSm ) ? 340 : 500;
+  const width_image = (isXs) ? 340 : 500;
+  const height_image = (isXs) ? 340 : 500;
 
   return (
-    <Section section_id="sobre" 
-      background_color={theme.palette.custom?.backgroundSectionMain}>      
-
+    <Section section_id="sobre" background_color={theme.palette.custom?.backgroundSectionMain}>      
       <ContainerAnimatedScroll>
-        <ContentSectionWrapStyled marginTop="0px" marginBottom="0px">                     
+        <ContentSectionWrapStyled marginTop="0px" marginBottom="0px">
           <SectionTextColumnStyle textColor={colorText}>
             <TitleSection 
               title_text="Bianca Souza Aguiar" 
@@ -38,7 +36,6 @@ const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs, isSm}) => {
           </ImageCover>                          
         </ContentSectionWrapStyled> 
       </ContainerAnimatedScroll> 
-
     </Section>            
   );  
 };

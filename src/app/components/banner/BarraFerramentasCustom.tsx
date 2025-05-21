@@ -1,16 +1,15 @@
 'use client';
 
-import { BarraDeFerramentas, BarraFerramentasHamburguer } from 'pipesolcomponents';
+import { BarraDeFerramentas, BarraFerramentasHamburguer, ItemMenuConfig } from 'pipesolcomponents';
 import React from 'react';
 import SocialMedia from '../contatos/SocialMedia';
 import MenuIcon from '@mui/icons-material/Menu';
-import { ItemMenuProps } from 'pipesolcomponents/dist/components/menu/ItemMenuProps';
 import { useTheme } from '@mui/material';
 
 interface BarraFerramentasCustomProps{
   isXs: boolean,
   isSm: boolean,   
-  itens_menu: ItemMenuProps[]; 
+  itens_menu: ItemMenuConfig[]; 
 }
 
 const BarraFerramentasCustom: React.FC<BarraFerramentasCustomProps> = ({isXs, isSm, itens_menu}) => { 

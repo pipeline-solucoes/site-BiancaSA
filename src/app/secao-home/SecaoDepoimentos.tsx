@@ -3,7 +3,7 @@
 import {
   CarouselStyled,
   ContainerAnimatedScroll,
-  ContentSectionWrapCenterStyled,  
+  ContentSectionWrapStyled,  
   Section,
   TestimonialCard
 } from "pipesolcomponents";
@@ -19,16 +19,15 @@ interface DepoimentoProps {
 }
 
 interface SecaoDepoimentosProps{
-  isXs: boolean,
-  isSm: boolean,     
+  isXs: boolean,       
 }
 
-const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({isXs, isSm}) => {
+const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({isXs }) => {
 
   const theme = useTheme();
     
   const width_card = (isXs) ? '340px' : '80%';
-  const width_carrossel = (isXs) ? '340px' : '100%';
+  const width_carrossel = (isXs) ? '340px' : '90%';
   const height_carrossel = (isXs) ? '610px' : '430px';
 
   const renderCards = (depoimentos: DepoimentoProps[]): ReactElement => {
@@ -97,17 +96,15 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({isXs, isSm}) => {
 
   return (
     <Section section_id="depoimentos" background_color={theme.palette.custom?.backgroundSectionMain}>
-      <ContentSectionWrapCenterStyled>
-          <ContainerAnimatedScroll>
-            <TitleSectionCenter 
-              title_text="Histórias de Superação e Esperança"
-              subtitle_text="Palavras dos meus pacientes"
-            >
+      <ContainerAnimatedScroll>
+        <ContentSectionWrapStyled marginTop="40px" marginBottom="40px" >          
+          <TitleSectionCenter 
+            title_text="Histórias de Superação e Esperança"
+            subtitle_text="Palavras dos meus pacientes">
             </TitleSectionCenter>
-            {renderCards(depoimentosObras)} 
-          </ContainerAnimatedScroll>
-      </ContentSectionWrapCenterStyled>
-      
+            {renderCards(depoimentosObras)}
+        </ContentSectionWrapStyled>
+      </ContainerAnimatedScroll>      
     </Section>
   );
 };

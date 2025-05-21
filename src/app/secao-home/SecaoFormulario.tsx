@@ -1,6 +1,6 @@
 "use client";
 
-import { ContainerAnimatedCard, ContainerList, ContentSectionWrapStyled, Form, IconCheckText, Section, SectionTextColumnStyle, ShadowCard } from "pipesolcomponents";
+import { ContainerAnimatedScroll, ContainerList, ContentSectionWrapStyled, Form, IconCheckText, Section, SectionTextColumnStyle, ShadowCard } from "pipesolcomponents";
 import TitleSection from "../components/TitleSection";
 import { Box, useTheme } from "@mui/material";
 import Email from "../components/contatos/Email";
@@ -9,17 +9,16 @@ import { sombraClara, sombraEscura, tokenFormulario } from "@/constants";
 import Telefone from "../components/contatos/Telefone";
 
 interface SecaoFormularioProps{
-  isXs: boolean,
-  isSm: boolean,     
+  isXs: boolean,    
 }
 
-const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs, isSm}) => {
+const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs}) => {
    
   const theme = useTheme();
 
   const colorIconCheck = theme.palette.primary.main;
   const colorText = theme.palette.text.primary;
-  const widthForm = (isXs || isSm) ? '340px' : '560px';
+  const widthForm = (isXs) ? '340px' : '560px';
 
   return (
     
@@ -40,8 +39,8 @@ const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs, isSm}) => {
           </ContainerList>                    
         </SectionTextColumnStyle>
         
-        <ContainerAnimatedCard>
-          <ShadowCard sombraClara={sombraClara} sombraEscura={sombraEscura} width={widthForm} height="fit-content" border_radius="20px" padding="0px">
+        <ContainerAnimatedScroll>
+          <ShadowCard sombraClara={sombraClara} sombraEscura={sombraEscura} width={widthForm} height="fit-content" border_radius="20px" padding="0px">            
             <Box display="flex" flexDirection='column' justifyContent="center" gap="24px" marginTop='8px' flex={1} 
               sx={{ backgroundColor: theme.palette.custom.backgroundSectionAlternative, padding: "24px", borderRadius: '10px' }} >
                 {/* reCAPTCHA: 6LfNNjQrAAAAAJdYsNsPL8RFXM6krfURGLX9Ze98  */}
@@ -66,7 +65,7 @@ const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs, isSm}) => {
                 </ContainerList>                        
             </Box>
           </ShadowCard>
-        </ContainerAnimatedCard> 
+        </ContainerAnimatedScroll> 
 
       </ContentSectionWrapStyled>
             

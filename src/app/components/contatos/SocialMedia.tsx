@@ -12,7 +12,7 @@ const Container = styled('div')({
     justifyItems: 'center',
     alignItems: 'center',    
     width: '100%',
-    gap: '4px'
+    gap: '8px'
   });
 
 export interface SocialMediaProps {
@@ -23,20 +23,15 @@ const SocialMedia: React.FC<SocialMediaProps> = ({position}) => {
   
   const theme = useTheme();
 
-  let color = theme.palette.primary.main;
-  if (position == 'footer'){
-    color = theme.palette.primary.contrastText;
-  }
-  else if (position == 'barraFerramentas'){
-    color = theme.palette.primary.dark;
-  }
-
+  const color = (position == 'footer') ? theme.palette.primary.dark : theme.palette.primary.contrastText;
+  const background = (position == 'footer') ? theme.palette.primary.contrastText : theme.palette.primary.main;  
+  
   return(
     <Container>
-      {position != 'barraFerramentas' && <Typography variant='body1' component='div' color={color}>Siga e compartilhe:</Typography>}
-      <SocialMediaIconLinkWithBorder url={urlInstagram} background_color="transparent"
+      {position != 'barraFerramentas' && <Typography variant='body1' component='div' color={background}>Siga e compartilhe:</Typography>}
+      <SocialMediaIconLinkWithBorder url={urlInstagram} background_color={background}  
         aria_label='botao instagram' >
-        <InstagramIcon sx={{ color: color, fontSize: 32 }} ></InstagramIcon>
+        <InstagramIcon sx={{ color: color, fontSize: 24 }} ></InstagramIcon>
       </SocialMediaIconLinkWithBorder>
     </Container>
   );
