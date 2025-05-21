@@ -19,16 +19,17 @@ interface DepoimentoProps {
 }
 
 interface SecaoDepoimentosProps{
-  isXs: boolean,       
+  isXs: boolean,
+  isSm: boolean,
 }
 
-const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({isXs }) => {
+const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({ isXs, isSm }) => {
 
   const theme = useTheme();
     
   const width_card = (isXs) ? '340px' : '80%';
-  const width_carrossel = (isXs) ? '340px' : '90%';
-  const height_carrossel = (isXs) ? '610px' : '430px';
+  const width_carrossel = (isXs) ? '340px' : (isSm ? '600px' : '100%');
+  const height_carrossel = (isXs) ? '680px' : (isSm ? '530px' : '410px');
 
   const renderCards = (depoimentos: DepoimentoProps[]): ReactElement => {
     

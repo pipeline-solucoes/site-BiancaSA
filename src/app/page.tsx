@@ -29,7 +29,7 @@ export default function Home() {
       <main>
         <SecaoSobre isXs={isXs} isSm={isSm}></SecaoSobre> 
         <SecaoServicos isXs={isXs} isSm={isSm}></SecaoServicos>
-        <SecaoDepoimentos isXs={isXs}></SecaoDepoimentos> 
+        <SecaoDepoimentos isXs={isXs} isSm={isSm}></SecaoDepoimentos> 
         <SecaoAtendimento></SecaoAtendimento>
         <SecaoVideos isXs={isXs}></SecaoVideos>
         <SecaoFormulario isXs={isXs}></SecaoFormulario>                                                                      
