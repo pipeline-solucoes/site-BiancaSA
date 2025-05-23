@@ -11,7 +11,7 @@ interface TitleBannerCustomProps{
 const TitleBannerCustom: React.FC<TitleBannerCustomProps> = ({isXs, exibirBotaoCTA=true}) => {                
 
     const theme = useTheme();
-    const widthImage = (isXs) ? 300 : 540; 
+    const widthImage = (isXs) ? 340 : 540; 
     const imagePerfil = "/fotoBanner.png";  
     
     if (exibirBotaoCTA){

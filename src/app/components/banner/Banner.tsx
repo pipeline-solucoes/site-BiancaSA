@@ -18,7 +18,7 @@ const Banner: React.FC<BannerProps> = ({isXs, exibirBotaoCTA = true}) => {
 
   return(        
     <ResponsiveBannerGradiente
-      height_xs='900px' height_sm={height_default} height_md={height_default} 
+      height_xs='800px' height_sm={height_default} height_md={height_default} 
       height_lg={height_default} height_xl={height_default}
       colorStart={backgroud_color} colorMiddle={backgroud_color} colorEnd={backgroud_color}>                
       <TitleBanner isXs={isXs} exibirBotaoCTA={exibirBotaoCTA}/>                                  
