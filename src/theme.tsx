@@ -3,8 +3,6 @@ import { createTheme } from '@mui/material/styles';
 declare module '@mui/material/styles' {
   interface Palette {
     custom: {
-      transparent: string;
-
       backgroundSectionMain: string;      
       backgroundSectionAlternative: string;
       backgroundSectionHighlight?: string;
@@ -25,8 +23,6 @@ declare module '@mui/material/styles' {
   }
   interface PaletteOptions {
     custom?: {
-      transparent: string;
-
       backgroundSectionMain: string;      
       backgroundSectionAlternative: string;
       backgroundSectionHighlight?: string;     
@@ -61,24 +57,22 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#336dd5" , //Azul
-      dark: "#0e2244" , //Azul mais escuro
-      light: "#7da7eb", //Azul mais claro
-      contrastText: "#ffffff" //Branco      
+      main: "#009ace" , //Azul
+      dark: "#003d5c" , //Azul mais escuro
+      light: "#eff6f9", //Azul mais claro
+      contrastText: "#f2f2f2" //Branco      
     },
     secondary: {
       main: '#8c6d32', // Dourado 
       light: '#b68d40', // Dourado mais claro
-      contrastText: "#ffffff" //Branco
+      contrastText: "#f2f2f2" //Branco
     },    
     text: {
-      primary: '#60697B',
-      secondary: '#ffffff',
+      primary: '#292929',
+      secondary: '#4d4d4d',
       disabled: '#A9A9A9',
     },          
     custom: {
-      transparent: '#00000000',
-
       backgroundSectionMain: '#ffffff',
       backgroundSectionAlternative: '#f2f4f7',
       backgroundSectionHighlight: '#f2f5f7',      
@@ -107,13 +101,13 @@ const theme = createTheme({
   typography: {
     fontFamily: 'Montserrat, Arial, sans-serif',
     h1: {         
-      fontSize: '44px', // Desktop     
+      fontSize: '52px', // Desktop     
       lineHeight: '1.0',
       letterSpacing: '0.01em',
-      fontWeight: 600,
+      fontWeight: 400,
       margin: 0,
       fontStyle: 'normal',
-      color: '#0e2244',
+      color: '#292929',
       padding: '8px 0px',    
       '@media (min-width:601px) and (max-width:1280px)': {
         fontSize: '40px', // Tablet
@@ -128,7 +122,7 @@ const theme = createTheme({
       letterSpacing: '0.01em',
       fontWeight: 400,
       margin: 0,
-      color: '#0e2244',    
+      color: '#292929',    
       '@media (min-width:601px) and (max-width:960px)': {
         fontSize: '18px', // Tablet
       },
@@ -138,14 +132,14 @@ const theme = createTheme({
       },
     },
     h3: {
-      fontSize: '28px', // Desktop
+      fontSize: '32px', // Desktop
       lineHeight: '1.5',
       letterSpacing: '0.01em',
       fontWeight: 600,
       margin: 0,
       fontStyle: 'normal',      
       '@media (min-width:601px) and (max-width:960px)': {
-        fontSize: '28px', // Tablet
+        fontSize: '32px', // Tablet
       },
       '@media (max-width:600px)': {
         fontSize: '28px', // Mobile

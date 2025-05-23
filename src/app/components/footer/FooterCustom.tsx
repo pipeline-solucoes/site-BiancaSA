@@ -7,6 +7,7 @@ import { Box, Typography, useTheme } from '@mui/material';
 import SocialMedia from '../contatos/SocialMedia';
 import Email from '../contatos/Email';
 import Telefone from '../contatos/Telefone';
+import { urlPoliticaPrivacidade, urlTermoUso } from '@/constants';
 
 interface FooterCustomProps{
   itens_menu: ItemMenuConfig[];   
@@ -19,8 +20,7 @@ const FooterCustom: React.FC<FooterCustomProps> = ({itens_menu}) => {
     const renderColunas = (): ReactElement => {
       
       const textColor = theme.palette.primary.contrastText;
-      const urlTermoUso: string = "/termo";
-      const urlPoliticaPrivacidade: string = "/politica";
+      
 
       return (
           <>

@@ -24,7 +24,7 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs}) => {
   const urlPriscila = 'https://www.instagram.com/nutriprigoretti/';
   
   return (
-    <Section section_id="servicos" background_color={theme.palette.custom.backgroundSectionMain}>      
+    <Section section_id="podcasts" background_color={theme.palette.custom.backgroundSectionMain}>      
 
       <TitleSectionCenter
         title_text="Participações em Podcasts" 

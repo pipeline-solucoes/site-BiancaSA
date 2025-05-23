@@ -25,7 +25,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({title_text, subtitle_text}) 
                 {title_text}
             </Typography>
             {   subtitle_text &&
-                <Typography variant='h4' component="h4" color={theme.palette.text.primary} 
+                <Typography variant='h4' component="h4" color={theme.palette.text.secondary} 
                     sx={{ width: '100%' }}>
                     {subtitle_text}
                 </Typography>

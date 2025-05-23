@@ -20,7 +20,7 @@ const BarraFerramentasCustom: React.FC<BarraFerramentasCustomProps> = ({isXs, is
     {
       return(
         <BarraFerramentasHamburguer
-          background_color={theme.palette.custom.backgroundSectionMain}
+          background_color='transparent'
           color={theme.palette.primary.dark}
           color_hover={theme.palette.primary.main}                                     
           renderSocialMedia={() => <SocialMedia position="barraFerramentas"></SocialMedia> }          
@@ -37,7 +37,7 @@ const BarraFerramentasCustom: React.FC<BarraFerramentasCustomProps> = ({isXs, is
     else{
       return(
         <BarraDeFerramentas
-          background_color={theme.palette.custom.backgroundSectionMain}
+          background_color='transparent'
           color={theme.palette.primary.dark}
           color_hover={theme.palette.primary.main}        
           text_decoration="none"                    

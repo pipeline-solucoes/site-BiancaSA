@@ -45,7 +45,7 @@ const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs}) => {
               sx={{ backgroundColor: theme.palette.custom.backgroundSectionAlternative, padding: "24px", borderRadius: '10px' }} >
                 {/* reCAPTCHA: 6LfNNjQrAAAAAJdYsNsPL8RFXM6krfURGLX9Ze98  */}
                 <Form token={tokenFormulario}
-                  background_color="#e6ebff" 
+                  background_color={theme.palette.custom.backgroundSectionMain} 
                   color={colorText} 
                   border_radius="10px" 
                   background_color_button={theme.palette.primary.main} 

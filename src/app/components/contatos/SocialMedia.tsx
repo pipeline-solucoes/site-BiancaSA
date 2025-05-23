@@ -24,8 +24,7 @@ const SocialMedia: React.FC<SocialMediaProps> = ({position}) => {
   const theme = useTheme();
 
   const color = (position == 'footer') ? theme.palette.primary.dark :  theme.palette.primary.contrastText;
-  const background = (position == 'footer') ? theme.palette.primary.contrastText : 
-    (position == 'barraFerramentas' ? theme.palette.primary.dark : theme.palette.primary.main);  
+  const background = (position == 'footer') ? theme.palette.primary.contrastText : theme.palette.primary.main;  
   
   return(
     <Container>

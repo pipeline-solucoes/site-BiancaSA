@@ -1,13 +1,13 @@
 "use client";
 
-import { HeaderBarTop, Section, useResponsive } from "pipesolcomponents";
-import BannerCustomSemCTA from "../components/banner/BannerCustomSemCTA";
+import { HeaderBarIn, Section, useResponsive } from "pipesolcomponents";
 import { Box, Typography, useTheme } from "@mui/material";
 import TitleSection from "../components/TitleSection";
 import BotaoVoltarPaginaPrincipal from "../components/botaoVoltarPaginaPrincipal";
 import FooterCustomTermoPolitica from "../components/footer/FooterCustomTermoPolitica";
 import BarraFerramentasCustom from "../components/banner/BarraFerramentasCustom";
 import { email, itemsMenuTermoPolitica, numberPhone } from "@/constants";
+import Banner from "../components/banner/Banner";
 
 
 const TermoDeUso: React.FC = ()  => {
@@ -18,10 +18,11 @@ const TermoDeUso: React.FC = ()  => {
 
     return(
         <>
-            <HeaderBarTop                       
+            <HeaderBarIn background_color='transparent' border_radius="40px" top_bar="10px"
+                height_xs="880px" height_sm="880px" height_md="700px" height_lg="700px" height_xl="700px"                       
                 renderBar={() => <BarraFerramentasCustom isXs={isXs} isSm={isSm} itens_menu={itemsMenuTermoPolitica}></BarraFerramentasCustom>}
-                renderBanner={() => <BannerCustomSemCTA isXs={isXs}></BannerCustomSemCTA>}>        
-            </HeaderBarTop>
+                renderBanner={() => <Banner isXs={isXs} exibirBotaoCTA={false}></Banner>}>        
+            </HeaderBarIn>
 
             <Section section_id='termo' background_color={theme.palette.custom?.backgroundSectionMain}>
                 <Box sx={{width:'100%'}}>

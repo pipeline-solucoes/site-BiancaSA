@@ -1,7 +1,7 @@
 import { ItemMenuConfig, ShadowConfig } from "pipesolcomponents";
 
 export const tituloBanner: string = "Fisioterapia Humanizada no Rio de Janeiro, Niterói e São Gonçalo";
-export const subTituloBanner: string = "Cuidado especializado em cada fase da vida";
+export const subTituloBanner: string = "Recupere sua qualidade de vida com cuidado próximo, no seu ritmo e no seu espaço.";
 
 export const urlTermoUso: string = "/termo";
 export const urlPoliticaPrivacidade: string = "/politica";
