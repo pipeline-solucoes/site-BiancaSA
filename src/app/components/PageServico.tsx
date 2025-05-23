@@ -4,9 +4,9 @@ import { ContentSectionWrapStyled, HeaderBarTop, ItemMenuConfig, Section, Sectio
 import { Box, Typography, useTheme } from "@mui/material";
 import { itemsMenuPage } from "@/constants";
 import BarraFerramentasCustom from "@/app/components/banner/BarraFerramentasCustom";
-import BannerCustomSemCTA from "@/app/components/banner/BannerCustomSemCTA";
 import TitleSection from "@/app/components/TitleSection";
 import FooterCustom from "@/app/components/footer/FooterCustom";
+import Banner from "./banner/Banner";
 
 interface PageServicoProps{    
     servico: 'Cuidados Paliativos' | 'Fotobiomodulação' | 'Perícia Judicial' | 'Pós Operatório' |
@@ -42,7 +42,7 @@ const PageServico: React.FC<PageServicoProps> = ({servico})  => {
         <>
             <HeaderBarTop                       
                 renderBar={() => <BarraFerramentasCustom isXs={isXs} isSm={isSm} itens_menu={itemsMenuPage}></BarraFerramentasCustom>}
-                renderBanner={() => <BannerCustomSemCTA isXs={isXs}></BannerCustomSemCTA>}>        
+                renderBanner={() => <Banner isXs={isXs}></Banner>}>        
             </HeaderBarTop>
 
             <Section section_id='termo' background_color={theme.palette.custom?.backgroundSectionMain}>
