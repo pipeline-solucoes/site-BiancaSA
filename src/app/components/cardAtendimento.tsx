@@ -56,16 +56,19 @@ interface CardBookProps {
   bairro?: string;
   cidade?: string;
   uf?: string;
-  cep?:string;  
+  cep?:string; 
+  width: string; 
 }
 
-const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, titulo, text, endereco, bairro, cidade, uf, cep})  => {
+const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, titulo, text, endereco, bairro, cidade, uf, cep, width})  => {
 
   const theme = useTheme();
   const colorText = theme.palette.text.secondary;
   
   if (src)
   {
+    const widthImage = (width == '340px') ? 300 : 340 ;
+
     return (
       <ContainerAnimatedIndex index={index}>
         <ShadowCard 
@@ -73,9 +76,9 @@ const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, tit
           sombraClara={sombraClara} 
           sombraEscura={sombraEscura} 
           height='fit-content'
-          width='340px'>
+          width={width}>
           <ImageCard src={src} alt={alt}
-            widthImage={300} heightImage={300} 
+            widthImage={widthImage} heightImage={300} 
             border_radius='20px' 
             background_color={theme.palette.custom.backgroundSectionAlternative}>          
             <ContentCard>
@@ -96,7 +99,7 @@ const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, tit
           sombraClara={sombraClara} 
           sombraEscura={sombraEscura} 
           height='fit-content'
-          width='340px'
+          width={width}
         >
           <MapCard 
             srcGoogle={srcMap}         
