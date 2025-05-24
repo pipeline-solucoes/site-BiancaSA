@@ -1,12 +1,11 @@
 "use client";
 
-import { ContentSectionWrapStyled, HeaderBarTop, ItemMenuConfig, Section, SectionTextColumnStyle, SiteMap, useResponsive } from "pipesolcomponents";
+import { ContentSectionWrapStyled, ItemMenuConfig, Section, SectionTextColumnStyle, SiteMap, useResponsive } from "pipesolcomponents";
 import { Box, Typography, useTheme } from "@mui/material";
 import { itemsMenuPage } from "@/constants";
-import BarraFerramentasCustom from "@/app/components/banner/BarraFerramentasCustom";
 import TitleSection from "@/app/components/TitleSection";
 import FooterCustom from "@/app/components/footer/FooterCustom";
-import Banner from "./banner/Banner";
+import HeaderBarInCustom from "./banner/HeaderBarInCustom";
 
 interface PageServicoProps{    
     servico: 'Cuidados Paliativos' | 'Fotobiomodulação' | 'Perícia Judicial' | 'Pós Operatório' |
@@ -39,11 +38,8 @@ const PageServico: React.FC<PageServicoProps> = ({servico})  => {
     itemMenuLateral = itemMenuLateral.slice(itemMenuLateral.findIndex(x => x.text == servico));   
 
     return(
-        <>
-            <HeaderBarTop                       
-                renderBar={() => <BarraFerramentasCustom isXs={isXs} isSm={isSm} itens_menu={itemsMenuPage}></BarraFerramentasCustom>}
-                renderBanner={() => <Banner isXs={isXs}></Banner>}>        
-            </HeaderBarTop>
+        <>            
+            <HeaderBarInCustom isXs={isXs} isSm={isSm} itemsMenu={itemsMenuPage}></HeaderBarInCustom>
 
             <Section section_id='termo' background_color={theme.palette.custom?.backgroundSectionMain}>
 
