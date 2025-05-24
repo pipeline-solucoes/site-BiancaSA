@@ -6,13 +6,12 @@ import SecaoFormulario from "./secao-home/SecaoFormulario";
 import ScrollToTopButtonCustom from "./components/ScrollToTopButtonCustom";
 import NotificationBarCustom from "./components/NotificationBarCustom";
 import FooterCustom from "./components/footer/FooterCustom";
-import BarraFerramentasCustom from "./components/banner/BarraFerramentasCustom";
-import { HeaderBarIn, useResponsive, WhatsAppButton } from "pipesolcomponents";
-import { itemsMenu, numberWhatsapp } from "@/constants";
+import {useResponsive, WhatsAppButton} from "pipesolcomponents";
+import {itemsMenu, numberWhatsapp} from "@/constants";
 import SecaoAtendimento from "./secao-home/SecaoAtendimento";
 import SecaoServicos from "./secao-home/SecaoServicos";
 import SecaoVideos from "./secao-home/SecaoVideos";
-import Banner from "./components/banner/Banner";
+import HeaderBarInCustom from "./components/banner/HeaderBarInCustom";
 
 
 export default function Home() {
@@ -20,12 +19,8 @@ export default function Home() {
   const { isXs, isSm } = useResponsive();  
   
   return (    
-    <>
-      <HeaderBarIn background_color='transparent' border_radius="40px" top_bar="10px"
-        height_xs="880px" height_sm="880px" height_md="700px" height_lg="700px" height_xl="700px"                
-        renderBar={() => <BarraFerramentasCustom isXs={isXs} isSm={isSm} itens_menu={itemsMenu}></BarraFerramentasCustom>}
-        renderBanner={() => <Banner isXs={isXs}></Banner>}>        
-      </HeaderBarIn>
+    <>      
+      <HeaderBarInCustom isXs={isXs} isSm={isSm} itemsMenu={itemsMenu}></HeaderBarInCustom>
       
       <main>
         <SecaoSobre isXs={isXs} isSm={isSm}></SecaoSobre> 

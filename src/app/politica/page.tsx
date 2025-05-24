@@ -1,13 +1,12 @@
 "use client"
 
-import { HeaderBarIn, Section, useResponsive } from "pipesolcomponents";
-import { Box, Typography, useTheme } from '@mui/material';
+import { Section, useResponsive } from "pipesolcomponents";
+import { Box, useTheme } from '@mui/material';
 import TitleSection from '../components/TitleSection';
 import BotaoVoltarPaginaPrincipal from '../components/botaoVoltarPaginaPrincipal';
 import FooterCustomTermoPolitica from "../components/footer/FooterCustomTermoPolitica";
-import BarraFerramentasCustom from "../components/banner/BarraFerramentasCustom";
 import { itemsMenuTermoPolitica } from "@/constants";
-import Banner from "../components/banner/Banner";
+import HeaderBarInCustom from "../components/banner/HeaderBarInCustom";
 
 
 const PoliticaPrivacidade: React.FC = ()  => {  
@@ -16,12 +15,8 @@ const PoliticaPrivacidade: React.FC = ()  => {
     const { isXs, isSm } = useResponsive();
     
     return(
-        <>
-            <HeaderBarIn background_color='transparent' border_radius="40px" top_bar="10px"
-                height_xs="880px" height_sm="880px" height_md="700px" height_lg="700px" height_xl="700px"                      
-                renderBar={() => <BarraFerramentasCustom isXs={isXs} isSm={isSm} itens_menu={itemsMenuTermoPolitica}></BarraFerramentasCustom>}
-                renderBanner={() => <Banner isXs={isXs} exibirBotaoCTA={false}></Banner>}>        
-            </HeaderBarIn>
+        <>            
+            <HeaderBarInCustom isXs={isXs} isSm={isSm} itemsMenu={itemsMenuTermoPolitica}></HeaderBarInCustom>
 
             <Section section_id='politica' background_color={theme.palette.custom?.backgroundSectionMain}>
                 <Box sx={{width:'100%'}}>
