@@ -8,7 +8,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import { sombraClara, sombraEscura } from '@/constants';
 
 const ContentCard = styled('div')({   
-  width: '340px',
+  width: '300px',
   height: '156px',
   display: 'flex',
   flexDirection: 'column',
@@ -62,7 +62,7 @@ interface CardBookProps {
 const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, titulo, text, endereco, bairro, cidade, uf, cep})  => {
 
   const theme = useTheme();
-  const colorText = theme.palette.text.primary;
+  const colorText = theme.palette.text.secondary;
   
   if (src)
   {
@@ -73,9 +73,9 @@ const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, tit
           sombraClara={sombraClara} 
           sombraEscura={sombraEscura} 
           height='fit-content'
-          width='fit-content'>
+          width='340px'>
           <ImageCard src={src} alt={alt}
-            widthImage={340} heightImage={300} 
+            widthImage={300} heightImage={300} 
             border_radius='20px' 
             background_color={theme.palette.custom.backgroundSectionAlternative}>          
             <ContentCard>
@@ -96,11 +96,11 @@ const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, tit
           sombraClara={sombraClara} 
           sombraEscura={sombraEscura} 
           height='fit-content'
-          width='fit-content'
+          width='340px'
         >
           <MapCard 
             srcGoogle={srcMap}         
-            width="340px" height_map="300px" 
+            width="100%" height_map="300px" 
             border_radius='20px' 
             background_color={theme.palette.custom.backgroundSectionAlternative}                        
             >          

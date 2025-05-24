@@ -56,7 +56,7 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({ isXs, isSm }) => {
             height="100%"
             name={item.nome}
             socialMedia=" "
-            color={theme.palette.text.primary}
+            color={theme.palette.text.secondary}
             color_icon={theme.palette.primary.main}            
             background_color='transparent'                      
           >            

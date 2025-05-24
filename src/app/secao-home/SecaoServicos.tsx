@@ -50,7 +50,7 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
 
   const theme = useTheme();
 
-  const width_card = (isXs || isSm) ? '100%' : 'calc(50% - 8px)';
+  const width_card = (isXs || isSm) ? '80%' : 'calc(50% - 8px)';
   const max_height_card = (isXs || isSm) ? '200px' : '230px';
 
     
@@ -61,6 +61,7 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
         </TitleSectionCenter>         
                   
         <ContentSectionWrapStyled marginTop="40px" marginBottom="40px">
+          
           <ContainerAnimatedScroll>          
             <AnimatedCardGroup cards={cards} 
               background_color='transparent' 
@@ -75,37 +76,6 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
               sombraEscura={sombraEscura}             
             />  
           </ContainerAnimatedScroll>   
-
-            {/* {  
-              servicos.map((item, index) => (
-                <ContainerAnimatedCard key={item.title} index={index}>                
-                  <ShadowCard                     
-                    width="320px" 
-                    height="280px"                      
-                    border_radius="10px"                    
-                    sombraClara={sombraClara}
-                    sombraEscura={sombraEscura}
-                  >                    
-                    <ContentCardDescription title={item.title} 
-                      description={item.description} 
-                      color_title={theme.palette.primary.main}
-                      color_description={theme.palette.text.primary}
-                    >
-                      <NavigationButton                             
-                        color={theme.palette.primary.main} 
-                        border_color={theme.palette.primary.main}               
-                        width="auto" 
-                        url={item.url} 
-                        aria_label={`botao ${item.title}`}              
-                        layout="link" 
-                        text_decoration="underline"                 
-                      >
-                        Ler mais
-                      </NavigationButton>
-                    </ContentCardDescription>                    
-                  </ShadowCard>  
-                </ContainerAnimatedCard>                                               
-            ))} */}
 
         </ContentSectionWrapStyled>
                                 

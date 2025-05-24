@@ -16,7 +16,7 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs}) => {
   const borderRadius = "24px";
   const width = (isXs) ? '340px' : "500px";
   const height_video = (isXs) ? '340px' : "400px";
-  const height_text = (isXs) ? "auto" : "150px";
+  const height_text = (isXs) ? "auto" : "180px";
   const flexDirectionCard = 'column';
 
   const colorLink = theme.palette.primary.main;
@@ -32,7 +32,7 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs}) => {
       </TitleSectionCenter>
 
 
-      <ContentSectionWrapStyled>
+      <ContentSectionWrapStyled marginTop="40px" marginBottom="40px">
         
           <ContainerAnimatedIndex key={0} index={0}>
             <ShadowCard 
@@ -40,16 +40,16 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs}) => {
               sombraClara={sombraClara} 
               sombraEscura={sombraEscura} 
               height='fit-content'
-              width='fit-content'>
+              width={width}>
               <YoutubeCard               
                 background_color={background}
                 border_radius={borderRadius}
                 srcYoutube='https://www.youtube.com/embed/tvPg_N7Vw88?si=uYLp9C4-RLb5_dht'
-                width={width} 
+                width="100%"
                 height_video={height_video}
                 flex_direction={flexDirectionCard}
               >            
-                <Typography variant="body1" color={theme.palette.text.primary} component="div" sx={{height: height_text}}>
+                <Typography variant="body1" color={theme.palette.text.secondary} component="div" sx={{height: height_text}}>
                   <p>Fui convidada a participar do podcast 
                     da <b><NavigationButton color={colorLink} aria_label="link Wefy" layout="link" text_decoration="underline" url={urlWefy} width="auto">WEFY</NavigationButton></b>, 
                     junto com <b><NavigationButton color={colorLink} aria_label="link nutricionista Priscilla Faria Goretti" layout="link" text_decoration="underline" url={urlPriscila} width="auto">nutricionista Priscilla Faria Goretti</NavigationButton></b>, para uma conversa especial sobre o <b>Outubro Rosa</b> e a importância da conscientização sobre o <b>câncer de mama</b>.</p>
@@ -65,16 +65,16 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs}) => {
               sombraClara={sombraClara} 
               sombraEscura={sombraEscura} 
               height='fit-content'
-              width='fit-content'>
+              width={width}>
               <YoutubeCard
                 background_color={background}
                 border_radius={borderRadius}
                 srcYoutube='https://www.youtube.com/embed/lSLx_qQBpbQ?si=eBcOr2S2QSEOoLkN'
-                width={width} 
+                width="100%" 
                 height_video={height_video}
                 flex_direction={flexDirectionCard}
               >
-                <Typography variant="body1" color={theme.palette.text.primary} component="div" sx={{height: height_text}}>
+                <Typography variant="body1" color={theme.palette.text.secondary} component="div" sx={{height: height_text}}>
                   <p>Fui convidada a participar do podcast da <b><NavigationButton color={colorLink} aria_label="link Wefy" layout="link" text_decoration="underline" url={urlWefy} width="auto">WEFY</NavigationButton></b> para 
                     conversar sobre um tema muito importante: <b>Cuidados Paliativos</b>. </p>
                   <p>Foi uma troca rica e sensível, onde tivemos a oportunidade de compartilhar experiências e reflexões sobre o cuidado integral com o paciente.</p>                                

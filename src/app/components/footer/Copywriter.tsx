@@ -11,7 +11,7 @@ const Copywriter: React.FC = () => {
     return(
       <CopywriteCenter ano="2025" 
           color={theme.palette.primary.contrastText} 
-          color_link_pipeline={theme.palette.primary.light} 
+          color_link_pipeline={theme.palette.primary.main} 
           color_border={theme.palette.primary.contrastText}>                 
       </CopywriteCenter>
     );         

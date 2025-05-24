@@ -17,7 +17,7 @@ const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs}) => {
   const theme = useTheme();
 
   const colorIconCheck = theme.palette.primary.main;
-  const colorText = theme.palette.text.primary;
+  const colorText = theme.palette.text.secondary;
   const widthForm = (isXs) ? '340px' : '560px';
 
   return (
