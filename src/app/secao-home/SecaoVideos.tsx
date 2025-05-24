@@ -1,22 +1,21 @@
 "use client";
 
-import { ContainerAnimatedIndex, ContentSectionWrapStyled, NavigationButton, Section, ShadowCard, YoutubeCard } from "pipesolcomponents";
+import { ContainerAnimatedIndex, ContentSectionWrapStyled, NavigationButton, Section, YoutubeCard } from "pipesolcomponents";
 import { Typography, useTheme } from "@mui/material";
 import TitleSectionCenter from "../components/TitleSectionCenter";
-import { sombraClara, sombraEscura } from "@/constants";
 
 interface SecaoVideosProps{
-  isXs: boolean,  
+  isXs: boolean,
+  isSm: boolean,  
 }
 
-const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs}) => {
+const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
 
   const theme = useTheme();
-  const background = 'rgba(255, 255, 255, 0.25)';
-  const borderRadius = "24px";
+  const background = 'rgba(255, 255, 255, 0.25)';  
   const width = (isXs) ? '340px' : "500px";
-  const height_video = (isXs) ? '340px' : "400px";
-  const height_text = (isXs) ? "auto" : "180px";
+  const height_video = (isXs || isSm) ? '340px' : "400px";
+  const height_text = (isXs || isSm) ? "auto" : "180px";
   const flexDirectionCard = 'column';
 
   const colorLink = theme.palette.primary.main;
@@ -34,18 +33,11 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs}) => {
 
       <ContentSectionWrapStyled marginTop="40px" marginBottom="40px">
         
-          <ContainerAnimatedIndex key={0} index={0}>
-            <ShadowCard 
-              border_radius='32px' 
-              sombraClara={sombraClara} 
-              sombraEscura={sombraEscura} 
-              height='fit-content'
-              width={width}>
+          <ContainerAnimatedIndex key={0} index={0}>            
               <YoutubeCard               
-                background_color={background}
-                border_radius={borderRadius}
+                background_color={background}                
                 srcYoutube='https://www.youtube.com/embed/tvPg_N7Vw88?si=uYLp9C4-RLb5_dht'
-                width="100%"
+                width={width}
                 height_video={height_video}
                 flex_direction={flexDirectionCard}
               >            
@@ -55,22 +47,15 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs}) => {
                     junto com <b><NavigationButton color={colorLink} aria_label="link nutricionista Priscilla Faria Goretti" layout="link" text_decoration="underline" url={urlPriscila} width="auto">nutricionista Priscilla Faria Goretti</NavigationButton></b>, para uma conversa especial sobre o <b>Outubro Rosa</b> e a importância da conscientização sobre o <b>câncer de mama</b>.</p>
                   <p>Foi um momento de troca valiosa, com informações e reflexões sobre prevenção, diagnóstico e cuidado.</p>                                
                 </Typography>
-              </YoutubeCard>
-            </ShadowCard>
+              </YoutubeCard>            
           </ContainerAnimatedIndex>
 
           <ContainerAnimatedIndex key={1} index={1}>
-            <ShadowCard 
-              border_radius='32px' 
-              sombraClara={sombraClara} 
-              sombraEscura={sombraEscura} 
-              height='fit-content'
-              width={width}>
+           
               <YoutubeCard
-                background_color={background}
-                border_radius={borderRadius}
+                background_color={background}                
                 srcYoutube='https://www.youtube.com/embed/lSLx_qQBpbQ?si=eBcOr2S2QSEOoLkN'
-                width="100%" 
+                width={width} 
                 height_video={height_video}
                 flex_direction={flexDirectionCard}
               >
@@ -80,7 +65,7 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs}) => {
                   <p>Foi uma troca rica e sensível, onde tivemos a oportunidade de compartilhar experiências e reflexões sobre o cuidado integral com o paciente.</p>                                
                 </Typography>
               </YoutubeCard>
-            </ShadowCard> 
+             
           </ContainerAnimatedIndex>       
                                
       </ContentSectionWrapStyled>       
