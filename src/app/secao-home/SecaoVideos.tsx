@@ -30,7 +30,7 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
           subtitle_text="Acompanhe os episódios em que compartilhei conhecimentos sobre fisioterapia, cuidados paliativos, oncologia e qualidade de vida.">
         </TitleSectionCenter>
 
-        <ContentSectionWrapStyled marginTop="40px" marginBottom="0px">                              
+        <ContentSectionWrapStyled marginTop="30px" marginBottom="0px">                              
           <YoutubeCard               
                   background_color={background}                
                   srcYoutube='https://www.youtube.com/embed/tvPg_N7Vw88?si=uYLp9C4-RLb5_dht'

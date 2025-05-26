@@ -1,6 +1,5 @@
 import { IconText } from 'pipesolcomponents';
 import React from 'react';
-import { Typography } from '@mui/material';
 import { numberPhone } from '@/constants';
 import { PhoneEnabled } from '@mui/icons-material';
 
@@ -10,13 +9,10 @@ export interface EmailProps {
 
 const Telefone: React.FC<EmailProps> = ({color}) => {                
 
-    const colorIcon : string = color || '#000000'
-
     return(
-      <IconText
-        renderIcon={() => <PhoneEnabled sx={{ color: colorIcon, fontSize: 24 }}></PhoneEnabled> }>
-        <Typography variant='body1' component="span" color={color}>{numberPhone}</Typography>
-      </IconText>
+      <IconText Icon={PhoneEnabled} color_icon={color} color_text={color}>
+        {numberPhone}
+      </IconText>       
     );         
 };
 

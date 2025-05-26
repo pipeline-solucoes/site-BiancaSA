@@ -1,12 +1,13 @@
 "use client";
 
-import { ContainerAnimatedScroll, ContainerList, ContentSectionWrapStyled, Form, IconCheckText, Section, SectionTextColumnStyle, ShadowCard } from "pipesolcomponents";
+import { ContainerAnimatedScroll, ContainerList, ContentSectionWrapStyled, Form, Section, SectionTextColumnStyle, ShadowCard, IconText } from "pipesolcomponents";
 import TitleSection from "../components/TitleSection";
 import { Box, useTheme } from "@mui/material";
 import Email from "../components/contatos/Email";
 import SocialMedia from "../components/contatos/SocialMedia";
 import { sombraClara, sombraEscura, tokenFormulario } from "@/constants";
 import Telefone from "../components/contatos/Telefone";
+import VerifiedIcon from '@mui/icons-material/Verified';
 
 interface SecaoFormularioProps{
   isXs: boolean,    
@@ -35,9 +36,9 @@ const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs}) => {
               </TitleSection> 
               <p>Meu compromisso é oferecer um atendimento personalizado e humanizado, tanto no conforto do seu lar quanto no acolhimento do nosso consultório. Acredito que um ambiente de confiança e empatia é fundamental para um tratamento eficaz.</p>          
               <ContainerList>
-                <IconCheckText typeCheck="VerifiedIcon" marginLeft="0px" iconColor={colorIconCheck} textColor={colorText}><b>Agendamento de Consultas:</b> Marque uma consulta no horário e local que melhor se adequem à sua rotina.</IconCheckText>
-                <IconCheckText typeCheck="VerifiedIcon" marginLeft="0px" iconColor={colorIconCheck} textColor={colorText}><b>Esclarecimento de Dúvidas:</b> Estou a disposição para responder às suas perguntas e oferecer orientações claras e precisas.</IconCheckText>
-                <IconCheckText typeCheck="VerifiedIcon" marginLeft="0px" iconColor={colorIconCheck} textColor={colorText}><b>Suporte e Acompanhamento:</b> Precisando de um pouco de apoio extra? Estou aqui para ouvir e ajudar.</IconCheckText>                    
+                <IconText Icon={VerifiedIcon} color_icon={colorIconCheck} color_text={colorText}><b>Agendamento de Consultas:</b> Marque uma consulta no horário e local que melhor se adequem à sua rotina.</IconText>
+                <IconText Icon={VerifiedIcon} color_icon={colorIconCheck} color_text={colorText}><b>Esclarecimento de Dúvidas:</b> Estou a disposição para responder às suas perguntas e oferecer orientações claras e precisas.</IconText>
+                <IconText Icon={VerifiedIcon} color_icon={colorIconCheck} color_text={colorText}><b>Suporte e Acompanhamento:</b> Precisando de um pouco de apoio extra? Estou aqui para ouvir e ajudar.</IconText>                    
               </ContainerList>                    
             </SectionTextColumnStyle>
                   

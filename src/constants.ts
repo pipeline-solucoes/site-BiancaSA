@@ -3,8 +3,8 @@ import { ItemMenuConfig, ShadowConfig } from "pipesolcomponents";
 export const tituloBanner: string = "Fisioterapia Humanizada no Rio de Janeiro, Niterói e São Gonçalo";
 export const subTituloBanner: string = "Recupere sua qualidade de vida com cuidado próximo, no seu ritmo e no seu espaço.";
 
-export const urlTermoUso: string = "/termo";
-export const urlPoliticaPrivacidade: string = "/politica";
+export const urlTermoUso: string = "/termo-de-uso";
+export const urlPoliticaPrivacidade: string = "/politica-de-privacidade";
 export const numberPhone: string = "(21) 98131-4001";
 export const numberWhatsapp: string = "5521981314001";
 export const tokenFormulario = "";

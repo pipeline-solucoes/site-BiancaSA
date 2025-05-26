@@ -24,7 +24,7 @@ const SecaoAtendimento: React.FC<SecaoAtendimentoProps> = ({isXs}) => {
           subtitle_text="No Conforto do Seu Lar ou No Consultório">
         </TitleSectionCenter>        
 
-        <ContentSectionWrapStyled marginTop="40px" marginBottom="40px">
+        <ContentSectionWrapStyled marginTop="30px" marginBottom="30px">
           <CardAtendimento width={width}
             alt="atendimento" 
             src="/atendimento-domiciliar.jpeg" 
