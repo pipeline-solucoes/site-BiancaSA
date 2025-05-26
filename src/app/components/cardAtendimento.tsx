@@ -102,7 +102,8 @@ const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, tit
           width={width}
         >
           <MapCard 
-            srcGoogle={srcMap}         
+            srcGoogle={srcMap} 
+            titleFrame={alt}        
             width="100%" height_map="300px" 
             border_radius='20px' 
             background_color={theme.palette.custom.backgroundSectionAlternative}                        
