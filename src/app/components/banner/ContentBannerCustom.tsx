@@ -2,6 +2,7 @@ import React from 'react';
 import { ContentBanner2Columns, ImageResponsive, NavigationButton, TitleBanner, } from 'pipesolcomponents';
 import { Typography, useTheme } from '@mui/material';
 import { subTituloBanner, tituloBanner } from '@/constants';
+import fotoBanner from 'public/fotoBanner.png';
 
 interface TitleBannerCustomProps{
   isXs: boolean;
@@ -13,8 +14,7 @@ const ContentBannerCustom: React.FC<TitleBannerCustomProps> = ({isXs, isSm, exib
 
     const theme = useTheme();
     const widthImage = (isXs) ? 340 : 540;
-    const align = (isXs || isSm) ? 'center' : 'left'; 
-    const imagePerfil = "/fotoBanner.png"; 
+    const align = (isXs || isSm) ? 'center' : 'left';     
     const top = '90px'; 
     
     if (exibirBotaoCTA){
@@ -35,7 +35,7 @@ const ContentBannerCustom: React.FC<TitleBannerCustomProps> = ({isXs, isSm, exib
                         <Typography variant='body1'>Quero Agendar Avaliação</Typography>
                     </NavigationButton>
                 </TitleBanner>
-                <ImageResponsive src={imagePerfil} alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage} priority={true}>
+                <ImageResponsive src={fotoBanner} alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage} priority={true}>
                 </ImageResponsive>            
             </ContentBanner2Columns>          
         );
@@ -45,7 +45,7 @@ const ContentBannerCustom: React.FC<TitleBannerCustomProps> = ({isXs, isSm, exib
             <ContentBanner2Columns height='auto' top={top}>
                 <TitleBanner width='100%' textAlign='left' textTitle={tituloBanner} textSubTitle={subTituloBanner}>
                 </TitleBanner>  
-                <ImageResponsive src={imagePerfil} alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage} priority={true}>
+                <ImageResponsive src={fotoBanner} alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage} priority={true}>
                 </ImageResponsive>                           
             </ContentBanner2Columns>          
         );

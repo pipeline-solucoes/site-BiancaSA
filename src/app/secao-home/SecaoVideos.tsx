@@ -31,7 +31,7 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
       </TitleSectionCenter>
 
 
-      <ContentSectionWrapStyled marginTop="40px" marginBottom="40px">
+      <ContentSectionWrapStyled marginTop="40px" marginBottom="0px">
         
           <ContainerAnimatedIndex key={0} index={0}>            
               <YoutubeCard               

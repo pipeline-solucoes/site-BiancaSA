@@ -3,6 +3,7 @@
 import { SectionTextColumnStyle, ContentSectionWrapStyled, Section, ContainerAnimatedScroll, ImageResponsive } from "pipesolcomponents";
 import { useTheme } from "@mui/material";
 import TitleSection from "../components/TitleSection";
+import fotoBanner from 'public/fotoBanner.png';
 
 interface SecaoSobreProps {  
   isXs: boolean,
@@ -20,9 +21,9 @@ const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs}) => {
   return (
     <Section section_id="sobre" background_color={theme.palette.custom?.backgroundSectionMain}>      
       <ContainerAnimatedScroll>        
-        <ContentSectionWrapStyled marginTop="0px" marginBottom="0px">
+        <ContentSectionWrapStyled>
           
-          <ImageResponsive src="/fotoBanner.png" alt="foto Bianca Souza Aguiar" 
+          <ImageResponsive src={fotoBanner} alt="foto Bianca Souza Aguiar" 
             height={height_image} width={width_image} border_radius="20px">
           </ImageResponsive>
           
