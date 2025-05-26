@@ -3,7 +3,7 @@
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { styled, Typography, useTheme } from '@mui/material';
-import { ContainerAnimatedIndex, ImageCard, Location, MapCard, ShadowCard } from 'pipesolcomponents';
+import { ImageCard, Location, MapCard, ShadowCard } from 'pipesolcomponents';
 import PlaceIcon from '@mui/icons-material/Place';
 import { sombraClara, sombraEscura } from '@/constants';
 
@@ -45,8 +45,7 @@ const Titulo = styled('h4')(({ theme }) => ({
 }));
 
 
-interface CardBookProps {  
-  index: number;
+interface CardBookProps {    
   src?: string;
   srcMap?: string;  
   alt: string;   
@@ -60,7 +59,7 @@ interface CardBookProps {
   width: string; 
 }
 
-const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, titulo, text, endereco, bairro, cidade, uf, cep, width})  => {
+const CardAtendimento : React.FC<CardBookProps> = ({src, srcMap, alt, titulo, text, endereco, bairro, cidade, uf, cep, width})  => {
 
   const theme = useTheme();
   const colorText = theme.palette.text.secondary;
@@ -69,8 +68,7 @@ const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, tit
   {
     const widthImage = (width == '340px') ? 300 : 340 ;
 
-    return (
-      <ContainerAnimatedIndex index={index}>
+    return (      
         <ShadowCard 
           border_radius='20px' 
           sombraClara={sombraClara} 
@@ -86,14 +84,12 @@ const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, tit
               <Typography variant='body1' component='p' color={colorText}>{text}</Typography>                          
             </ContentCard>
           </ImageCard> 
-        </ShadowCard> 
-      </ContainerAnimatedIndex>        
+        </ShadowCard>             
     );
   }
 
   else if (srcMap) {
-    return (
-      <ContainerAnimatedIndex index={index}>
+    return (      
         <ShadowCard 
           border_radius='20px' 
           sombraClara={sombraClara} 
@@ -118,9 +114,7 @@ const CardAtendimento : React.FC<CardBookProps> = ({index, src, srcMap, alt, tit
               }                
             </ContentCardMapa>  
           </MapCard>
-        </ShadowCard>
-            
-      </ContainerAnimatedIndex>
+        </ShadowCard>                
     );
   }
   

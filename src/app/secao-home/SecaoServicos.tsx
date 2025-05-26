@@ -36,14 +36,13 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
 
     
   return (
-    <Section section_id="servicos" background_color={theme.palette.custom?.backgroundSectionAlternative}>
-      
+    <Section section_id="servicos" background_color={theme.palette.custom?.backgroundSectionAlternative}>      
+      <ContainerAnimatedScroll>
+
         <TitleSectionCenter title_text="Serviços" subtitle_text="Atendimento em consultório e domicílio, com foco em excelência e cuidado humanizado.">
         </TitleSectionCenter>         
                   
-        <ContentSectionWrapStyled marginTop="40px" marginBottom="40px">
-          
-          <ContainerAnimatedScroll>          
+        <ContentSectionWrapStyled marginTop="30px" marginBottom="30px">                              
             <AnimatedCardGroup 
               cards={cards} 
               icon={ArrowCircleDownIcon}
@@ -58,12 +57,12 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
               max_height_card={max_height_card}
               sombraClara={sombraClara}
               sombraEscura={sombraEscura}             
-            />  
-          </ContainerAnimatedScroll>   
-
+            />              
         </ContentSectionWrapStyled>
-                                
-        <NavigationButton 
+
+      </ContainerAnimatedScroll>                     
+
+      <NavigationButton 
             url="#formulario"             
             width="auto"
             background_color={theme.palette.custom.backgroundButtonCTA} 
@@ -74,10 +73,8 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
             layout='button'
             text_decoration='none'>
             <Typography variant='body1'>Quero Agendar Avaliação</Typography>
-        </NavigationButton>
-
-      
-
+      </NavigationButton>
+       
     </Section>            
   );  
 };
