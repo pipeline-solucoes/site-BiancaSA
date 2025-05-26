@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContentBanner2Columns, ImageCover, NavigationButton, TitleBanner, } from 'pipesolcomponents';
+import { ContentBanner2Columns, ImageResponsive, NavigationButton, TitleBanner, } from 'pipesolcomponents';
 import { Typography, useTheme } from '@mui/material';
 import { subTituloBanner, tituloBanner } from '@/constants';
 
@@ -35,8 +35,8 @@ const ContentBannerCustom: React.FC<TitleBannerCustomProps> = ({isXs, isSm, exib
                         <Typography variant='body1'>Quero Agendar Avaliação</Typography>
                     </NavigationButton>
                 </TitleBanner>
-                <ImageCover src={imagePerfil} alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage}>
-                </ImageCover>            
+                <ImageResponsive src={imagePerfil} alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage} priority={true}>
+                </ImageResponsive>            
             </ContentBanner2Columns>          
         );
     }
@@ -45,8 +45,8 @@ const ContentBannerCustom: React.FC<TitleBannerCustomProps> = ({isXs, isSm, exib
             <ContentBanner2Columns height='auto' top={top}>
                 <TitleBanner width='100%' textAlign='left' textTitle={tituloBanner} textSubTitle={subTituloBanner}>
                 </TitleBanner>  
-                <ImageCover src={imagePerfil} alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage}>
-                </ImageCover>                           
+                <ImageResponsive src={imagePerfil} alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage} priority={true}>
+                </ImageResponsive>                           
             </ContentBanner2Columns>          
         );
     }                           

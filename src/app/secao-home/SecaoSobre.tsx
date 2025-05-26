@@ -1,6 +1,6 @@
 "use client";
 
-import { SectionTextColumnStyle, ContentSectionWrapStyled, ImageCover, Section, ContainerAnimatedScroll } from "pipesolcomponents";
+import { SectionTextColumnStyle, ContentSectionWrapStyled, Section, ContainerAnimatedScroll, ImageResponsive } from "pipesolcomponents";
 import { useTheme } from "@mui/material";
 import TitleSection from "../components/TitleSection";
 
@@ -22,9 +22,9 @@ const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs}) => {
       <ContainerAnimatedScroll>        
         <ContentSectionWrapStyled marginTop="0px" marginBottom="0px">
           
-          <ImageCover src="/fotoBanner.png" alt="foto Bianca Souza Aguiar" 
+          <ImageResponsive src="/fotoBanner.png" alt="foto Bianca Souza Aguiar" 
             height={height_image} width={width_image} border_radius="20px">
-          </ImageCover>
+          </ImageResponsive>
           
           <SectionTextColumnStyle textColor={colorText}>
             <TitleSection 
