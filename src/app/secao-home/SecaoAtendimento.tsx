@@ -7,12 +7,12 @@ import CardAtendimento from "../components/cardAtendimento";
 
 interface SecaoAtendimentoProps{
   isXs: boolean,
+  isSm: boolean,
 }
 
-const SecaoAtendimento: React.FC<SecaoAtendimentoProps> = ({isXs}) => {
+const SecaoAtendimento: React.FC<SecaoAtendimentoProps> = ({isXs, isSm}) => {
 
-  const theme = useTheme();
-  const width = (isXs) ? '340px' : '380px';
+  const theme = useTheme();  
 
   return (
     <Section section_id="atendimento" background_color={theme.palette.custom.backgroundSectionAlternative}>      
@@ -25,13 +25,13 @@ const SecaoAtendimento: React.FC<SecaoAtendimentoProps> = ({isXs}) => {
         </TitleSectionCenter>        
 
         <ContentSectionWrapStyled marginTop="30px" marginBottom="30px">
-          <CardAtendimento width={width}
+          <CardAtendimento isXs={isXs} isSm={isSm} 
             alt="atendimento" 
-            src="/atendimento-domiciliar.png" 
+            src="/atendimento-domiciliar.webp" 
             titulo="Domiciliar" 
             text="Realizo atendimento domiciliar em Niterói, Tijuca e Zona Sul do Rio de Janeiro.">        
           </CardAtendimento>        
-          <CardAtendimento width={width}
+          <CardAtendimento  isXs={isXs} isSm={isSm}
             srcMap="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.6878355902954!2d-43.23473182531663!3d-22.924882079242433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997e6aa100fadb%3A0x700211b48320a812!2sShopping%2045!5e0!3m2!1spt-BR!2sbr!4v1746458726230!5m2!1spt-BR!2sbr"
             alt="Atendimento consultório Tijuca"           
             titulo="Tijuca" 
@@ -41,7 +41,7 @@ const SecaoAtendimento: React.FC<SecaoAtendimentoProps> = ({isXs}) => {
             uf="RJ"
             cep="20520-901">
           </CardAtendimento>              
-          <CardAtendimento width={width}
+          <CardAtendimento  isXs={isXs} isSm={isSm} 
             alt="Atendimento consultório São Gonçalo"             
             srcMap="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117652.20006841299!2d-43.209280103317504!3d-22.85312829351251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x999af531d40b61%3A0xbbdbe1fcd22771e8!2sIcon%20Business%20%26%20Mall!5e0!3m2!1spt-BR!2sbr!4v1746460045180!5m2!1spt-BR!2sbr"
             titulo="São Gonçalo" 

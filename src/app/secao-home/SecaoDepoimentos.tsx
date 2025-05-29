@@ -53,7 +53,7 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({ isXs, isSm }) => {
           <TestimonialCard
             key={index}
             width={width_card}
-            height="100%"
+            height="auto"
             name={item.nome}
             socialMedia=" "
             color={theme.palette.text.secondary}
