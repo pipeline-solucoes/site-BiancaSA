@@ -15,17 +15,25 @@ const NotificationBarCustom: React.FC = () => {
             text_button_accept="Aceitar" text_button_notaccept="Rejeitar"
             border_radius_button={theme.palette.custom.borderRadiusButtonCTA}>
 
-            <Typography variant="body1" component="div" color={theme.palette.text.primary}>
-            
-            Este site usa cookies e dados pessoais de acordo com os 
-            nossos <NavigationButton width='auto' url={urlTermoUso} layout='link' color={theme.palette.primary.main} 
-            text_decoration="none" aria_label='link termo de uso'>
-            Termo de Uso</NavigationButton> e  <NavigationButton 
-            width='auto' url={urlPoliticaPrivacidade} layout='link' color={theme.palette.primary.main} 
-            text_decoration="none" aria_label='link politica de privacidade'>Política de Privacidade</NavigationButton> e, 
-            ao continuar navegando neste site, você declara estar ciente dessas condições.
+            <Typography variant="body1" component="div" color={theme.palette.text.primary}>                         
+                <p>
+                Este site usa cookies e dados pessoais de acordo com os nossos {' '}
+                <NavigationButton width='auto' url={urlTermoUso} layout='link' color={theme.palette.primary.main} 
+                text_decoration="none" aria_label='link termo de uso'>Termo de Uso</NavigationButton> e {' '} 
+                <NavigationButton width='auto' url={urlPoliticaPrivacidade} layout='link' color={theme.palette.primary.main} 
+                text_decoration="none" aria_label='link politica de privacidade'>Política de Privacidade</NavigationButton> e, 
+                ao continuar navegando neste site, você declara estar ciente dessas condições.
+                </p>
+                <p>
+                Este site é protegido pelo Google reCAPTCHA e está sujeito à {' '}
+                <NavigationButton width='auto' url="https://policies.google.com/privacy" layout='link' color={theme.palette.primary.main} 
+                text_decoration="none" aria_label='link termo de uso'>Política de Privacidade</NavigationButton>                  
+                e aos {' '}
+                <NavigationButton width='auto' url="https://policies.google.com/terms" layout='link' color={theme.palette.primary.main} 
+                text_decoration="none" aria_label='link termo de uso'>Termos de Serviço</NavigationButton> do Google.
+                </p>
+            </Typography> 
 
-            </Typography>  
         </NotificationBar>                
     );         
 };
