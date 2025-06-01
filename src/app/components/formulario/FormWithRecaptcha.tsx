@@ -11,9 +11,9 @@ declare global {
   interface Window {
     grecaptcha: {
       ready: (callback: () => void) => void;
-      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+      execute: (siteKey: string) => Promise<string>; 
     };
-  }
+}
 }
 
 export function executeRecaptcha(siteKey: string): Promise<string> {
@@ -23,13 +23,12 @@ export function executeRecaptcha(siteKey: string): Promise<string> {
     }
 
     window.grecaptcha.ready(() => {
-      window.grecaptcha.execute(siteKey, { action: 'submit' }).then((token: string) => {
+      window.grecaptcha.execute(siteKey).then((token: string) => {
         resolve(token);
       }).catch((err: unknown) => reject(err));
     });
   });
 }
-
 
 const FormContainer = styled('div')(() => ({
   display: 'flex',
@@ -136,8 +135,6 @@ interface FormWithRecaptchaProps {
             body: formData
           });
 
-          
-  
           if (response.status === 200) {
             setCorMensagemApi(theme.palette.success.main);
             setMensagemApi(message_sucess);
