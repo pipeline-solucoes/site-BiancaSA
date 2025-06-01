@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { ButtonFormStyled, TextFieldFixedSizeStyled, TextFieldStyled } from 'pipesolcomponents';
 import { Typography, useTheme } from '@mui/material';
-import { siteKey } from '@/constants';
+import { siteKeyRecaptcha, tokenApi, urlApi } from '@/constants';
 import Script from 'next/script';
 
 declare global {
@@ -126,12 +126,17 @@ interface FormWithRecaptchaProps {
           formData.append('email', email);
           formData.append('telefone', telefone);
           formData.append('mensagem', mensagem);
-          formData.append('captcha_token', await executeRecaptcha(siteKey));          
+          formData.append('captcha_token', await executeRecaptcha(siteKeyRecaptcha));          
   
-          const response = await fetch('https://backend-sites-pipelinesolucoes.onrender.com/send-email', {
-            method: 'POST',            
+          const response = await fetch(urlApi, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${tokenApi}`
+            },            
             body: formData
           });
+
+          
   
           if (response.status === 200) {
             setCorMensagemApi(theme.palette.success.main);
@@ -164,7 +169,7 @@ interface FormWithRecaptchaProps {
       <>
 
         <Script
-          src={`https://www.google.com/recaptcha/api.js?render=${siteKey}`}
+          src={`https://www.google.com/recaptcha/api.js?render=${siteKeyRecaptcha}`}
           strategy="afterInteractive"
         />
 
