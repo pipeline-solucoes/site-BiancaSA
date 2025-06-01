@@ -1,7 +1,6 @@
 import React from 'react';
 import { ContentBanner2Columns, ImageResponsive, NavigationButton, TitleBanner, } from 'pipesolcomponents';
 import { Typography, useTheme } from '@mui/material';
-import { subTituloBanner, tituloBanner } from '@/constants';
 import fotoBanner from 'public/fotoBanner.png';
 
 interface TitleBannerCustomProps{
@@ -16,6 +15,8 @@ const ContentBannerCustom: React.FC<TitleBannerCustomProps> = ({isXs, isSm, exib
     const widthImage = (isXs) ? 340 : 540;
     const align = (isXs || isSm) ? 'center' : 'left';     
     const top = '90px'; 
+    const tituloBanner: string = "Fisioterapia Humanizada no Rio de Janeiro, Niterói e São Gonçalo";
+    const subTituloBanner: string = "Recupere sua qualidade de vida com cuidado próximo, no seu ritmo e no seu espaço.";
     
     if (exibirBotaoCTA){
 

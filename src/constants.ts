@@ -1,15 +1,12 @@
 import { ItemMenuConfig, ShadowConfig } from "pipesolcomponents";
 
-export const tituloBanner: string = "Fisioterapia Humanizada no Rio de Janeiro, Niterói e São Gonçalo";
-export const subTituloBanner: string = "Recupere sua qualidade de vida com cuidado próximo, no seu ritmo e no seu espaço.";
-
 export const urlTermoUso: string = "/termo-de-uso";
 export const urlPoliticaPrivacidade: string = "/politica-de-privacidade";
 export const numberPhone: string = "(21) 98131-4001";
 export const numberWhatsapp: string = "5521981314001";
-export const tokenFormulario = "";
 export const urlInstagram = "https://www.instagram.com/biancasouzaaguiarfisio/"
 export const email = 'contato@biancasouzaaguiar.com.br'
+export const siteKey = "6LfNNjQrAAAAAJdYsNsPL8RFXM6krfURGLX9Ze98";
 
 export const sombraClara: ShadowConfig = {
     offsetX: '-10px',

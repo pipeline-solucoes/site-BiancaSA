@@ -1,13 +1,14 @@
 "use client";
 
-import { ContainerAnimatedScroll, ContainerList, ContentSectionWrapStyled, Form, Section, SectionTextColumnStyle, ShadowCard, IconText } from "pipesolcomponents";
+import { ContainerAnimatedScroll, ContainerList, ContentSectionWrapStyled, Section, SectionTextColumnStyle, ShadowCard, IconText } from "pipesolcomponents";
 import TitleSection from "../components/TitleSection";
 import { Box, useTheme } from "@mui/material";
 import Email from "../components/contatos/Email";
 import SocialMedia from "../components/contatos/SocialMedia";
-import { sombraClara, sombraEscura, tokenFormulario } from "@/constants";
+import { sombraClara, sombraEscura } from "@/constants";
 import Telefone from "../components/contatos/Telefone";
 import VerifiedIcon from '@mui/icons-material/Verified';
+import FormWithRecaptcha from "../components/formulario/FormWithRecaptcha";
 
 interface SecaoFormularioProps{
   isXs: boolean,    
@@ -45,7 +46,7 @@ const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs}) => {
             <ShadowCard sombraClara={sombraClara} sombraEscura={sombraEscura} width={widthForm} height="fit-content" border_radius="20px" padding="0px">            
               <Box display="flex" flexDirection='column' justifyContent="center" gap="24px" marginTop='8px' flex={1} 
                 sx={{ backgroundColor: theme.palette.custom.backgroundSectionAlternative, padding: "24px", borderRadius: '10px' }} >                  
-                  <Form token={tokenFormulario}
+                  <FormWithRecaptcha 
                     background_color={theme.palette.custom.backgroundSectionMain} 
                     color={colorText} 
                     border_radius="10px" 
@@ -55,9 +56,7 @@ const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs}) => {
                     text_button="Enviar mensagem" 
                     message_sucess="Agradeço pelo seu contato. Em breve, responderei com atenção. Até logo!"
                     message_erro="Houve um problema ao enviar sua mensagem. Por favor, verifique sua conexão e tente novamente mais tarde. 
-                    Caso o erro persista, saiba que você também pode me contatar pelos outros canais disponíveis."
-                    color_message_erro={theme.palette.error.main}
-                    color_message_sucess={theme.palette.success.main}
+                    Caso o erro persista, saiba que você também pode me contatar pelos outros canais disponíveis."                    
                   />
                   <ContainerList>
                     <Telefone color={theme.palette.primary.main}></Telefone>
