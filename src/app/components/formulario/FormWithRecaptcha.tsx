@@ -120,12 +120,15 @@ interface FormWithRecaptchaProps {
       if (!hasErrors) {
         setIsLoading(true); // Inicia o estado de loading
         try {
+
           const formData = new FormData();
           formData.append('nome', nome);
           formData.append('email', email);
           formData.append('telefone', telefone);
           formData.append('mensagem', mensagem);
-          formData.append('captcha_token', await executeRecaptcha(siteKeyRecaptcha));          
+
+          const recaptcha_token = await executeRecaptcha(siteKeyRecaptcha);          
+          formData.append('captcha_token', recaptcha_token);          
   
           const response = await fetch(urlApi, {
             method: 'POST',
