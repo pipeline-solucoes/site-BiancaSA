@@ -187,7 +187,8 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
         src={`https://www.google.com/recaptcha/api.js?render=explicit`}
         strategy="afterInteractive"
       />
-      <div id="recaptcha-container" style={{ minHeight: 78 }}></div> {/* para debug visual opcional */}
+      
+      <div id="recaptcha-container" style={{ position: 'absolute', left: '-9999px' }} />
 
       <FormContainer>
         <TextFieldStyled
