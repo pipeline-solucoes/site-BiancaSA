@@ -6,9 +6,7 @@ export const numberPhone: string = "(21) 98131-4001";
 export const numberWhatsapp: string = "5521981314001";
 export const urlInstagram = "https://www.instagram.com/biancasouzaaguiarfisio/"
 export const email = 'contato@biancasouzaaguiar.com.br'
-export const tokenBearer = "token-render-prod";
-export const urlApi = "https://backend-sites-pipelinesolucoes.onrender.com/send-email";
-export const siteKeyRecaptcha = "6LfNNjQrAAAAAJdYsNsPL8RFXM6krfURGLX9Ze98";
+
 
 export const sombraClara: ShadowConfig = {
     offsetX: '-10px',
