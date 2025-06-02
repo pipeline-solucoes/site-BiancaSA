@@ -18,6 +18,7 @@ declare global {
           callback?: (token: string) => void;
         }
       ) => number;
+      reset: (widgetId: number) => void;
     };
   }
 }
@@ -81,8 +82,13 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
       case 'telefone':
         setErrors((prev) => ({ ...prev, telefone: !validateTelefone(telefone) }));
         break;
+      case 'nome':
+        setErrors((prev) => ({ ...prev, nome: !nome.trim() }));
+        break;
+      case 'mensagem':
+        setErrors((prev) => ({ ...prev, mensagem: !mensagem.trim() }));
+        break;
       default:
-        setErrors((prev) => ({ ...prev, [field]: !Boolean(eval(field)) }));
         break;
     }
   };
@@ -112,6 +118,10 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
           setEmail('');
           setTelefone('');
           setMensagem('');
+          setErrors({});
+          if (widgetIdRef.current !== null) {
+            window.grecaptcha.reset(widgetIdRef.current);
+          }
         } else {
           setCorMensagemApi(color_message_erro);
           setMensagemApi(message_erro ?? 'Erro ao enviar. Tente novamente mais tarde.');
@@ -128,14 +138,31 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
   );
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
+    let isMounted = true;
 
-    script.onload = () => {
-      if (window.grecaptcha) {
+    // Só adiciona o script se ele ainda não estiver na página
+    if (!document.querySelector('script[src="https://www.google.com/recaptcha/api.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://www.google.com/recaptcha/api.js';
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+
+      script.onload = () => {
+        if (isMounted && window.grecaptcha) {
+          window.grecaptcha.ready(() => {
+            if (widgetIdRef.current === null) {
+              widgetIdRef.current = window.grecaptcha.render('recaptcha-container', {
+                sitekey: siteKeyRecaptcha,
+                size: 'invisible',
+                callback: handleToken,
+              });
+            }
+          });
+        }
+      };
+    } else {
+      if (window.grecaptcha && widgetIdRef.current === null) {
         window.grecaptcha.ready(() => {
           widgetIdRef.current = window.grecaptcha.render('recaptcha-container', {
             sitekey: siteKeyRecaptcha,
@@ -144,8 +171,13 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
           });
         });
       }
+    }
+
+    return () => {
+      isMounted = false;
     };
-  }, [handleToken]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (telefoneRef.current) {
