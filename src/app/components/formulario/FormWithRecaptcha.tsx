@@ -90,19 +90,28 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
 
   // Renderiza o reCAPTCHA invisível
   useEffect(() => {
-    const tryRender = () => {
-      if (typeof window !== 'undefined' && window.grecaptcha && !widgetIdRef.current) {
+  const interval = setInterval(() => {
+    if (window.grecaptcha && !widgetIdRef.current) {
+      const el = document.getElementById('recaptcha-container');
+      if (el) {
         window.grecaptcha.ready(() => {
-          widgetIdRef.current = window.grecaptcha.render('recaptcha-container', {
-            sitekey: siteKeyRecaptcha,
-            size: 'invisible',
-            callback: () => {},
-          });
+          try {
+            widgetIdRef.current = window.grecaptcha.render('recaptcha-container', {
+              sitekey: siteKeyRecaptcha,
+              size: 'invisible',
+              callback: () => {},
+            });
+            clearInterval(interval);
+          } catch (err) {
+            console.error('Erro ao renderizar o reCAPTCHA:', err);
+          }
         });
       }
-    };
-    tryRender();
-  }, []);
+    }
+  }, 500);
+
+  return () => clearInterval(interval);
+}, []);
 
   const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
   const validateTelefone = (telefone: string) => /^\d{2}\d{9}$/.test(telefone);
@@ -178,7 +187,7 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
         src={`https://www.google.com/recaptcha/api.js?render=explicit`}
         strategy="afterInteractive"
       />
-      <div id="recaptcha-container" style={{ display: 'none' }}></div>
+      <div id="recaptcha-container" style={{ minHeight: 78 }}></div> {/* para debug visual opcional */}
 
       <FormContainer>
         <TextFieldStyled
