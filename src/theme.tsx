@@ -158,7 +158,7 @@ const theme = createTheme({
       '@media (max-width:600px)': {
         fontSize: '18px', // Mobile
       },
-    },
+    },    
     body1: { //Normal
       fontSize: '16px', // Desktop
       lineHeight: '1.5',
@@ -185,6 +185,20 @@ const theme = createTheme({
         fontSize: '16px', // Mobile
       },
     },
+    caption: {
+      fontSize: '13px', // Desktop
+      lineHeight: '1.5',
+      letterSpacing: '0.01em',
+      fontWeight: 600,     
+      fontStyle: 'normal',      
+      '@media (min-width:601px) and (max-width:960px)': {
+        fontSize: '13px', // Tablet
+      },
+      '@media (max-width:600px)': {
+        fontSize: '13px', // Mobile
+      },
+    }
+    
   },
   spacing: 8,
 });
