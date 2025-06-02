@@ -90,28 +90,36 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
 
   // Renderiza o reCAPTCHA invisível
   useEffect(() => {
-  const interval = setInterval(() => {
-    if (window.grecaptcha && !widgetIdRef.current) {
-      const el = document.getElementById('recaptcha-container');
-      if (el) {
-        window.grecaptcha.ready(() => {
-          try {
-            widgetIdRef.current = window.grecaptcha.render('recaptcha-container', {
-              sitekey: siteKeyRecaptcha,
-              size: 'invisible',
-              callback: () => {},
-            });
-            clearInterval(interval);
-          } catch (err) {
-            console.error('Erro ao renderizar o reCAPTCHA:', err);
-          }
-        });
-      }
+  const renderRecaptcha = () => {
+    if (window.grecaptcha && widgetIdRef.current === null) {
+      window.grecaptcha.ready(() => {
+        try {
+          widgetIdRef.current = window.grecaptcha.render('recaptcha-container', {
+            sitekey: siteKeyRecaptcha,
+            size: 'invisible',
+            callback: () => {},
+          });
+        } catch (err) {
+          console.error('Erro ao renderizar o reCAPTCHA:', err);
+        }
+      });
     }
-  }, 500);
+  };
 
-  return () => clearInterval(interval);
+  // Espera o script carregar antes de tentar renderizar
+  if (typeof window.grecaptcha === 'undefined') {
+    const checkInterval = setInterval(() => {
+      if (typeof window.grecaptcha !== 'undefined') {
+        clearInterval(checkInterval);
+        renderRecaptcha();
+      }
+    }, 300);
+    return () => clearInterval(checkInterval);
+  } else {
+    renderRecaptcha();
+  }
 }, []);
+
 
   const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
   const validateTelefone = (telefone: string) => /^\d{2}\d{9}$/.test(telefone);
@@ -187,7 +195,7 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
         src={`https://www.google.com/recaptcha/api.js?render=explicit`}
         strategy="afterInteractive"
       />
-      
+
       <div id="recaptcha-container" style={{ position: 'absolute', left: '-9999px' }} />
 
       <FormContainer>
