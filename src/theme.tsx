@@ -186,16 +186,16 @@ const theme = createTheme({
       },
     },
     caption: {
-      fontSize: '13px', // Desktop
+      fontSize: '12px', // Desktop
       lineHeight: '1.5',
       letterSpacing: '0.01em',
       fontWeight: 600,     
       fontStyle: 'normal',      
       '@media (min-width:601px) and (max-width:960px)': {
-        fontSize: '13px', // Tablet
+        fontSize: '12px', // Tablet
       },
       '@media (max-width:600px)': {
-        fontSize: '13px', // Mobile
+        fontSize: '12px', // Mobile
       },
     }
     

@@ -255,7 +255,9 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
         )}
       </FormContainer>
 
-      {children}
+      <Box flex={1}>
+        {children}
+      </Box>
 
       <Typography variant='caption' component="div">
         Este site é protegido pelo Google reCAPTCHA e está sujeito à {' '}
