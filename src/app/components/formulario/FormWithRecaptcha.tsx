@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { ButtonFormStyled, TextFieldFixedSizeStyled, TextFieldStyled } from 'pipesolcomponents';
 import { Typography, useTheme } from '@mui/material';
-import { siteKeyRecaptcha } from '@/constants';
+import { siteKeyRecaptcha, tokenBearer } from '@/constants';
 import Script from 'next/script';
 
 declare global {
@@ -129,7 +129,10 @@ interface FormWithRecaptchaProps {
           // formData.append('captcha_token', await executeRecaptcha(siteKeyRecaptcha));          
   
           const response = await fetch('https://backend-sites-pipelinesolucoes.onrender.com/send-email', {
-            method: 'POST',            
+            method: 'POST', 
+            headers: {
+              'Authorization': `Bearer ${tokenBearer}`
+            },           
             body: formData
           });
   
