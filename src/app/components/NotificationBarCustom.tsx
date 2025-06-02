@@ -23,15 +23,7 @@ const NotificationBarCustom: React.FC = () => {
                 <NavigationButton width='auto' url={urlPoliticaPrivacidade} layout='link' color={theme.palette.primary.main} 
                 text_decoration="none" aria_label='link politica de privacidade'>Política de Privacidade</NavigationButton> e, 
                 ao continuar navegando neste site, você declara estar ciente dessas condições.
-                </p>
-                <p>
-                Este site é protegido pelo Google reCAPTCHA e está sujeito à {' '}
-                <NavigationButton width='auto' url="https://policies.google.com/privacy" layout='link' color={theme.palette.primary.main} 
-                text_decoration="none" aria_label='link termo de uso'>Política de Privacidade</NavigationButton>                  
-                e aos {' '}
-                <NavigationButton width='auto' url="https://policies.google.com/terms" layout='link' color={theme.palette.primary.main} 
-                text_decoration="none" aria_label='link termo de uso'>Termos de Serviço</NavigationButton> do Google.
-                </p>
+                </p>                
             </Typography> 
 
         </NotificationBar>                

@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { ButtonFormStyled, TextFieldFixedSizeStyled, TextFieldStyled } from 'pipesolcomponents';
-import { Typography, useTheme } from '@mui/material';
+import { ButtonFormStyled, NavigationButton, TextFieldFixedSizeStyled, TextFieldStyled } from 'pipesolcomponents';
+import { Box, Typography, useTheme } from '@mui/material';
 import RecaptchaInvisible, { RecaptchaInvisibleRef } from './RecaptchaInvisible';
 
 
@@ -18,7 +18,7 @@ const FormContainer = styled('div')(() => ({
 
 interface FormWithRecaptchaProps {
   color: string;
-  background_color?: string;
+  background_color_field?: string;
   border_radius?: string;
   color_button: string;
   background_color_button?: string;
@@ -26,11 +26,12 @@ interface FormWithRecaptchaProps {
   text_button: string;
   message_sucess: string;
   message_erro?: string;
+  children: React.ReactNode;
 }
 
 const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
   color,
-  background_color = 'transparent',
+  background_color_field = 'transparent',
   border_radius = '0px',
   color_button,
   background_color_button = 'transparent',
@@ -38,6 +39,7 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
   text_button,
   message_sucess,
   message_erro,
+  children
 }) => {
   const theme = useTheme();
   const color_message_erro = theme.palette.error.main;
@@ -56,13 +58,6 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
 
   // Ref para o recaptcha
   const recaptchaRef = useRef<RecaptchaInvisibleRef>(null);
-
-  useEffect(() => {
-    if (telefoneRef.current) {
-      telefoneRef.current.focus();
-    }
-  }, []);
-
   const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
   const validateTelefone = (telefone: string) => /^\d{2}\d{9}$/.test(telefone);
 
@@ -177,7 +172,8 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
   };
 
   return (
-    <>
+    <Box display="flex" flexDirection='column' justifyContent="center" gap="24px" marginTop='8px' flex={1} 
+      sx={{ padding: "24px", borderRadius: '10px' }}>
       <FormContainer>
         <TextFieldStyled
           id="nome"
@@ -189,7 +185,7 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
           error={errors.nome}
           helperText={errors.nome && <span style={{ color: color_message_erro }}>Nome é obrigatório</span>}
           required
-          background_color={background_color}
+          background_color={background_color_field}
           text_color={color}
           text_color_error={color_message_erro}
           border_radius={border_radius}
@@ -204,7 +200,7 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
           error={errors.email}
           helperText={errors.email && <span style={{ color: color_message_erro }}>Email inválido</span>}
           required
-          background_color={background_color}
+          background_color={background_color_field}
           text_color={color}
           text_color_error={color_message_erro}
           border_radius={border_radius}
@@ -219,7 +215,7 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
           helperText={errors.telefone && <span style={{ color: color_message_erro }}>Telefone inválido</span>}
           required
           placeholder="21999999999"
-          background_color={background_color}
+          background_color={background_color_field}
           text_color={color}
           text_color_error={color_message_erro}
           border_radius={border_radius}
@@ -236,7 +232,7 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
           helperText={errors.mensagem && <span style={{ color: color_message_erro }}>Mensagem é obrigatória</span>}
           required
           multiline
-          background_color={background_color}
+          background_color={background_color_field}
           text_color={color}
           text_color_error={color_message_erro}
           border_radius={border_radius}
@@ -259,9 +255,20 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
         )}
       </FormContainer>
 
+      {children}
+
+      <Typography variant='caption' component="div">
+        Este site é protegido pelo Google reCAPTCHA e está sujeito à {' '}
+        <NavigationButton width='auto' url="https://policies.google.com/privacy" layout='link' color={theme.palette.primary.main} 
+        text_decoration="none" aria_label='link termo de uso'>Política de Privacidade</NavigationButton>                  
+        e aos {' '}
+        <NavigationButton width='auto' url="https://policies.google.com/terms" layout='link' color={theme.palette.primary.main} 
+        text_decoration="none" aria_label='link termo de uso'>Termos de Serviço</NavigationButton> do Google.
+      </Typography>
+
       {/* reCAPTCHA invisível */}
       <RecaptchaInvisible siteKey={siteKeyRecaptcha} ref={recaptchaRef} />
-    </>
+    </Box> 
   );
 };
 

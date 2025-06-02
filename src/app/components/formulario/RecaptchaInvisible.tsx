@@ -34,7 +34,7 @@ const RecaptchaInvisible = forwardRef<RecaptchaInvisibleRef, RecaptchaInvisibleP
       execute: executeRecaptcha,
     }));
 
-    return <ReCAPTCHA sitekey={siteKey} size="invisible" ref={recaptchaRef} />;
+    return <ReCAPTCHA sitekey={siteKey} size="invisible" badge="bottomleft" ref={recaptchaRef} />;
   }
 );
 
