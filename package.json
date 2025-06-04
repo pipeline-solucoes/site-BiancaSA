@@ -19,7 +19,7 @@
     "@mui/icons-material": "^6.4.4",
     "@mui/material": "^6.4.4",
     "next": "^15.2.3",
-    "pipesolcomponents": "^0.5.43",
+    "pipesolcomponents": "^0.5.46",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-google-recaptcha": "^3.1.0",

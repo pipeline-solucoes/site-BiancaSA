@@ -128,7 +128,8 @@ const CardAtendimento : React.FC<CardBookProps> = ({src, srcMap, alt, titulo, te
             titleFrame={alt}        
             width_map={`${widthImage}px`} height_map={`${height_image}px`}
             border_radius={border_radius} 
-            background_color={theme.palette.custom.backgroundSectionAlternative}                        
+            background_color={theme.palette.custom.backgroundSectionAlternative}
+            root_margin='600px'
             >          
             <ContentCardMapa width={width_content_card} height={height_content_card}>
               <Titulo>{titulo}</Titulo>                        
