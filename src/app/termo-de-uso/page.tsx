@@ -20,7 +20,7 @@ const TermoDeUso: React.FC = ()  => {
 
             <Section section_id='termo' background_color={theme.palette.custom?.backgroundSectionMain}>
                 <Box sx={{width:'100%'}}>
-                    <TitleSection title_text="Termos de Uso"></TitleSection>
+                    <TitleSection align="left" title_text="Termos de Uso"></TitleSection>
                 </Box>                
                 <BotaoVoltarPaginaPrincipal></BotaoVoltarPaginaPrincipal>           
             </Section>

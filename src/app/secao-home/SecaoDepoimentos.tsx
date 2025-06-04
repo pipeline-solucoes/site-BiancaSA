@@ -11,7 +11,7 @@ import { ReactElement } from "react";
 import { useTheme } from "@mui/material";
 import * as React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import TitleSectionCenter from "../components/TitleSectionCenter";
+import TitleSection from "../components/TitleSection";
 
 interface DepoimentoProps {
   nome: string;
@@ -30,6 +30,7 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({ isXs, isSm }) => {
   const width_card = (isXs) ? '340px' : '80%';
   const width_carrossel = (isXs) ? '340px' : (isSm ? '600px' : '100%');
   const height_carrossel = (isXs) ? '680px' : (isSm ? '530px' : '410px');
+  const alignTitle = (isXs) ? 'left' : 'center';
 
   const renderCards = (depoimentos: DepoimentoProps[]): ReactElement => {
     
@@ -99,10 +100,10 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({ isXs, isSm }) => {
     <Section section_id="depoimentos" background_color={theme.palette.custom?.backgroundSectionMain}>
       <ContainerAnimatedScroll>
         <ContentSectionWrapStyled marginTop="40px" marginBottom="40px" >          
-          <TitleSectionCenter 
+          <TitleSection align={alignTitle}
             title_text="Histórias de Superação e Esperança"
             subtitle_text="Palavras dos meus pacientes">
-            </TitleSectionCenter>
+            </TitleSection>
             {renderCards(depoimentosObras)}
         </ContentSectionWrapStyled>
       </ContainerAnimatedScroll>      

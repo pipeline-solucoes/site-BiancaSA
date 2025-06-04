@@ -16,7 +16,7 @@ const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs}) => {
   const colorText = theme.palette.text.secondary;
 
   const width_image = (isXs) ? 340 : 500;
-  const height_image = (isXs) ? 340 : 500;
+  const height_image = (isXs) ? 340 : 500;   
 
   return (
     <Section section_id="sobre" background_color={theme.palette.custom?.backgroundSectionMain}>      
@@ -28,7 +28,7 @@ const SecaoSobre: React.FC<SecaoSobreProps> = ({isXs}) => {
           </ImageResponsive>
           
           <SectionTextColumnStyle textColor={colorText}>
-            <TitleSection 
+            <TitleSection align="left"
               title_text="Bianca Souza Aguiar" 
               subtitle_text="Fisioterapeuta Especialista em Oncologia e Especializada em Cuidados Paliativos">
             </TitleSection>

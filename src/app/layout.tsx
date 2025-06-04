@@ -6,7 +6,10 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: "Bianca Souza Aguiar",
-  description: "????",  
+  description: `Fisioterapeuta com título de Especialista em Oncologia pelo COFFITO e ABFO . 
+  Atendimento a pacientes oncológicos desde seu diagnóstico. 
+  Olhar baseado em evidências científicas, objetivando autonomia, qualidade de vida, prevenção de agravos e 
+  minimizando efeitos adversos ao tratamento oncológico, através de condutas individualizadas, integrativas e humanizadas.`,  
 };
 
 export default function RootLayout({

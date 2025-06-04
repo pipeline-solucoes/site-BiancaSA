@@ -20,7 +20,7 @@ const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs}) => {
 
   const colorIconCheck = theme.palette.primary.main;
   const colorText = theme.palette.text.secondary;
-  const widthForm = (isXs) ? '340px' : '560px';
+  const widthForm = (isXs) ? '340px' : '560px';  
 
   return (
     
@@ -31,7 +31,7 @@ const SecaoFormulario: React.FC<SecaoFormularioProps> = ({isXs}) => {
         <ContentSectionWrapStyled>
           
             <SectionTextColumnStyle textColor={colorText}>
-              <TitleSection 
+              <TitleSection align="left"
                 title_text="Fale com a Bianca" 
                 subtitle_text="Estou aqui para ajudar">          
               </TitleSection> 

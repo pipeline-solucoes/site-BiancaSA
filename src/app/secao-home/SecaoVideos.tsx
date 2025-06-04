@@ -2,7 +2,7 @@
 
 import { ContainerAnimatedScroll, ContentSectionWrapStyled, NavigationButton, Section, YoutubeCard } from "pipesolcomponents";
 import { Typography, useTheme } from "@mui/material";
-import TitleSectionCenter from "../components/TitleSectionCenter";
+import TitleSection from "../components/TitleSection";
 
 interface SecaoVideosProps{
   isXs: boolean,
@@ -17,6 +17,7 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
   const height_video = (isXs || isSm) ? '340px' : "400px";
   const height_text = (isXs || isSm) ? "auto" : "180px";
   const flexDirectionCard = 'column';
+  const alignTitle = (isXs) ? 'left' : 'center';
 
   const colorLink = theme.palette.primary.main;
   const urlWefy = 'https://www.youtube.com/@wefyoficial';
@@ -25,10 +26,10 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
   return (
     <Section section_id="podcasts" background_color={theme.palette.custom.backgroundSectionMain}>      
       <ContainerAnimatedScroll>
-        <TitleSectionCenter
+        <TitleSection align={alignTitle}
           title_text="Participações em Podcasts" 
           subtitle_text="Acompanhe os episódios em que compartilhei conhecimentos sobre fisioterapia, cuidados paliativos, oncologia e qualidade de vida.">
-        </TitleSectionCenter>
+        </TitleSection>
 
         <ContentSectionWrapStyled marginTop="30px" marginBottom="0px">                              
           <YoutubeCard               

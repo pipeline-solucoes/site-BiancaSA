@@ -2,7 +2,7 @@
 
 import { ContainerAnimatedScroll, ContentSectionWrapStyled, NavigationButton, Section } from "pipesolcomponents";
 import { Typography, useTheme } from "@mui/material";
-import TitleSectionCenter from "../components/TitleSectionCenter";
+import TitleSection from "../components/TitleSection";
 import CardAtendimento from "../components/cardAtendimento";
 
 interface SecaoAtendimentoProps{
@@ -13,16 +13,17 @@ interface SecaoAtendimentoProps{
 const SecaoAtendimento: React.FC<SecaoAtendimentoProps> = ({isXs, isSm}) => {
 
   const theme = useTheme();  
+  const alignTitle = (isXs) ? 'left' : 'center';
 
   return (
     <Section section_id="atendimento" background_color={theme.palette.custom.backgroundSectionAlternative}>      
 
       <ContainerAnimatedScroll>
 
-        <TitleSectionCenter 
+        <TitleSection align={alignTitle} 
           title_text="Atendimento Personalizado" 
           subtitle_text="No Conforto do Seu Lar ou No Consultório">
-        </TitleSectionCenter>        
+        </TitleSection>        
 
         <ContentSectionWrapStyled marginTop="30px" marginBottom="30px">
           <CardAtendimento isXs={isXs} isSm={isSm} 

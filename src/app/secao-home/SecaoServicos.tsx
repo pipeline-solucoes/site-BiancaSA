@@ -2,7 +2,7 @@
 
 import { AnimatedCardData, AnimatedCardGroup, ContainerAnimatedScroll, ContentSectionWrapStyled, NavigationButton, Section } from "pipesolcomponents";
 import { Typography, useTheme } from "@mui/material";
-import TitleSectionCenter from "../components/TitleSectionCenter";
+import TitleSection from "../components/TitleSection";
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import { sombraClara, sombraEscura } from "@/constants";
@@ -32,15 +32,18 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
   const theme = useTheme();
 
   const width_card = (isXs || isSm) ? '80%' : 'calc(50% - 8px)';
-  const max_height_card = (isXs || isSm) ? '200px' : '230px';
+  const max_height_card = (isXs || isSm) ? '250px' : '230px';
+  const alignTitle = (isXs) ? 'left' : 'center';
 
     
   return (
     <Section section_id="servicos" background_color={theme.palette.custom?.backgroundSectionAlternative}>      
       <ContainerAnimatedScroll>
 
-        <TitleSectionCenter title_text="Serviços" subtitle_text="Atendimento em consultório e domicílio, com foco em excelência e cuidado humanizado.">
-        </TitleSectionCenter>         
+        <TitleSection align={alignTitle}
+          title_text="Serviços" 
+          subtitle_text="Atendimento em consultório e domicílio, com foco em excelência e cuidado humanizado.">
+        </TitleSection>         
                   
         <ContentSectionWrapStyled marginTop="30px" marginBottom="30px">                              
             <AnimatedCardGroup 

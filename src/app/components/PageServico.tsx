@@ -53,7 +53,7 @@ const PageServico: React.FC<PageServicoProps> = ({servico})  => {
                     </Box>
 
                     <SectionTextColumnStyle textColor={colorText}>                        
-                        <TitleSection title_text={servico}></TitleSection>                                                                                    
+                        <TitleSection title_text={servico} align="center"></TitleSection>                                                                                    
                         <Typography variant="body1" component="div">
                             descricao
                         </Typography>                         
