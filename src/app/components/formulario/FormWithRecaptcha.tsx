@@ -43,7 +43,7 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
 }) => {
   const theme = useTheme();
   const color_message_erro = theme.palette.error.main;
-  const tokenBearer = 'token-render-prod';
+  const tokenBearer = 'token-render-bianca';
   const siteKeyRecaptcha = '6LfNNjQrAAAAAJdYsNsPL8RFXM6krfURGLX9Ze98';
 
   const [mensagemApi, setMensagemApi] = useState('');
