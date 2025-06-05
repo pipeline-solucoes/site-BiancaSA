@@ -135,7 +135,7 @@ const FormWithRecaptcha: React.FC<FormWithRecaptchaProps> = ({
       formData.append('mensagem', mensagem);
       formData.append('captcha_token', token); // Enviar token para backend validar
 
-      const response = await fetch('https://backend-sites-pipelinesolucoes.onrender.com/send-email', {
+      const response = await fetch('https://backend-sites-pipelinesolucoes.onrender.com/send-email-gmail', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${tokenBearer}`,
