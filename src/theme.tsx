@@ -153,10 +153,10 @@ const theme = createTheme({
       margin: 0,
       fontStyle: 'normal',      
       '@media (min-width:601px) and (max-width:960px)': {
-        fontSize: '28px', // Tablet
+        fontSize: '24px', // Tablet
       },
       '@media (max-width:600px)': {
-        fontSize: '24px', // Mobile
+        fontSize: '20px', // Mobile
       },
     },    
     h5: {
