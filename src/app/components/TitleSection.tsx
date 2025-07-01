@@ -35,7 +35,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({title_text, subtitle_text, a
                 {title_text}
             </Typography>
             {   subtitle_text &&
-                <Typography variant='h4' component="h4" color={colorSubTitle} sx={{ width: '100%' }}>
+                <Typography variant='h5' component="h5" color={colorSubTitle} sx={{ width: '100%' }}>
                     {subtitle_text}
                 </Typography>
             }

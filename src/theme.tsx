@@ -146,6 +146,20 @@ const theme = createTheme({
       },
     },
     h4: {
+      fontSize: '28px', // Desktop
+      lineHeight: '1.5',
+      letterSpacing: '0.01em',
+      fontWeight: 500,
+      margin: 0,
+      fontStyle: 'normal',      
+      '@media (min-width:601px) and (max-width:960px)': {
+        fontSize: '28px', // Tablet
+      },
+      '@media (max-width:600px)': {
+        fontSize: '24px', // Mobile
+      },
+    },    
+    h5: {
       fontSize: '18px', // Desktop
       lineHeight: '1.5',
       letterSpacing: '0.01em',

@@ -40,7 +40,7 @@ const ContentCardMapa = styled('div', {
   gap: '16px'  
 }));
 
-const Titulo = styled('h4')(({ theme }) => ({
+const Titulo = styled('h5')(({ theme }) => ({
   width: '100%',
   height: 'auto',     
   textAlign: 'center',  
@@ -48,12 +48,12 @@ const Titulo = styled('h4')(({ theme }) => ({
 
   // Tipografia
   fontFamily: theme.typography.fontFamily,
-  fontWeight: theme.typography.h4?.fontWeight,
-  fontStyle: theme.typography.h4?.fontStyle,
-  lineHeight: theme.typography.h4?.lineHeight,
-  letterSpacing: theme.typography.h4?.letterSpacing,
-  fontSize: theme.typography.h4?.fontSize,
-  margin: theme.typography.h4?.margin,
+  fontWeight: theme.typography.h5?.fontWeight,
+  fontStyle: theme.typography.h5?.fontStyle,
+  lineHeight: theme.typography.h5?.lineHeight,
+  letterSpacing: theme.typography.h5?.letterSpacing,
+  fontSize: theme.typography.h5?.fontSize,
+  margin: theme.typography.h5?.margin,
 }));
 
 

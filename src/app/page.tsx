@@ -12,7 +12,6 @@ import SecaoAtendimento from "./secao-home/SecaoAtendimento";
 import SecaoServicos from "./secao-home/SecaoServicos";
 import SecaoVideos from "./secao-home/SecaoVideos";
 import HeaderBarInCustom from "./components/banner/HeaderBarInCustom";
-import InfiniteTickerCustom from "./components/InfiniteTickerCustom";
 
 
 export default function Home() {
@@ -21,8 +20,7 @@ export default function Home() {
   
   return (    
     <>      
-      <HeaderBarInCustom isXs={isXs} isSm={isSm} itemsMenu={itemsMenu}></HeaderBarInCustom>
-      <InfiniteTickerCustom></InfiniteTickerCustom>
+      <HeaderBarInCustom isXs={isXs} isSm={isSm} itemsMenu={itemsMenu}></HeaderBarInCustom>      
       
       <main>
         <SecaoSobre isXs={isXs} isSm={isSm}></SecaoSobre> 

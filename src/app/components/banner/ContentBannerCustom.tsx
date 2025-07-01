@@ -1,15 +1,15 @@
 import React from 'react';
-import { ContentBanner2Columns, ImageResponsive, NavigationButton, TitleBanner, } from 'pipesolcomponents';
+import { ContentBanner2Columns, ImageResponsive, NavigationButton, TitleBanner } from 'pipesolcomponents';
 import { Typography, useTheme } from '@mui/material';
 import fotoBanner from 'public/fotoBanner.png';
 
-interface TitleBannerCustomProps{
+interface ContentBannerCustomProps{
   isXs: boolean;
   isSm: boolean;
   exibirBotaoCTA?: boolean;  
 }
 
-const ContentBannerCustom: React.FC<TitleBannerCustomProps> = ({isXs, isSm, exibirBotaoCTA=true}) => {                
+const ContentBannerCustom: React.FC<ContentBannerCustomProps> = ({isXs, isSm, exibirBotaoCTA=true}) => {                
 
     const theme = useTheme();
     const widthImage = (isXs) ? 340 : 540;
@@ -21,7 +21,7 @@ const ContentBannerCustom: React.FC<TitleBannerCustomProps> = ({isXs, isSm, exib
     if (exibirBotaoCTA){
 
         return (
-            <ContentBanner2Columns height='calc(100% - 90px)' top={top}>
+            <ContentBanner2Columns height='calc(100% - 90px - 176px)' top={top}>
                 <TitleBanner width='100%' textAlign={align} textTitle={tituloBanner} textSubTitle={subTituloBanner}>                                    
                     <NavigationButton 
                         url="#formulario"             
@@ -38,7 +38,7 @@ const ContentBannerCustom: React.FC<TitleBannerCustomProps> = ({isXs, isSm, exib
                 </TitleBanner>
                 <ImageResponsive src={fotoBanner} alt="foto Bianca Souza Aguiar" height={widthImage} width={widthImage} priority={true}>
                 </ImageResponsive>            
-            </ContentBanner2Columns>          
+            </ContentBanner2Columns>
         );
     }
     else{

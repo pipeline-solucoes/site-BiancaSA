@@ -2,8 +2,10 @@
 
 import { ResponsiveBannerGradiente } from 'pipesolcomponents';
 import React from 'react';
-import { useTheme } from "@mui/material";
 import ContentBannerCustom from './ContentBannerCustom';
+import { Box } from '@mui/material';
+import InfiniteTickerCustom from '../InfiniteTickerCustom';
+
 
 interface BannerProps {  
   isXs: boolean;
@@ -13,16 +15,19 @@ interface BannerProps {
 
 const Banner: React.FC<BannerProps> = ({isXs, isSm, exibirBotaoCTA = true}) => {   
 
-  const theme = useTheme();
-  const backgroud_color = theme.palette.primary.light;
   const height_default = '100%';
 
   return(        
     <ResponsiveBannerGradiente
       height_xs={height_default} height_sm={height_default} height_md={height_default} 
       height_lg={height_default} height_xl={height_default}
-      colorStart={backgroud_color} colorMiddle={backgroud_color} colorEnd={backgroud_color}>                
-      <ContentBannerCustom isXs={isXs} isSm={isSm} exibirBotaoCTA={exibirBotaoCTA}/>                                  
+      background_gradient='linear-gradient(120deg, #eff6f9 0%, #eff6f9 100%)'> 
+      <Box display="flex">
+        <ContentBannerCustom isXs={isXs} isSm={isSm} exibirBotaoCTA={exibirBotaoCTA}/>
+        <Box sx={{bottom: 20, position: 'absolute', width: '100%' }}>
+          <InfiniteTickerCustom></InfiniteTickerCustom>
+        </Box>        
+      </Box>            
     </ResponsiveBannerGradiente>
   );
     

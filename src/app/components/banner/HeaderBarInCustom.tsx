@@ -11,7 +11,7 @@ interface HeaderBarInCustomProps{
 
 const HeaderBarInCustom: React.FC<HeaderBarInCustomProps> = ({ isXs, isSm, itemsMenu}) => {                
         
-    const height = (isXs) ? '750px' : (isSm ? '850px' : '700px') ;
+    const height = (isXs) ? '850px' : (isSm ? '950px' : '800px') ;
 
     return (
        <HeaderBarIn background_color='transparent' border_radius="40px" top_bar={10}
