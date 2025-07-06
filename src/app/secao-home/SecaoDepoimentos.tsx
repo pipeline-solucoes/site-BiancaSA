@@ -35,7 +35,7 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({ isXs }) => {
           border_radius_button="50%"
           color_button={theme.palette.text.primary}
           color_hover_button={theme.palette.primary.main}
-          cardWidth={300}
+          cardWidth={340}
           cardsCount={depoimentosObras.length}  
           color_dot_active={theme.palette.primary.main}                  
       >
