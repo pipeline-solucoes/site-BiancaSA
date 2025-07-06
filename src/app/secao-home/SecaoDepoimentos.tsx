@@ -35,7 +35,7 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({ isXs }) => {
           border_radius_button="50%"
           color_button={theme.palette.text.primary}
           color_hover_button={theme.palette.primary.main}
-          cardWidth={340}
+          cardWidth={300}
           cardsCount={depoimentosObras.length}  
           color_dot_active={theme.palette.primary.main}                  
       >
@@ -63,12 +63,22 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({ isXs }) => {
       texto: [`Não tenho palavras pra descrever a a profissional maravilhosa que é a Bianca! Além de competentíssima, é uma pessoa incrível. Fui acolhida com muito carinho, além do tratamento físico, recebi muito apoio emocional durante as sessões, e como disse anteriormente, ela é muito acolhedora. Outro aspecto marcante é que a Bianca sempre entrava em contato comigo, enviando mensagem pra saber como eu estava e, de acordo com a necessidade, passava algumas orientações. Cabe ressaltar também a sua alegria, simpatia e amor pelos pacientes! Outro detalhe ainda, pelo amor a profissão está em constante busca de aprofundamento e estudo na área em que atua! É uma profissional que faz a diferença!`],
     },
     {
-      nome: "Pablo Nunes",
-      texto: [`A Bianca é uma excelente fisioterapeuta, referência na sua área de atuação. Dedicada e sempre atualizada às melhoras práticas da profissão. Recomendo!`],
+      nome: "Livia.dealmeida Alves",
+      texto: [`Profissional excelente.`,
+        `Maestria em ser didática humana e empática...`,
+        `Habilidades e conhecimento teorico/científico de alto nível.`,
+        `Sem dúvidas uma recomendação profissional sem igual`,
+      ],
     },
     {
-      nome: "Henrique Luna",
-      texto: [`A Bianca é uma excelente profissional. Atenciosa, competente, divertida e super atualizada com as melhores práticas da fisioterapia. Recomendo 100%.`],
+      nome: "Vivian Longobardi",
+      texto: [`A Melhor fisioterapeuta que eu poderia ter, atenciosa, competente, me sinto extremamente segura com ela.`,
+        `Ser humano incrível!!`,
+        ` `,
+        `Gratidão por tanto.`,
+        ` `,
+        `Excelência em pessoa e não tô exagerando não rs`
+      ],
     },
     {
       nome: "Gloria Couceiro",
@@ -87,7 +97,7 @@ const SecaoDepoimentos: React.FC<SecaoDepoimentosProps> = ({ isXs }) => {
   return (
     <Section section_id="depoimentos" background_color={theme.palette.custom?.backgroundSectionMain}>
       <ContainerAnimatedScroll>
-        <ContentSectionWrapStyled marginTop="40px" marginBottom="40px" >          
+        <ContentSectionWrapStyled marginTop="40px" marginBottom="40px">          
           <TitleSection align={alignTitle}
             title_text="Histórias de Superação e Esperança"
             subtitle_text="Palavras dos meus pacientes">
