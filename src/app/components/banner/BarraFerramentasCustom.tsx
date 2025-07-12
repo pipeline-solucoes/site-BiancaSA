@@ -21,7 +21,7 @@ const BarraFerramentasCustom: React.FC<BarraFerramentasCustomProps> = ({isXs, is
       return(
         <BarraFerramentasHamburguer
           background_color='transparent'
-          color={theme.palette.primary.dark}
+          color={theme.palette.text.primary}
           color_hover={theme.palette.primary.main}                                     
           renderSocialMedia={() => <SocialMedia position="barraFerramentas"></SocialMedia> }          
           listaItemMenu={itens_menu}
@@ -38,7 +38,7 @@ const BarraFerramentasCustom: React.FC<BarraFerramentasCustomProps> = ({isXs, is
       return(
         <BarraDeFerramentas
           background_color='transparent'
-          color={theme.palette.primary.dark}
+          color={theme.palette.text.primary}
           color_hover={theme.palette.primary.main}        
           text_decoration="none"                    
           renderLogo={() => <></> }

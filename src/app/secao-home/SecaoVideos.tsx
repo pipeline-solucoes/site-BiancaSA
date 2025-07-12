@@ -41,7 +41,10 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
         </TitleSection>        
                
         <ContentSectionWrapStyled marginTop="30px" marginBottom="30px">
-          <VideoGallery videos={videos} backgroundList={theme.palette.custom.backgroundSectionAlternative} borderRadius={theme.shape.borderRadius} />
+          <VideoGallery videos={videos} 
+            colorListSeparator={theme.palette.text.disabled}
+            backgroundList={theme.palette.custom.backgroundSectionAlternative} 
+            borderRadius={theme.shape.borderRadius} />
         </ContentSectionWrapStyled>       
         
         

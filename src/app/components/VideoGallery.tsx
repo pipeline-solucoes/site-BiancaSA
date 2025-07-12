@@ -8,17 +8,6 @@ import {
 import { styled, useTheme } from '@mui/material/styles'
 import { motion } from 'framer-motion'
 
-type Video = {
-  id: string
-  title: string
-  description?: string
-}
-
-type VideoGalleryProps = {
-  videos: Video[]
-  backgroundList: string
-  borderRadius: number
-}
 
 const GalleryWrapper = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'background' && prop !== 'borderRadius',
@@ -113,10 +102,24 @@ const ResponsiveIframe = styled('iframe', {
   borderRadius: borderRadius ?? theme.shape.borderRadius,
 }))
 
+type Video = {
+  id: string
+  title: string
+  description?: string
+}
+
+type VideoGalleryProps = {
+  videos: Video[];
+  backgroundList: string;
+  borderRadius: number;  
+  colorListSeparator: string;
+}
+
 export const VideoGallery: React.FC<VideoGalleryProps> = ({
   videos,
   backgroundList,
   borderRadius,
+  colorListSeparator
 }) => {
 
   const [selected, setSelected] = useState<Video>(videos[0]);
@@ -150,7 +153,7 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
       </motion.div>
 
       <ListWrapper>
-        {videos.map((video) => (
+        {videos.map((video, index) => (
           <ListItemButton
             key={video.id}
             selected={selected.id === video.id}
@@ -161,6 +164,7 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({
               padding: 1.5,
               flexDirection: 'column',
               alignContent: 'flex-start',
+              borderBottom: index !== videos.length - 1 ? `3px solid ${colorListSeparator}` : 'none',
             }}
           >
             <ContainerTitulo>
