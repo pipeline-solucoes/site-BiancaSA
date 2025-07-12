@@ -15,8 +15,8 @@ const InfiniteTickerCustom: React.FC = () => {
             sombraEscura={sombraEscura} 
             height='fit-content'
             width="100%"
-            padding='24px 64px'
-            margin='10px'
+            padding='24px 48px'
+            margin='0px'
             background_color={theme.palette.custom.backgroundSectionMain}
             >   
             <InfiniteTicker

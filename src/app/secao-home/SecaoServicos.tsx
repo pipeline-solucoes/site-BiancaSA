@@ -38,7 +38,7 @@ const SecaoServicos: React.FC<SecaoServicosProps> = ({isXs, isSm}) => {
 
   const theme = useTheme();
 
-  const width_card = (isXs || isSm) ? '80%' : 'calc(50% - 8px)';
+  const width_card = (isXs) ? '340px' : (isSm ? '80%' : 'calc(50% - 8px)') ;
   const max_height_card = (isXs || isSm) ? '300px' : '280px';
   const alignTitle = (isXs) ? 'left' : 'center';
 
