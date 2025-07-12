@@ -72,15 +72,15 @@ export const ContainerTitulo = styled('div')(() => ({
   width: '100%',
 }))
 
-const Titulo = styled('div')(({ theme }) => ({
+const Titulo = styled('h6')(({ theme }) => ({
   width: '100%',
   fontFamily: theme.typography.fontFamily,
-  fontWeight: theme.typography.h5?.fontWeight,
-  fontStyle: theme.typography.h5?.fontStyle,
-  lineHeight: theme.typography.h5?.lineHeight,
-  letterSpacing: theme.typography.h5?.letterSpacing,
-  fontSize: theme.typography.h5?.fontSize,
-  margin: theme.typography.h5?.margin,
+  fontWeight: theme.typography.h6?.fontWeight,
+  fontStyle: theme.typography.h6?.fontStyle,
+  lineHeight: theme.typography.h6?.lineHeight,
+  letterSpacing: theme.typography.h6?.letterSpacing,
+  fontSize: theme.typography.h6?.fontSize,
+  margin: theme.typography.h6?.margin,
 }))
 
 const Description = styled('div')(({ theme }) => ({
@@ -94,7 +94,7 @@ const Description = styled('div')(({ theme }) => ({
 }))
 
 const StyledThumbnail = styled('img')(({ theme }) => ({
-  width: 120,
+  width: 160,
   height: 90,
   borderRadius: theme.shape.borderRadius,
   flexShrink: 0,
