@@ -22,15 +22,13 @@ const SecaoVideos: React.FC<SecaoVideosProps> = ({isXs, isSm}) => {
   const videos = [
   { id: 'tvPg_N7Vw88', title: 'Outubro Rosa, Câncer de Mama, Prevenções, Diagnóstico Precoce e Sintomas| WeFy Podcast #2.18', 
     description: `
-      <p>Fui convidada a participar do podcast da <b><NavigationButton color={${colorLink}} aria_label="link Wefy" layout="link" text_decoration="underline" url='${urlWefy}' width="auto">WEFY</NavigationButton></b>, 
-      junto com <b><NavigationButton color={colorLink} aria_label="link nutricionista Priscilla Faria Goretti" layout="link" text_decoration="underline" url=${urlPriscila} width="auto">nutricionista Priscilla Faria Goretti</NavigationButton></b>, para uma conversa especial sobre o <b>Outubro Rosa</b> e a importância da conscientização sobre o <b>câncer de mama</b>.</p>
-      p>Foi um momento de troca valiosa, com informações e reflexões sobre prevenção, diagnóstico e cuidado.</p>`
+      Fui convidada a participar do podcast da <b><NavigationButton color={${colorLink}} aria_label="link Wefy" layout="link" text_decoration="underline" url='${urlWefy}' width="auto">WEFY</NavigationButton></b>, 
+      junto com <b><NavigationButton color={${colorLink}} aria_label="link nutricionista Priscilla Faria Goretti" layout="link" text_decoration="underline" url=${urlPriscila} width="auto">nutricionista Priscilla Faria Goretti</NavigationButton></b>, para uma conversa especial sobre o <b>Outubro Rosa</b> e a importância da conscientização sobre o <b>câncer de mama</b>.`
    },
   { id: 'lSLx_qQBpbQ', title: 'Cuidados Paliativos: Histórias Reais e Uma Jornada de Conforto e Qualidade | WeFy Podcast #1.3',
     description: `
-      <p>Fui convidada a participar do podcast da <b><NavigationButton color={${colorLink}} aria_label="link Wefy" layout="link" text_decoration="underline" url='${urlWefy}' width="auto">WEFY</NavigationButton></b> para 
-      conversar sobre um tema muito importante: <b>Cuidados Paliativos</b>. </p>
-      <p>Foi uma troca rica e sensível, onde tivemos a oportunidade de compartilhar experiências e reflexões sobre o cuidado integral com o paciente.</p> `
+      Fui convidada a participar do podcast da <b><NavigationButton color={${colorLink}} aria_label="link Wefy" layout="link" text_decoration="underline" url='${urlWefy}' width="auto">WEFY</NavigationButton></b> para 
+      conversar sobre um tema muito importante: <b>Cuidados Paliativos</b>.`
    },  
 ]
   

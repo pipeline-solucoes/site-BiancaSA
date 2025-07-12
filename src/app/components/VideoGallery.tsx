@@ -4,7 +4,6 @@ import {
   List,
   ListItemButton,
   useMediaQuery,
-  Typography,
 } from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles'
 import { motion } from 'framer-motion'
@@ -21,45 +20,90 @@ type VideoGalleryProps = {
   borderRadius: number
 }
 
-const GalleryWrapper = styled(Box)(({ theme }) => ({
+const GalleryWrapper = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'background' && prop !== 'borderRadius',
+})<{ background: string; borderRadius: number }>(({ theme, background, borderRadius }) => ({
   display: 'flex',
   flexDirection: 'row',
-  gap: theme.spacing(2),
-  height: 'auto',
-  width: '100%',  
-  [theme.breakpoints.down('sm')]: {
-    flexDirection: 'column',
-  },
-}))
-
-const ListWrapper = styled(List, {
-  shouldForwardProp: (prop) => prop !== 'background' && prop !== 'borderRadius',
-})<{background: string; borderRadius: number;}>(({ theme, background, borderRadius }) => ({
-  width: '40%',
-  maxWidth: '500px',
+  gap: '16px',
+  width: '100%',
+  height: '100%',
+  padding: '16px',
   background: background,
   borderRadius: borderRadius,
+  boxSizing: 'border-box',
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column',
+    height: 'auto',
+  },
+  alignContent: 'center',
+  alignItems: 'center',
+}))
+
+const ListWrapper = styled(List)(({theme}) => ({
+  width: '40%',
+  maxWidth: '500px',
   gap: '16px',
-  [theme.breakpoints.down('sm')]: {
+  overflowY: 'auto',
+  [theme.breakpoints.down('md')]: {
     width: '100%',
+    maxWidth: '100%',
   },
 }))
 
 const VideoContainer = styled(Box)(() => ({
   width: '100%',
+  height: '100%',
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'column',   
 }))
 
 const AspectRatioBox = styled(Box)(() => ({
   position: 'relative',
   width: '100%',
-  paddingTop: '56.25%', // 16:9 aspect ratio
+  paddingTop: '56.25%', // 16:9
+  flexGrow: 1,
+}))
+
+export const ContainerTitulo = styled('div')(() => ({
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '16px',
+  width: '100%',
+}))
+
+const Titulo = styled('div')(({ theme }) => ({
+  width: '100%',
+  fontFamily: theme.typography.fontFamily,
+  fontWeight: theme.typography.h5?.fontWeight,
+  fontStyle: theme.typography.h5?.fontStyle,
+  lineHeight: theme.typography.h5?.lineHeight,
+  letterSpacing: theme.typography.h5?.letterSpacing,
+  fontSize: theme.typography.h5?.fontSize,
+  margin: theme.typography.h5?.margin,
+}))
+
+const Description = styled('div')(({ theme }) => ({
+  width: '100%',
+  fontFamily: theme.typography.fontFamily,
+  fontWeight: theme.typography.body1?.fontWeight,
+  fontStyle: theme.typography.body1?.fontStyle,
+  lineHeight: theme.typography.body1?.lineHeight,
+  letterSpacing: theme.typography.body1?.letterSpacing,
+  fontSize: theme.typography.body1?.fontSize,  
+}))
+
+const StyledThumbnail = styled('img')(({ theme }) => ({
+  width: 120,
+  height: 90,
+  borderRadius: theme.shape.borderRadius,
+  flexShrink: 0,
+  objectFit: 'cover',
 }))
 
 const ResponsiveIframe = styled('iframe', {
   shouldForwardProp: (prop) => prop !== 'borderRadius',
-})<{borderRadius: number}>(({ theme, borderRadius }) => ({
+})<{ borderRadius: number }>(({ theme, borderRadius }) => ({
   position: 'absolute',
   top: 0,
   left: 0,
@@ -69,19 +113,29 @@ const ResponsiveIframe = styled('iframe', {
   borderRadius: borderRadius ?? theme.shape.borderRadius,
 }))
 
-export const VideoGallery: React.FC<VideoGalleryProps> = ({ videos, backgroundList, borderRadius }) => {
-  const [selected, setSelected] = useState<Video>(videos[0])
-  const theme = useTheme()
-  const isSmall = useMediaQuery(theme.breakpoints.down('sm'))
+export const VideoGallery: React.FC<VideoGalleryProps> = ({
+  videos,
+  backgroundList,
+  borderRadius,
+}) => {
+
+  const [selected, setSelected] = useState<Video>(videos[0]);
+  const theme = useTheme();  
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <GalleryWrapper>
+    <GalleryWrapper background={backgroundList} borderRadius={borderRadius}>
+      
       <motion.div
         key={selected.id}
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        style={{ flex: 1 }}
+        style={{
+            flex: 1,
+            height: isMobile ? 'auto' : '100%',
+            width: '100%',
+        }}        
       >
         <VideoContainer>
           <AspectRatioBox>
@@ -92,25 +146,10 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({ videos, backgroundLi
               title={selected.title}
             />
           </AspectRatioBox>
-
-          <Box sx={{ p: 2 }}>
-            <Typography
-              variant="body1"
-              component="div"
-              sx={{
-                color: 'text.secondary',
-                '& a': {
-                  color: 'primary.main',
-                  textDecoration: 'underline',
-                },
-              }}
-              dangerouslySetInnerHTML={{ __html: selected.description || '' }}
-            />
-          </Box>
         </VideoContainer>
       </motion.div>
 
-      <ListWrapper background={backgroundList} borderRadius={borderRadius}>
+      <ListWrapper>
         {videos.map((video) => (
           <ListItemButton
             key={video.id}
@@ -120,28 +159,25 @@ export const VideoGallery: React.FC<VideoGalleryProps> = ({ videos, backgroundLi
               alignItems: 'flex-start',
               gap: 2,
               padding: 1.5,
+              flexDirection: 'column',
+              alignContent: 'flex-start',
             }}
           >
-            <Box
-              component="img"
-              src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-              alt={video.title}
-              sx={{
-                width: 120,
-                height: 90,
-                borderRadius: 1,
-                flexShrink: 0,
-                objectFit: 'cover',
-              }}
+            <ContainerTitulo>
+              <StyledThumbnail
+                alt={video.title}
+                src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+              />
+              <Titulo>{video.title}</Titulo>
+            </ContainerTitulo>
+
+            <Description
+              dangerouslySetInnerHTML={{ __html: video.description || '' }}
             />
-            <Box>
-              <Typography variant="h5" component="h5">
-                {video.title}
-              </Typography>
-            </Box>
           </ListItemButton>
         ))}
       </ListWrapper>
     </GalleryWrapper>
   )
 }
+
